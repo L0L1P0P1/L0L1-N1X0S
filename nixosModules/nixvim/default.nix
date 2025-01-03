@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, pkgsUnstable, inputs, ... }:
 {
 
 	options = {
@@ -43,6 +43,7 @@
 				dressing.enable = true;
 				noice.enable = true;
 				notify.enable = true;
+				render-markdown.enable = true;
 
 				vim-dadbod.enable = true;
 				vim-dadbod-ui.enable = true;
@@ -100,6 +101,7 @@
 							{name = "vim-dadbod-completion";}
 							{name = "path";}
 							{name = "buffer";}
+							{name = "render-markdown";}
 						]; 
 						mapping = {
 							"<C-k>" = "cmp.mapping.select_prev_item()";
@@ -165,10 +167,10 @@
 			};
 			
 			# Extra Plugins
-			extraPlugins = [
-				pkgs.vimPlugins."markdown-nvim"
-			];
-			extraConfigLua = "require('markdown').setup({})";
+			# extraPlugins = [
+			# 	pkgsUnstable.vimPlugins.markdown-nvim
+			# ];
+			# extraConfigLua = "require('markdown').setup({})";
 		};
 	};
 }

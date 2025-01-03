@@ -93,8 +93,3 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 
 
 Happy hacking with NixOS!
-
-
-
-
-
