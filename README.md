@@ -46,10 +46,10 @@ nixos
 
 ### Cloning the Repository
 
-Clone the repository into your NixOS configuration directory (e.g., `/etc/nixos`):
+Clone the repository into your NixOS configuration directory (e.g., `PATH_TO_YOUR_NIXOS_CONF/`). Note that because this configuration is flake-based, you can put your configuration anywhere you like:
 
 ```bash
-git clone <repository-url> /etc/nixos
+git clone <repository-url> PATH_TO_YOUR_NIXOS_CONF/ 
 ```
 
 ### Applying the Configuration
@@ -57,7 +57,7 @@ git clone <repository-url> /etc/nixos
 To apply a specific host configuration using Nix flakes:
 
 ```bash
-nixos-rebuild switch --flake /etc/nixos#<hostname>
+nixos-rebuild switch --flake PATH_TO_YOUR_NIXOS_CONF#<hostname>
 ```
 
 Replace `<hostname>` with the name of the desired host (e.g., `merdas` or `sitka`).
