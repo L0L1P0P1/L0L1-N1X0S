@@ -163,6 +163,12 @@
 					};
 				};
 			};
+			
+			# Extra Plugins
+			extraPlugins = [
+				pkgs.vimPlugins."markdown-nvim"
+			];
+			extraConfigLua = "require('markdown').setup({})";
 		};
 	};
 }
