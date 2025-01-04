@@ -18,7 +18,6 @@
 				# From Stable Channel
 				brave
 				syncthing
-				kitty
 				vlc
 				sioyek
 				teamspeak_client
@@ -37,6 +36,7 @@
 				# From Unstable Channel
 				persepolis
 				telegram-desktop
+				kitty
 				vesktop
 				obsidian
 				tauon
