@@ -7,7 +7,7 @@
 		};
 
 		nixpkgs-unstable = {
-			url = "github:nixos/nixpkgs/nixpkgs-unstable";
+			url = "github:nixos/nixpkgs/nixos-unstable";
 		};
 
 		nixvim = {
@@ -17,7 +17,7 @@
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 	};
 
