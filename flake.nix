@@ -2,7 +2,6 @@
 	description = "Nixos Config Flake";
 
 	inputs = {
-
     	nixpkgs = {
 			url = "github:nixos/nixpkgs/nixos-24.11";
 		};
@@ -16,10 +15,10 @@
 			inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 
-		# home-manager = {
-		#   url = "github:nix-community/home-manager";
-		#   inputs.nixpkgs.follows = "nixpkgs";
-		# };
+		home-manager = {
+		  url = "github:nix-community/home-manager";
+		  inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable,... }@inputs: {
@@ -29,6 +28,7 @@
 			specialArgs = {inherit inputs;};
 			modules = [
 				inputs.nixvim.nixosModules.nixvim
+				inputs.home-manager.nixosModules.default
 				./hosts/sitka/configuration.nix
 			];
     	};
