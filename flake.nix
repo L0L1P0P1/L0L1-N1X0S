@@ -21,7 +21,7 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable,... }@inputs: {
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
 
 		# Sitka Host, Home PC
     	nixosConfigurations.sitka = nixpkgs.lib.nixosSystem {

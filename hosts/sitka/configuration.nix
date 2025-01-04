@@ -91,6 +91,7 @@
 	devTools.enable = true;
 	tmux.enable = true;
 
+	# User
 	users.users.L0L1P0P = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -98,9 +99,15 @@
 		# packages = with pkgs; [];
 	};
 
-
-	# List packages installed in system profile. To search, run:
-	# $ nix search wget
+	# Home Manager
+	home-manager = {
+		extraSpecialArgs = {inherit inputs;};
+		users = {
+			"L0L1P0P" = import ./home.nix;
+		};
+	};
+	
+	# System packages
 	environment.systemPackages = with pkgs; [
 		tree
 	];
