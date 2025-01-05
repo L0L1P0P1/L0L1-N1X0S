@@ -18,7 +18,6 @@
 
 		environment.systemPackages = with pkgs; [
 			tmux
-			tmux-sessionizer
 		];
 
 	};
