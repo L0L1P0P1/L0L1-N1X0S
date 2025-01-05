@@ -40,6 +40,8 @@
 				nvim-autopairs.enable = true;
 				tmux-navigator.enable = true;
 				neoscroll.enable = true;
+				neocord.enable = true;
+				neogit.enable = true;
 				dressing.enable = true;
 				noice.enable = true;
 				notify.enable = true;
