@@ -280,6 +280,23 @@
 			};
 		}
 
+		{
+			mode = "n";
+			key = "<leader>fb";
+			action = "<cmd>Telescope buffers<CR>";
+			options = {
+				desc = "Search Between Open Buffers";
+			};
+		}
+
+		{
+			mode = "n";
+			key = "<leader>f/";
+			action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
+			options = {
+				desc = "Fuzzy Find in current buffer";
+			};
+		}
 		# {
 		# 	mode = ;
 		# 	key = ;
