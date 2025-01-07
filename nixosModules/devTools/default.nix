@@ -17,6 +17,7 @@
 			wget
 			ripgrep
 			htop
+			btop
 			zip
 			unzip
 			stow
