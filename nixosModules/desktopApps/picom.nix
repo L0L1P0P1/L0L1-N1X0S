@@ -10,6 +10,8 @@
 	config = lib.mkIf config.picom.enable {
 		services.picom = {
 			enable = true;
+			backend = "xrender";
+			activeOpacity = 0.9;
 		};
 	};
 }
