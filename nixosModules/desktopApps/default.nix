@@ -24,7 +24,11 @@
 				xfce.thunar
 				puddletag
 				maim
+
 				rofi
+				rofi-power-menu
+				networkmanager_dmenu
+
 				nekoray
 				pwvucontrol
 				nitrogen
