@@ -29,6 +29,7 @@
 				rofi
 				rofi-power-menu
 				networkmanager_dmenu
+				papirus-icon-theme
 
 				nekoray
 				pwvucontrol
