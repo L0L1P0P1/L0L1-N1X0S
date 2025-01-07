@@ -87,6 +87,7 @@
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
 	nixvim.enable = true;
+	picom.enable = true;
 	zsh.enable = true;
 	devTools.enable = true;
 	tmux.enable = true;

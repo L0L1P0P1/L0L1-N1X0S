@@ -4,6 +4,7 @@
 
 	imports = [
 		./droidcamOBS.nix
+		./picom.nix
 	];
 
 	options = {
@@ -26,7 +27,6 @@
 				maim
 
 				polybarFull
-				picom
 				rofi
 				rofi-power-menu
 				networkmanager_dmenu
