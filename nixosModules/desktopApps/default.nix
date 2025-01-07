@@ -26,6 +26,7 @@
 				maim
 
 				polybarFull
+				picom
 				rofi
 				rofi-power-menu
 				networkmanager_dmenu
