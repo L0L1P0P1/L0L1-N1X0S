@@ -25,6 +25,7 @@
 				puddletag
 				maim
 
+				polybarFull
 				rofi
 				rofi-power-menu
 				networkmanager_dmenu
@@ -34,7 +35,6 @@
 				nitrogen
 				qpwgraph
 				xclip
-				polybar
 			]) ++ 
 			(with pkgsUnstable; [
 				# From Unstable Channel

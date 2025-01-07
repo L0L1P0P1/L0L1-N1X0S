@@ -112,7 +112,7 @@
 		{
 			mode = "n" ;
 			key = "<leader>ef";
-			action = "<cmd>NvimTreeFindFileToggle<CR>";
+			action = "<cmd>NvimTreeFindFile<CR>";
 			options = {
 				desc = "Toggle file explorer on current file";
 			};
