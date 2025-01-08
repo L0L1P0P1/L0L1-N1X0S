@@ -74,4 +74,6 @@
 	hardware.nvidia.powerManagement.finegrained = false;
 	hardware.nvidia.open = true;
 	hardware.nvidia.nvidiaSettings = true;
+	hardware.nvidia.forceFullCompositionPipeline = true;
+
 }
