@@ -121,7 +121,6 @@
 				{
 					type = "button";
 					val = "     Find Text    ";
-					on_press.__raw = "function() require('telescope.builtin').live_grep() end";
 					opts = {
 						shortcut = "g";
 						keymap = [

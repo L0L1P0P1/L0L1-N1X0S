@@ -11,7 +11,12 @@
 		services.picom = {
 			enable = true;
 			backend = "xrender";
-			activeOpacity = 0.9;
+			opacityRule = [
+				"90:class_g = 'kitty'"
+				"90:class_g = 'rofi'"
+				"90:class_g = 'tauon'"
+				"90:class_g = 'thunar'"
+			];
 		};
 	};
 }
