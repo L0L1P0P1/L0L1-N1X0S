@@ -18,7 +18,7 @@
 				"90:class_g = 'tauonmb'"
 				"90:class_g = 'Thunar'"
 				"90:class_g = 'vesktop'"
-				"90:class_g = 'TelegramDesktop'"
+				"96:class_g = 'TelegramDesktop'"
 			];
 			settings = {
 				blur = {
