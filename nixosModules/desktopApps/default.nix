@@ -46,7 +46,6 @@
 				kitty
 				vesktop
 				obsidian
-				tauon
 				v2rayn
 				openrgb-with-all-plugins
 			]);
