@@ -18,7 +18,6 @@
 				"90:class_g = 'tauonmb'"
 				"90:class_g = 'Thunar'"
 				"90:class_g = 'vesktop'"
-				"96:class_g = 'TelegramDesktop'"
 			];
 			settings = {
 				blur = {
@@ -27,18 +26,24 @@
 					deviation = 7.5;
 				};
 				blur-background-exclude = [
-				  "window_type = 'menu'"
-				  "window_type = 'dropdown_menu'"
-				  "window_type = 'popup_menu'"
-				  "window_type = 'tooltip'"
+					"window_type = 'menu'"
+					"window_type = 'dropdown_menu'"
+					"window_type = 'popup_menu'"
+					"window_type = 'tooltip'"
+					"window_type = 'utility'"
+					"window_type = 'dnd'"
+					"window_type = 'dock'"
+					"class_g = 'TelegramDesktop'"
 				];
-				# animations = [
-				# {
-				# 	   triggers = [ "close"  "hide" ];
-				# 	   preset = "slide-out";
-				# 	   direction = "down";
-				# 	}
-				# ];
+				wintypes = {
+					dock = { shadow = false; };
+					dnd = { shadow = false; };
+					tooltip = { shadow = false; };
+					menu        = { opacity = false; };
+					dropdown_menu = { opacity = false; };
+					popup_menu    = { opacity = false; };
+					utility       = { opacity = false; };
+				};
 			};
 				
 			vSync = true;
