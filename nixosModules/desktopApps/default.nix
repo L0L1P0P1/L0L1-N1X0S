@@ -5,6 +5,7 @@
 	imports = [
 		./droidcamOBS.nix
 		./picom.nix
+		./tauon.nix
 	];
 
 	options = {
