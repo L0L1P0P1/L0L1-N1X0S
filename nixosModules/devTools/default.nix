@@ -20,6 +20,7 @@
 			btop
 			zip
 			unzip
+			rar
 			stow
 			tldr
 			man-pages
