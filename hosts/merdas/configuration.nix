@@ -122,7 +122,7 @@
 		];
 		fontconfig = {
 			defaultFonts = {
-				serif = [  "Liberation Serif" "Vazirmatn" ];
+				serif = [  "Liberation Serif" "Sahel" ];
 				sansSerif = [  "Sahel" ];
 				monospace = [ "IBM Plex Mono" ];
 			};
