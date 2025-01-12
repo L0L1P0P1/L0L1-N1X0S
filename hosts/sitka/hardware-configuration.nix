@@ -60,8 +60,6 @@
 	# Enable graphics 
 	hardware.graphics = {
 		enable = true;
-		driSupport = true;
-		driSupport32Bit = true;
 	};
 
 	# Monitor setup
