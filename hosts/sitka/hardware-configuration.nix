@@ -60,6 +60,8 @@
 	# Enable graphics 
 	hardware.graphics = {
 		enable = true;
+		driSupport = true;
+		driSupport32Bit = true;
 	};
 
 	# Monitor setup
@@ -69,11 +71,12 @@
 
 	# Load nvidia driver for Xorg and Wayland
 	services.xserver.videoDrivers = ["nvidia"];
-	hardware.nvidia.modesetting.enable = true;
-	hardware.nvidia.powerManagement.enable = false;
-	hardware.nvidia.powerManagement.finegrained = false;
-	hardware.nvidia.open = true;
-	hardware.nvidia.nvidiaSettings = true;
-	hardware.nvidia.forceFullCompositionPipeline = true;
-
+	hardware.nvidia = {
+		modesetting.enable = true;
+		powerManagement.enable = false;
+		powerManagement.finegrained = false;
+		open = true;
+		nvidiaSettings = true;
+		forceFullCompositionPipeline = true;
+	};
 }
