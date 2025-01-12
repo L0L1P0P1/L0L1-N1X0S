@@ -112,6 +112,7 @@
 	# System packages
 	environment.systemPackages = with pkgs; [
 		tree
+		polkit_gnome
 	];
 
 	security.polkit.enable = true;
