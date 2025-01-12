@@ -33,6 +33,7 @@
 				networkmanager_dmenu
 				papirus-icon-theme
 
+				heroic
 				nekoray
 				pwvucontrol
 				nitrogen
