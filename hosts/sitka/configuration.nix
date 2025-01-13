@@ -86,6 +86,8 @@
 	# Modules to Enable
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
+	virtualbox.enable = true;
+	heroic.enable = true;
 	nixvim.enable = true;
 	picom.enable = true;
 	tauon.enable = true;
@@ -161,7 +163,7 @@
 		"obsidian"
 		"teamspeak3"
 		"rar"
-		"steam"
+		"steam-unwrapped"
 	];
 
 	# Do Not Touch or NixGODs will condemn you to eternal suffering

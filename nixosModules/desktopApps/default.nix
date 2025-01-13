@@ -6,6 +6,8 @@
 		./droidcamOBS.nix
 		./picom.nix
 		./tauon.nix
+		./virtualbox.nix
+		./heroic.nix
 	];
 
 	options = {
@@ -26,7 +28,6 @@
 				xfce.thunar
 				puddletag
 				maim
-				playonlinux
 
 				polybarFull
 				rofi
@@ -34,7 +35,6 @@
 				networkmanager_dmenu
 				papirus-icon-theme
 
-				heroic
 				nekoray
 				pwvucontrol
 				nitrogen
