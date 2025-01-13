@@ -115,6 +115,9 @@
 		polkit_gnome
 	];
 
+	# Dconf
+	programs.dconf.enable = true;
+
 	# Polkit
 	security.polkit.enable = true;
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
