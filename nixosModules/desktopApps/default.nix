@@ -26,7 +26,7 @@
 				xfce.thunar
 				puddletag
 				maim
-				bottles
+				playonlinux
 
 				polybarFull
 				rofi
