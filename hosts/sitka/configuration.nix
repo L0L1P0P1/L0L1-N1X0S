@@ -161,6 +161,7 @@
 		"obsidian"
 		"teamspeak3"
 		"rar"
+		"steam"
 	];
 
 	# Do Not Touch or NixGODs will condemn you to eternal suffering
