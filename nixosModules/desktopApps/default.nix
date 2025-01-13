@@ -26,6 +26,7 @@
 				xfce.thunar
 				puddletag
 				maim
+				bottles
 
 				polybarFull
 				rofi
