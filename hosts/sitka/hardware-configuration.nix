@@ -64,6 +64,8 @@
 
 	# Monitor setup
 	services.xserver.displayManager.setupCommands = ''
+		KWIN_OPENGL_INTERFACE=egl
+		__GL_SYNC_DISPLAY_DEVICE=DP-0
 		${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --primary --pos 0x0 --mode 2560x1440 --rate 170 --output HDMI-0 --mode 1920x1080 --rate 60 --pos 2560x0
 	'';
 

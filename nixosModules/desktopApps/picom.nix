@@ -46,7 +46,7 @@
 				};
 			};
 				
-			vSync = true;
+			vSync = false;
 		};
 	};
 }
