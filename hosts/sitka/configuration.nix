@@ -90,6 +90,7 @@
 	heroic.enable = true;
 	nixvim.enable = true;
 	picom.enable = true;
+	libreOffice.enable = true;
 	tauon.enable = true;
 	zsh.enable = true;
 	devTools.enable = true;

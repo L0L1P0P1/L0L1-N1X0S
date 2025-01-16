@@ -8,6 +8,7 @@
 		./tauon.nix
 		./virtualbox.nix
 		./heroic.nix
+		./libreOffice.nix
 	];
 
 	options = {
