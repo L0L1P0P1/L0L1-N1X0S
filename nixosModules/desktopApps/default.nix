@@ -10,6 +10,7 @@
 		./heroic.nix
 		./libreOffice.nix
 		./photoPrism.nix
+		./immich.nix
 	];
 
 	options = {

@@ -25,7 +25,7 @@
     	fsType = "vfat";
     	options = [ "fmask=0077" "dmask=0077" ];
     };
-  
+
 	fileSystems."/mnt/d" = { 
 		device = "/dev/disk/by-uuid/6422C87222C84AAE";
 		fsType = "ntfs-3g";
@@ -37,6 +37,16 @@
 		fsType = "ntfs-3g";
 		options = ["rw"];
 	};
+
+	fileSystems."/var/lib/private/photoprism" = { 
+		device = "/mnt/e/Photos";
+		options = [ "bind" ];
+	}; 
+
+	fileSystems."/var/lib/immich" = { 
+		device = "/mnt/e/Photos";
+		options = [ "bind" ];
+	}; 
 
 	# OpenRGB
 	services.udev.packages = [pkgs.openrgb-with-all-plugins];
