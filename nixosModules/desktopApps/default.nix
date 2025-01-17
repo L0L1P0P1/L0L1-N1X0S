@@ -9,6 +9,7 @@
 		./virtualbox.nix
 		./heroic.nix
 		./libreOffice.nix
+		./photoPrism.nix
 	];
 
 	options = {
