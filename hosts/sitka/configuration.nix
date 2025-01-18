@@ -87,7 +87,7 @@
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
 	virtualbox.enable = true;
-	photoPrism.enable = true;
+	photoPrism.enable = false;
 	immich.enable = true;
 	heroic.enable = true;
 	nixvim.enable = true;
