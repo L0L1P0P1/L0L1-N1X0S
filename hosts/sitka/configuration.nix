@@ -16,6 +16,8 @@
 		inherit (config.nixpkgs) config;
 	};
 
+	nixpkgs.config.allowUnfree = true;
+
 	# modules to Import
 	imports = [ 	
 		./hardware-configuration.nix
@@ -72,6 +74,9 @@
 
 		# Enable touchpad support (enabled default in most desktopManager).
 		# libinput.enable = true;
+
+		tumbler.enable = true;
+		gvfs.enable = true;
 	};
 
 
@@ -160,14 +165,14 @@
 		};
 	};
 
-	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-		"nvidia-x11"
-		"nvidia-settings"
-		"obsidian"
-		"teamspeak3"
-		"rar"
-		"steam-unwrapped"
-	];
+	# nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+	# 	"nvidia-x11"
+	# 	"nvidia-settings"
+	# 	"obsidian"
+	# 	"teamspeak3"
+	# 	"rar"
+	# 	"steam-unwrapped"
+	# ];
 
 	# Do Not Touch or NixGODs will condemn you to eternal suffering
 	system.stateVersion = "24.05";

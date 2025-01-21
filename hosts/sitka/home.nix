@@ -28,6 +28,8 @@
 		#   echo "Hello, ${config.home.username}!"
 		# '')
 	];
+    
+	home.enableNixpkgsReleaseCheck = false;
 
 	home.file = {
 		# # Building this configuration will create a copy of 'dotfiles/screenrc' in

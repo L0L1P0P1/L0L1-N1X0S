@@ -38,11 +38,6 @@
 		options = ["rw"];
 	};
 
-	# fileSystems."/var/lib/private/photoprism" = { 
-	# 	device = "/mnt/e/Photos";
-	# 	options = [ "bind" ];
-	# }; 
-
 	fileSystems."/var/lib/immich" = { 
 		device = "/mnt/e/Photos";
 		options = [ "bind" ];
