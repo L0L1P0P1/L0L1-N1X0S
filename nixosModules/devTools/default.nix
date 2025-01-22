@@ -19,6 +19,7 @@
 			htop
 			btop
 			zip
+			bat
 			unzip
 			rar
 			stow
