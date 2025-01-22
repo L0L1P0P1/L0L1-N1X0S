@@ -14,7 +14,6 @@
 		
 		environment.systemPackages = with pkgs; [
 			zoxide
-			fzf
 			zsh-syntax-highlighting
 			zsh-autosuggestions
 		];
