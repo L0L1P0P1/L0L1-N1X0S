@@ -46,7 +46,6 @@
 			luarocks
 			lua-language-server
 			lua52Packages.lua-lsp
-			jupyter
 			pylint
 			nodejs_22 
 		];
