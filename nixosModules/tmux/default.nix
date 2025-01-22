@@ -21,7 +21,6 @@
 		]) ++
 		(with pkgsUnstable; [
 			fzf
-			fzf-tmux
 		]);
 
 	};
