@@ -87,9 +87,11 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- Add Homemanager For Managing Dotfiles
-- Cofigure Display Manager
-- Better Module Structuring
+- [ ] Add Homemanager For Managing Dotfiles
+- [ ] Cofigure Display Manager
+- [ ] Add Molten For NixVim
+- [ ] Add Keybinds For nixvim Neogit
+- [ ] Setup store sharing for multiple devices 
 
 
 Happy hacking with NixOS!
