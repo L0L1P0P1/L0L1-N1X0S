@@ -92,6 +92,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Add Molten For NixVim
 - [ ] Add Keybinds For nixvim Neogit
 - [ ] Setup store sharing for multiple devices 
+- [ ] Add molten.nvim to nixvim 
 
 
 Happy hacking with NixOS!
