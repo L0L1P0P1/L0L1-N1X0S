@@ -38,6 +38,7 @@
 				networkmanager_dmenu
 				papirus-icon-theme
 
+				localsend
 				nekoray
 				pwvucontrol
 				nitrogen
