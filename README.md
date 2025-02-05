@@ -88,6 +88,8 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 
 ### TODO
 - [ ] Add Homemanager For Managing Dotfiles
+- [ ] xdg/memo opening files. opening directories is a pain for e.g.
+- [ ] qt/gtk themes
 - [ ] Cofigure Display Manager
 - [ ] Add Molten For NixVim
 - [ ] Add Keybinds For nixvim Neogit
