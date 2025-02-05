@@ -2,12 +2,19 @@
 
 {
 	# nix settings	
-	nix.settings = {
-		experimental-features = [ "nix-command" "flakes" ];
-		# substituters = [ 
-		# 	"https://nix-community.cachix.org"
-		# 	"https://cache.nixos.org"
-		# ];
+	nix = {
+		settings = {
+			experimental-features = [ "nix-command" "flakes" ];
+			# substituters = [ 
+			# 	"https://nix-community.cachix.org"
+			# 	"https://cache.nixos.org"
+			# ];
+		};
+		
+		# sshServe = {
+		# 	enable = true;
+		# 	keys = [];
+		# };
 	};
 
 	# adds pkgsUnstable 
@@ -74,6 +81,11 @@
 				UseDns = true;
 				PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
 			};
+		};
+
+		nix-serve = {
+			enable = true;
+			port = 8080;
 		};
 
 		# Configure keymap in X11
