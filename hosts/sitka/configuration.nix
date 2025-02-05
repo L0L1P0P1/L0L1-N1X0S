@@ -65,6 +65,17 @@
 			configDir= "/home/L0L1P0P/.config/syncthing";
 		};
 
+		openssh = {
+			enable = true;
+			ports = [ 22 ];
+			settings = {
+				PasswordAuthentication = true;
+				AllowUsers = ["L0L1P0P"]; # Allows all users by default. Can be [ "user1" "user2" ]
+				UseDns = true;
+				PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+			};
+		};
+
 		# Configure keymap in X11
 		# xserver.xkb.layout = "us";
 		# xserver.xkb.options = "eurosign:e,caps:escape";
