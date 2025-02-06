@@ -45,7 +45,7 @@
     	nixosConfigurations.tigraan = nixpkgs.lib.nixosSystem {
 			specialArgs = {inherit inputs;};
 			modules = [
-				# inputs.nixvim.nixosModules.nixvim
+				inputs.nixvim.nixosModules.nixvim
 				./hosts/tigraan/configuration.nix
 			];
     	};
