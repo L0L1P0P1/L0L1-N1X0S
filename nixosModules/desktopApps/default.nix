@@ -27,7 +27,7 @@
 				syncthing
 				vlc
 				sioyek
-				teamspeak_client
+				# teamspeak3
 				xfce.thunar
 				puddletag
 				maim
