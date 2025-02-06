@@ -4,10 +4,12 @@
 	# nix settings	
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
-		# substituters = [ 
-		# 	"https://aseipp-nix-cache.global.ssl.fastly.net"
-		# 	"https://cache.nixos.org"
-		# ];
+		substituters = [ 
+			"http://192.168.1.100:8080"
+		];
+
+		# have this enabled only if you are using absolutely trusted caches (mines local)
+		require-sigs = false;
 	};
 
 	# adds pkgsUnstable 
@@ -15,6 +17,8 @@
 		inherit (pkgs.stdenv.hostPlatform) system;
 		inherit (config.nixpkgs) config;
 	};
+
+	nixpkgs.config.allowUnfree = true;
 
 	# modules to Import
 	imports = [ 	
@@ -72,6 +76,8 @@
 
 		# Enable touchpad support (enabled default in most desktopManager).
 		# libinput.enable = true;
+		tumbler.enable = true;
+		gvfs.enable = true;
 	};
 
 
@@ -104,9 +110,27 @@
 	# $ nix search wget
 	environment.systemPackages = with pkgs; [
 		tree
+		polkit_gnome
 	];
 
+	# Dconf
+	programs.dconf.enable = true;
+
+	# polkit
 	security.polkit.enable = true;
+    systemd.user.services.polkit-gnome-authentication-agent-1 = {
+		description = "polkit-gnome-authentication-agent-1";
+		wantedBy = [ "graphical-session.target" ];
+		wants = [ "graphical-session.target" ];
+		after = [ "graphical-session.target" ];
+		serviceConfig = {
+			Type = "simple";
+			ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+			Restart = "on-failure";
+			RestartSec = 1;
+			TimeoutStopSec = 10;
+		};
+    };
 
 	fonts = {
 		enableDefaultPackages = true;
@@ -128,14 +152,6 @@
 			};
 		};
 	};
-
-	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-		"nvidia-x11"
-		"nvidia-settings"
-		"obsidian"
-		"teamspeak3"
-		"rar"
-	];
 
 	# Do Not Touch or NixGODs will condemn you to eternal suffering
 	system.stateVersion = "24.05";
