@@ -48,6 +48,7 @@
 			(with pkgsUnstable; [
 				# From Unstable Channel
 				persepolis
+				varia
 				telegram-desktop
 				kitty
 				vesktop
