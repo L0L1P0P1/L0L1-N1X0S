@@ -42,9 +42,13 @@
 
 	# OpenRGB
 	services.udev.packages = [pkgs.openrgb-with-all-plugins];
-	services.hardware.openrgb.enable = true;
 	hardware.i2c.enable = true;
 	users.groups.i2c.members = ["L0L1P0P"];
+	services.hardware.openrgb = {
+		enable = true;
+		package = pkgs.openrgb-with-all-plugins;
+	};
+
 
 	swapDevices = [ ];
 
