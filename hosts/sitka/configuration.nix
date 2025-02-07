@@ -172,6 +172,7 @@
 				sansSerif = [  "Sahel" ];
 				monospace = [ "IBM Plex Mono" ];
 			};
+			useEmbeddedBitmaps = true;
 		};
 	};
 
