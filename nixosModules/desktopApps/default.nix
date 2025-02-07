@@ -48,13 +48,10 @@
 			(with pkgsUnstable; [
 				# From Unstable Channel
 				persepolis
-				varia
 				telegram-desktop
 				kitty
 				vesktop
 				obsidian
-				v2rayn
-				openrgb-with-all-plugins
 			]);
 	};
 
