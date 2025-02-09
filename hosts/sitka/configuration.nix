@@ -125,6 +125,7 @@
 	zsh.enable = true;
 	devTools.enable = true;
 	tmux.enable = true;
+	teamspeak.enable = true;
 
 	# User
 	users.users.L0L1P0P = {
@@ -175,15 +176,6 @@
 			useEmbeddedBitmaps = true;
 		};
 	};
-
-	# nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-	# 	"nvidia-x11"
-	# 	"nvidia-settings"
-	# 	"obsidian"
-	# 	"teamspeak3"
-	# 	"rar"
-	# 	"steam-unwrapped"
-	# ];
 
 	# Do Not Touch or NixGODs will condemn you to eternal suffering
 	system.stateVersion = "24.05";

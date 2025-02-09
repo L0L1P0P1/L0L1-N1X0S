@@ -11,6 +11,7 @@
 		./libreOffice.nix
 		./photoPrism.nix
 		./immich.nix
+		./teamspeak.nix
 	];
 
 	options = {
@@ -27,7 +28,6 @@
 				syncthing
 				vlc
 				sioyek
-				# teamspeak3
 				xfce.thunar
 				puddletag
 				maim
