@@ -124,6 +124,7 @@
 	tauon.enable = true;
 	zsh.enable = true;
 	devTools.enable = true;
+	arduino.enable = true;
 	tmux.enable = true;
 	teamspeak.enable = true;
 

@@ -1,6 +1,10 @@
 {config, lib, pkgs, pkgsUnstable, inputs, ... } :
 {
 	
+	imports = [
+		./arduino.nix
+	];
+
 	options = {
 		devTools.enable =
 			lib.mkEnableOption "enables devTools";
