@@ -131,7 +131,7 @@
 	# User
 	users.users.L0L1P0P = {
 		isNormalUser = true;
-		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+		extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
 		shell = pkgs.zsh;
 		# packages = with pkgs; [];
 	};
