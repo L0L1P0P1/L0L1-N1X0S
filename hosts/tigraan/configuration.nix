@@ -72,7 +72,7 @@
 		# xserver.xkb.options = "eurosign:e,caps:escape";
 
 		# Enable CUPS to print documents.
-		# printing.enable = true;
+		printing.enable = true;
 
 		# Enable touchpad support (enabled default in most desktopManager).
 		# libinput.enable = true;
