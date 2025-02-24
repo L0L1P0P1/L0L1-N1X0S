@@ -131,7 +131,8 @@
 					'';
 
 					servers = {
-						pyright.enable = true;
+						pylsp.enable = true;
+						# pyright.enable = true;
 						rust_analyzer = {
 							enable = true;
 							installCargo = true;
