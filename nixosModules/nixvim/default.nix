@@ -131,14 +131,25 @@
 					'';
 
 					servers = {
-						pylsp.enable = true;
-						# pyright.enable = true;
 						rust_analyzer = {
 							enable = true;
 							installCargo = true;
 							installRustc = true;
 						};
-						clangd.enable = true;
+						clangd = {
+							enable = true;
+							package = pkgsUnstable.clang-tools;
+							cmd = [
+								"${pkgsUnstable.clang-tools}/bin/clangd" 
+								"--function-arg-placeholders" 
+								"--completion-style=detailed"
+								"--background-index"
+								"--clang-tidy"
+								"--header-insertion=iwyu"
+								"--fallback-style=llvm"
+							]; 
+						};
+						pylsp.enable = true;
 						lua_ls.enable = true;
 						nixd.enable = true;
 					};
