@@ -297,6 +297,25 @@
 				desc = "Fuzzy Find in current buffer";
 			};
 		}
+		
+		{
+			mode = "n";
+			key = "<leader>gg";
+			action = "<cmd>Neogit<CR>";
+			options = {
+				desc = "Open NeoGit Menu";
+			};
+		}
+
+		{
+			mode = "n";
+			key = "<leader>gc";
+			action = "<cmd>NeogitCommit<CR>";
+			options = {
+				desc = "Open Last Commit";
+			};
+		}
+
 		# {
 		# 	mode = ;
 		# 	key = ;

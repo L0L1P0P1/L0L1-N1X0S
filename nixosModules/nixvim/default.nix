@@ -78,7 +78,6 @@
 					renderer.groupEmpty = true;
 				};
 
-
 				lualine = {
 					enable = true;
 					settings.options = {
