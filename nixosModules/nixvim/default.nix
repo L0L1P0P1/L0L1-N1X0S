@@ -45,6 +45,7 @@
 				dressing.enable = true;
 				noice.enable = true;
 				notify.enable = true;
+				presence-nvim.enable = true;
 				render-markdown.enable = true;
 
 				vim-dadbod.enable = true;
