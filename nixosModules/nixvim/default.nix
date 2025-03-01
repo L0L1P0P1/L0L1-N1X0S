@@ -182,6 +182,9 @@
 					enable = true;
 					settings = {
 						background_colour = "#000000";
+						render = "wrapped-compact";
+						fps = 60;
+						stages = "slide";
 					};
 				};
 			};
