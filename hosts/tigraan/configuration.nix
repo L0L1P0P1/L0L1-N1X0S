@@ -5,6 +5,7 @@
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
 		substituters = [ 
+			"https://cache.nixos.org"
 			"http://192.168.1.100:8080"
 		];
 
