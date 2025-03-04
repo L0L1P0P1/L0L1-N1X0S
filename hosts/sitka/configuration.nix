@@ -72,6 +72,8 @@
 		pipewire = {
 			enable = true;
 			pulse.enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
 		};
 
 		syncthing = {
@@ -171,6 +173,7 @@
 
 	# Polkit
 	security.polkit.enable = true;
+	security.rtkit.enable = true;
 
 	fonts = {
 		enableDefaultPackages = true;

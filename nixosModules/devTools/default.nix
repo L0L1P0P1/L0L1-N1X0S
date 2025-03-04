@@ -12,11 +12,10 @@
 
 	config = lib.mkIf config.devTools.enable {
 		
-		environment.systemPackages = with pkgs; [
+		environment.systemPackages = (with pkgs; [
 			tree
 			mlocate
 			tree-sitter
-			vim 
 			git
 			wget
 			ripgrep
@@ -35,8 +34,6 @@
 			killall
 			pkg-config
 			ntfs3g
-			nix-output-monitor
-			nix-fast-build
 
 			# Enviroments  
 			gcc
@@ -50,9 +47,11 @@
 			luarocks
 			lua-language-server
 			lua52Packages.lua-lsp
-			pylint
 			nodejs_22 
-		];
+			manim
+		]) ++ (with pkgsUnstable; [
+			vim 
+		]);
 	};
 
 
