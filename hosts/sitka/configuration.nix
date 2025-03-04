@@ -31,9 +31,19 @@
 		../../nixosModules
     ];
 
-	boot = {
-		loader.systemd-boot.enable = true;
-		loader.efi.canTouchEfiVariables = true;
+	boot.loader = {
+		systemd-boot.enable = false;
+		efi= {
+			canTouchEfiVariables = true;
+			efiSysMountPoint = "/boot";
+		};
+		grub = {
+			efiSupport = true;
+			enable = true;
+			useOSProber = true;
+			device = "nodev";
+			gfxmodeEfi = "2560x1440";
+		};
 	};
 
 	time.timeZone = "Asia/Tehran";
