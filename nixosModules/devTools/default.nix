@@ -39,6 +39,7 @@
 			gcc
 			clang-tools
 			clang
+			conda
 			cmake
 			rustc
 			cargo
