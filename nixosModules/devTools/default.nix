@@ -3,6 +3,7 @@
 	
 	imports = [
 		./arduino.nix
+		./latex.nix
 	];
 
 	options = {
