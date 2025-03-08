@@ -44,12 +44,14 @@
 				gitsigns.enable = true;
 				dressing.enable = true;
 				noice.enable = true;
-				presence-nvim.enable = true;
 				render-markdown.enable = true;
-
 				vim-dadbod.enable = true;
 				vim-dadbod-ui.enable = true;
 				vim-dadbod-completion.enable = true;
+
+				presence-nvim = {
+					enable = true;
+				};
 
 				indent-blankline = {
 					enable = true;
@@ -75,6 +77,10 @@
 					openOnSetup = true;
 					filters.dotfiles = true;
 					renderer.groupEmpty = true;
+					updateFocusedFile = {
+						enable = true;
+						updateRoot = true;
+					};
 				};
 
 				lualine = {
@@ -86,10 +92,21 @@
 
 				telescope = {
 					enable = true;
+					extensions = {
+						file-browser.enable = true;
+					};
 					keymaps = {
-						"<C-k>" = {action = "move_selection_previous";};
-						"<C-j>" = {action = "move_selection_next";};
-						"<C-q>" = {action = "send_selected_to_qflist";}; 
+						"<C-q>" = {action = "send_selected_to_qflist"; mode = ["i" "n"];}; 
+					};
+					settings.mappings = {
+						i = {
+							"<C-j>" = {
+								__raw = "require('telescope.actions').move_selection_next";
+							};
+							"<C-k>" = {
+								__raw = "require('telescope.actions').move_selection_previous";
+							};
+						};
 					};
 				};
 
@@ -148,11 +165,49 @@
 								"--fallback-style=llvm"
 							]; 
 						};
-						pylsp.enable = true;
+
+						# pylsp = {
+						# 	enable = true;
+						# 	settings.plugins = {
+						# 		autopep8.enable = true;
+						# 		black.enable = true;
+						# 		flake8.enable = true;
+						# 		pylint.enable = true;
+						# 		isort.enable = true;
+						# 		pycodestyle.enable = true;
+						# 		jedi_completion = {
+						# 			enable = true;
+						# 			cache_for = ["manim" "manimlib" "matplotlib" "numpy" "pandas"];
+						# 		};
+						# 		jedi_references.enable = true;
+						# 		jedi_hover.enable = true;
+						# 	};
+						# };
+
+						pyright = {
+							enable = true;
+							package = pkgsUnstable.pyright;
+							cmd = [
+								"${pkgsUnstable.pyright}/bin/pyright-langserver"
+								"--stdio"
+								"--pythonpath"
+								"$(eval \"which python\")"
+							];
+							# settings = {
+							# 	pythonPath = {__raw = ''vim.fn.exepath("python")'';};
+							# };
+						};
 						lua_ls.enable = true;
 						nixd.enable = true;
 					};
 				};	
+
+				# none-ls = {
+				# 	enable = true;
+				# 	sources.diagnostics = {
+				# 		pylint.enable = true;
+				# 	};
+				# };
 
 				treesitter = {
 					enable = true;
@@ -191,9 +246,9 @@
 			
 			# Extra Plugins
 			# extraPlugins = [
-			# 	pkgsUnstable.vimPlugins.markdown-nvim
+			# 	pkgsUnstable.vimPlugins.cord-nvim
 			# ];
-			# extraConfigLua = "require('markdown').setup({})";
+			# extraConfigLua = "require('cord').setup({})";
 		};
 	};
 }
