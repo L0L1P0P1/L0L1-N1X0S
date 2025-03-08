@@ -106,6 +106,7 @@
 	tauon.enable = true;
 	nixvim.enable = true;
 	zsh.enable = true;
+	picom.enable = true;
 	devTools.enable = true;
 	tmux.enable = true;
 	teamspeak.enable = true;
