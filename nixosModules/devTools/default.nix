@@ -33,6 +33,7 @@
 			nitch
 			starship
 			killall
+			keychain
 			pkg-config
 			ntfs3g
 
