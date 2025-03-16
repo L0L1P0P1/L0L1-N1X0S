@@ -18,6 +18,7 @@
 			mlocate
 			tree-sitter
 			git
+			gh
 			wget
 			ripgrep
 			htop
@@ -51,7 +52,6 @@
 			lua-language-server
 			lua52Packages.lua-lsp
 			nodejs_22 
-			# manim
 		]) ++ (with pkgsUnstable; [
 			vim 
 		]);
