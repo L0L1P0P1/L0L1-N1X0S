@@ -37,6 +37,9 @@
 			keychain
 			pkg-config
 			ntfs3g
+			nixfmt-rfc-style
+			nixpkgs-review
+			nixpkgs-manual
 
 			# Enviroments  
 			gcc
