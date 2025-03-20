@@ -43,6 +43,7 @@
 				pwvucontrol
 				nitrogen
 				qpwgraph
+				alsa-utils
 				xclip
 			]) ++ 
 			(with pkgsUnstable; [
