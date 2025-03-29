@@ -42,6 +42,14 @@
 			];
     	};
 
+    	nixosConfigurations.poolad = nixpkgs.lib.nixosSystem {
+			specialArgs = {inherit inputs;};
+			modules = [
+				inputs.nixvim.nixosModules.nixvim
+				./hosts/poolad/configuration.nix
+			];
+    	};
+
     	nixosConfigurations.tigraan = nixpkgs.lib.nixosSystem {
 			specialArgs = {inherit inputs;};
 			modules = [
