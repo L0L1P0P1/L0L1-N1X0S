@@ -45,7 +45,7 @@
 	time.timeZone = "Asia/Tehran";
 
 	networking = {
-		hostName = "merdas"; 
+		hostName = "poolad"; 
 		networkmanager.enable = true;  
 		nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
@@ -62,7 +62,9 @@
 	services = {
 		xserver = {
 			enable = true;
+			dpi = 150;
 			windowManager.qtile.enable = true;
+			videoDrivers = [ "amdgpu" ];
 		};
 
 		pipewire = {
@@ -89,6 +91,9 @@
 		# libinput.enable = true;
 		tumbler.enable = true;
 		gvfs.enable = true;
+		udev.extraRules = ''
+			ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+		'';
 	};
 
 
