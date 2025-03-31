@@ -109,6 +109,7 @@
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
 	tauon.enable = true;
+	heroic.enable = true;
 	nixvim.enable = true;
 	zsh.enable = true;
 	picom.enable = false;
