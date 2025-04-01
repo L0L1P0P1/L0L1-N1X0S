@@ -85,9 +85,7 @@
 
 				lualine = {
 					enable = true;
-					settings.options = {
-						ignore_focus = ["NvimTree"];
-					};
+					package = pkgs.vimPlugins.lualine-nvim;
 				};
 
 				telescope = {
@@ -139,11 +137,27 @@
 					enable = true;
 					inlayHints = true;
 					preConfig = ''
-							local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-							for type, icon in pairs(signs) do
-								local hl = "DiagnosticSign" .. type
-								vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-							end
+						vim.diagnostic.config {
+						  virtual_text = true,
+						  signs = {
+							text = {
+							  [vim.diagnostic.severity.ERROR] = "",
+							  [vim.diagnostic.severity.WARN] = "",
+							  [vim.diagnostic.severity.INFO] = "󰋼",
+							  [vim.diagnostic.severity.HINT] = "󰌵",
+							},
+						  },
+						  float = {
+							border = "rounded",
+							format = function(d)
+							  return ("%s (%s) [%s]"):format(d.message, d.source, d.code or d.user_data.lsp.code)
+							end,
+						  },
+						  underline = true,
+						  jump = {
+							float = true,
+						  },
+						}
 					'';
 
 					servers = {
