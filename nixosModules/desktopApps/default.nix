@@ -39,7 +39,6 @@
 				papirus-icon-theme
 
 				localsend
-				nekoray
 				pwvucontrol
 				nitrogen
 				qpwgraph
@@ -49,6 +48,8 @@
 			(with pkgsUnstable; [
 				# From Unstable Channel
 				persepolis
+				nekoray
+				v2rayn
 				telegram-desktop
 				kitty
 				vesktop
