@@ -65,10 +65,17 @@
 			dpi = 150;
 			windowManager.qtile.enable = true;
 			videoDrivers = [ "amdgpu" ];
-			libinput = {
-				enable = true;
-				mouse.accelProfile = "flat";
-				touchpad.accelProfile = "flat";
+		};
+		libinput = {
+			enable = true;
+			mouse = {
+				accelProfile = "flat";
+				accelSpeed = "1";
+			};
+			touchpad = {
+				accelProfile = "flat";
+				accelSpeed = "1";
+				disableWhileTyping = true;
 			};
 		};
 
