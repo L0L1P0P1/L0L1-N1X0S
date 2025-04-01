@@ -74,7 +74,7 @@
 			};
 			touchpad = {
 				accelProfile = "flat";
-				accelSpeed = "1";
+				accelSpeed = "0.8";
 				disableWhileTyping = true;
 			};
 		};
