@@ -67,6 +67,11 @@
 		xserver = {
 			enable = true;
 			windowManager.qtile.enable = true;
+			libinput = {
+				enable = true;
+				mouse.accelProfile = "flat";
+				touchpad.accelProfile = "flat";
+			};
 		};
 
 		pipewire = {
