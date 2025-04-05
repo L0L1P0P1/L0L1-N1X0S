@@ -106,18 +106,17 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- [ ] Add Home Manager for managing dotfiles
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [ ] Configure Qt/GTK themes
+- [ ] Add Home Manager for managing dotfiles
+- [ ] Fix some HiDPI settings for `poolad`
 - [ ] Configure Display Manager
-- [ ] Add Molten for NixVim
+- [ ] Setup some new keybinds for stuff life volume control
+- [ ] Notifications with something like `dunst`
+- [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
+- [ ] Add `home.nix` support for all hosts
 - [x] Setup store sharing for multiple devices
 - [x] Add keybinds for NixVim Neogit
-- [ ] Add `home.nix` support for all hosts
-- [ ] Improve modularization of configurations
-- [ ] Automate system updates using `nix` hooks
-- [ ] Add more NixOS services and optimizations
-- [ ] Improve documentation for better onboarding
 
 Happy hacking with NixOS!
