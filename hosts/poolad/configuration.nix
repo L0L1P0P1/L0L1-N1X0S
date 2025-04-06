@@ -125,13 +125,19 @@
 	tmux.enable = true;
 	zsh.enable = true;
 
+	# User
 	users.users.L0L1P0P = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-		shell = pkgs.zsh;
+		shell = pkgsUnstable.zsh;
 		# packages = with pkgs; [];
 	};
 
+	# Home Manager
+	home-manager = {
+		extraSpecialArgs = {inherit inputs;};
+		users."L0L1P0P" = import ./home.nix;
+	};
 
 	# List packages installed in system profile. To search, run:
 	# $ nix search wget
