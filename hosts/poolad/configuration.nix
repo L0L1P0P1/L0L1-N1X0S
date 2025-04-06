@@ -113,18 +113,17 @@
 	i18n.defaultLocale = "en_US.UTF-8";
 
 	# Modules to Enable
+	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
-	tauon.enable = true;
-	cli-tools.enable = true;
 	environments.enable = true;
 	heroic.enable = true;
 	nixvim.enable = true;
-	zsh.enable = true;
 	picom.enable = false;
-	devTools.enable = true;
-	tmux.enable = true;
+	tauon.enable = true;
 	teamspeak.enable = true;
+	tmux.enable = true;
+	zsh.enable = true;
 
 	users.users.L0L1P0P = {
 		isNormalUser = true;

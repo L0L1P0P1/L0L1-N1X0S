@@ -114,16 +114,16 @@
 	# };
 
 	# Modules to Enable
+	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
-	tauon.enable = true;
-	nixvim.enable = true;
-	zsh.enable = true;
-	picom.enable = false;
-	cli-tools.enable = true;
 	environments.enable = true;
-	tmux.enable = true;
+	nixvim.enable = true;
+	picom.enable = false;
+	tauon.enable = true;
 	teamspeak.enable = true;
+	tmux.enable = true;
+	zsh.enable = true;
 
 	users.users.L0L1P0P = {
 		isNormalUser = true;

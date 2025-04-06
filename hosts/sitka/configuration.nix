@@ -142,24 +142,23 @@
 	# };
 
 	# Modules to Enable
+	arduino.enable = false;
+	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
-	cli-tools.enable = true;
 	environments.enable = true;
-	virtualbox.enable = true;
-	photoPrism.enable = false;
-	immich.enable = true;
 	heroic.enable = true;
-	nixvim.enable = true;
-	picom.enable = true;
-	libreOffice.enable = true;
-	tauon.enable = true;
-	zsh.enable = true;
-	devTools.enable = true;
+	immich.enable = true;
 	latex.enable = true;
-	arduino.enable = false;
-	tmux.enable = true;
+	libreOffice.enable = true;
+	nixvim.enable = true;
+	photoPrism.enable = false;
+	picom.enable = true;
+	tauon.enable = true;
 	teamspeak.enable = true;
+	tmux.enable = true;
+	virtualbox.enable = true;
+	zsh.enable = true;
 
 	# User
 	users.users.L0L1P0P = {

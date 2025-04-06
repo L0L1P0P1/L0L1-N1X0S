@@ -2,10 +2,6 @@
 
 {
 	imports = [
-		./nixvim
-		./zsh.nix
-		./tmux
-
 		./programs
 		./desktop-apps
 	];

@@ -114,15 +114,14 @@
 	# };
 
 	# Modules to Enable
-	desktopApps.enable = true;
 	cli-tools.enable = true;
-	environments.enable = true;
+	desktopApps.enable = true;
 	droidcamOBS.enable = false;
-	tauon.enable = true;
+	environments.enable = true;
 	nixvim.enable = true;
-	zsh.enable = true;
-	devTools.enable = true;
+	tauon.enable = true;
 	tmux.enable = true;
+	zsh.enable = true;
 
 	users.users.L0L1P0P = {
 		isNormalUser = true;

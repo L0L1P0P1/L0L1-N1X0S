@@ -2,10 +2,10 @@
 {
 	imports = [
 		./arduino.nix
+		./cli-tools.nix
+		./environments.nix
 		./latex.nix
 		./zsh.nix
-		./environments.nix
-		./cli-tools.nix
 
 		./nixvim
 		./tmux
