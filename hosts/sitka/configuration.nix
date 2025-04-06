@@ -164,19 +164,15 @@
 	users.users.L0L1P0P = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
-		shell = pkgs.zsh;
+		shell = pkgsUnstable.zsh;
 		# packages = with pkgs; [];
 	};
 
 	# Home Manager
 	home-manager = {
 		extraSpecialArgs = {inherit inputs;};
-		users = {
-			"L0L1P0P" = import [
-				./home.nix
-				inputs.self.outputs.homeManagerModules.default
-			];
-		};
+		backupFileExtension = "backup";
+		users."L0L1P0P" = import ./home.nix;
 	};
 	
 	# System packages

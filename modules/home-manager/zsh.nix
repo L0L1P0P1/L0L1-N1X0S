@@ -6,17 +6,27 @@
 	};
 
 	config = lib.mkIf config.zsh.enable {
+		home = {
+			shell.enableZshIntegration = true;
+			shellAliases = {
+				"ls" = "ls --color";
+				".." = "cd ../";
+				"..." = "cd ../..";
+			};
+		};
 		programs.zsh = {
 			enable = true;
 			enableCompletion = true;
-			enableLsColors = true;
 
 			syntaxHighlighting = {
 				enable = true;
 			};
-			autosuggestions = {
+			autosuggestion = {
 				enable = true;
 			};
+			initExtra = ''
+				eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
+			'';
 		};
 
 		programs.starship = {
@@ -48,7 +58,7 @@
 				"--header 'Press CTRL-Y to copy command into clipboard'"
 				"--preview-window hidden"
 			];
-			changeDirWidgetCommand =	"--preview 'tree -C {}'";
+			changeDirWidgetOptions = [ "--preview 'tree -C {}'" ];
 		};
 	};
 }
