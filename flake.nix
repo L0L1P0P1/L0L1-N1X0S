@@ -57,5 +57,7 @@
 				./hosts/tigraan/configuration.nix
 			];
     	};
+
+		homeManagerModules.default = ./modules/home-manager;
 	};
 }

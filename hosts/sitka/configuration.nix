@@ -172,7 +172,10 @@
 	home-manager = {
 		extraSpecialArgs = {inherit inputs;};
 		users = {
-			"L0L1P0P" = import ./home.nix;
+			"L0L1P0P" = import [
+				./home.nix
+				inputs.self.outputs.homeManagerModules.default
+			];
 		};
 	};
 	
