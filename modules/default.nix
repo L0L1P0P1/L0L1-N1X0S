@@ -4,5 +4,6 @@
 	imports = [
 		./programs
 		./desktop-apps
+		./home-manager
 	];
 }
