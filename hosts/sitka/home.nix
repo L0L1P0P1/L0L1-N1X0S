@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
-	# imports = [
-	# 	../../homeManager
-	# ];
+	imports = [
+		../../modules/home-manager
+	];
 
 	# User 
 	home.username = "L0L1P0P";
@@ -30,7 +30,7 @@
 	];
     
 	home.enableNixpkgsReleaseCheck = false;
-
+	home = {zsh.enable =true;};
 	home.file = {
 		# # Building this configuration will create a copy of 'dotfiles/screenrc' in
 		# # the Nix store. Activating the configuration will then make '~/.screenrc' a

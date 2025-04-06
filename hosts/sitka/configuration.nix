@@ -158,7 +158,7 @@
 	teamspeak.enable = true;
 	tmux.enable = true;
 	virtualbox.enable = true;
-	zsh.enable = true;
+	# zsh.enable = true;
 
 	# User
 	users.users.L0L1P0P = {
