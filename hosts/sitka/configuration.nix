@@ -28,7 +28,7 @@
 	# modules to Import
 	imports = [ 	
 		./hardware-configuration.nix
-		../../nixosModules
+		../../modules
     ];
 
 	boot.loader = {
@@ -144,6 +144,8 @@
 	# Modules to Enable
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
+	cli-tools.enable = true;
+	environments.enable = true;
 	virtualbox.enable = true;
 	photoPrism.enable = false;
 	immich.enable = true;

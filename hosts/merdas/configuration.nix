@@ -24,7 +24,7 @@
 	# modules to Import
 	imports = [ 	
 		./hardware-configuration.nix
-		../../nixosModules
+		../../modules
     ];
 
 	boot.loader = {
@@ -120,7 +120,8 @@
 	nixvim.enable = true;
 	zsh.enable = true;
 	picom.enable = false;
-	devTools.enable = true;
+	cli-tools.enable = true;
+	environments.enable = true;
 	tmux.enable = true;
 	teamspeak.enable = true;
 

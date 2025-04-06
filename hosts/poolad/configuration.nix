@@ -24,7 +24,7 @@
 	# modules to Import
 	imports = [ 	
 		./hardware-configuration.nix
-		../../nixosModules
+		../../modules
     ];
 
 	boot.loader = {
@@ -116,6 +116,8 @@
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
 	tauon.enable = true;
+	cli-tools.enable = true;
+	environments.enable = true;
 	heroic.enable = true;
 	nixvim.enable = true;
 	zsh.enable = true;

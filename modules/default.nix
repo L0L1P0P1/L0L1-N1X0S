@@ -6,7 +6,7 @@
 		./zsh.nix
 		./tmux
 
-		./devTools
-		./desktopApps
+		./programs
+		./desktop-apps
 	];
 }
