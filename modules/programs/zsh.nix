@@ -1,11 +1,11 @@
 {config, lib, pkgs, pkgsUnstable, inputs, ...}:
 {
 	options = {
-		zsh.enable =
+		zshold.enable =
 			lib.mkEnableOption "enables zsh";
 	};
 
-	config = lib.mkIf config.zsh.enable {
+	config = lib.mkIf config.zshold.enable {
 
 		programs.zsh = {
 			enable=true;

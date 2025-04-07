@@ -1,11 +1,11 @@
 {config, lib, pkgs, pkgsUnstable, inputs, ...}:
 {
 	options = {
-		tmux.enable =
+		tmuxold.enable =
 			lib.mkEnableOption "enables tmux";
 	};
 
-	config = lib.mkIf config.tmux.enable {
+	config = lib.mkIf config.tmuxold.enable {
 
 		programs.tmux = {
 			enable = true;

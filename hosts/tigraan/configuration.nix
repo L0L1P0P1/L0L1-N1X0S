@@ -120,8 +120,8 @@
 	environments.enable = true;
 	nixvim.enable = true;
 	tauon.enable = true;
-	tmux.enable = true;
-	zsh.enable = true;
+	tmuxold.enable = true;
+	zshold.enable = true;
 
 	users.users.L0L1P0P = {
 		isNormalUser = true;

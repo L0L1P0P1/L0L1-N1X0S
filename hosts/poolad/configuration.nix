@@ -129,8 +129,12 @@
 		isNormalUser = true;
 		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
 		shell = pkgsUnstable.zsh;
+		ignoreShellProgramCheck = true;
 		# packages = with pkgs; [];
 	};
+
+	# shell environment
+	environment.shells = [pkgsUnstable.zsh];
 
 	# Home Manager
 	home-manager = {

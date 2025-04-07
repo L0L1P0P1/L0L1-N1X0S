@@ -134,12 +134,7 @@
 
 
 	# Select internationalisation properties.
-	# i18n.defaultLocale = "en_US.UTF-8";
-	# console = {
-	#   font = "Lat2-Terminus16";
-	#   keyMap = "us";
-	#   useXkbConfig = true; # use xkb.options in tty.
-	# };
+	i18n.defaultLocale = "en_US.UTF-8";
 
 	# Modules to Enable
 	arduino.enable = false;
@@ -167,6 +162,9 @@
 		shell = pkgsUnstable.zsh;
 		# packages = with pkgs; [];
 	};
+
+	# shell environment
+	environment.shells = [pkgsUnstable.zsh];
 
 	# Home Manager
 	home-manager = {

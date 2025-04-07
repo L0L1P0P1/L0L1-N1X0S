@@ -5,7 +5,7 @@
 		./cli-tools.nix
 		./environments.nix
 		./latex.nix
-		# ./zsh.nix
+		./zsh.nix
 
 		./nixvim
 		# ./tmux

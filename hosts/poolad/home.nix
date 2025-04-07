@@ -65,6 +65,7 @@
 	home.sessionVariables = {
 		EDITOR = "nvim";
 		MANPAGER = "nvim +Man!";
+		SHELL = "${pkgsUnstable.zsh}/bin/zsh";
 	};
 
 	# Let Home Manager install and manage itself.
