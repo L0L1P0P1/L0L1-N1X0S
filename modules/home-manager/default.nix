@@ -9,4 +9,6 @@
 	_module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
 		inherit (pkgs.stdenv.hostPlatform) system;
 	};
+
+	xdg.enable = true;
 }
