@@ -11,7 +11,7 @@
 			
 			themeFile = "GruvboxMaterialDarkSoft";	
 			font.name = "IBM Plex Mono";
-			font.size = "16";
+			font.size = 16;
 
 			settings = {
 				 confirm_os_window_close = 0;
