@@ -63,6 +63,6 @@
 			];
     	};
 
-		homeManagerModules.default = ./modules/home-manager;
+		# homeManagerModules.default = ./modules/home-manager;
 	};
 }

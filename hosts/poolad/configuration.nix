@@ -122,7 +122,7 @@
 	picom.enable = false;
 	tauon.enable = true;
 	teamspeak.enable = true;
-	tmux.enable = true;
+	# tmux.enable = true;
 
 	# User
 	users.users.L0L1P0P = {

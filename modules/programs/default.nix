@@ -8,6 +8,6 @@
 		# ./zsh.nix
 
 		./nixvim
-		./tmux
+		# ./tmux
 	];
 }
