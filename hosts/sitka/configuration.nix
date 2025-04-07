@@ -156,7 +156,7 @@
 	picom.enable = true;
 	tauon.enable = true;
 	teamspeak.enable = true;
-	tmux.enable = true;
+	# tmux.enable = true;
 	virtualbox.enable = true;
 	# zsh.enable = true;
 

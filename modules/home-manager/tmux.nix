@@ -54,7 +54,7 @@
 				}
 				{
 					plugin = gruvbox;
-					extraConfig = "set -g @gruvbox_flavour 'dark'";
+					extraConfig = "set -g @tmux-gruvbox 'dark256'";
 				}
             ];
 		};
