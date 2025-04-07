@@ -10,6 +10,7 @@
 			shell.enableZshIntegration = true;
 			shellAliases = {
 				"ls" = "ls --color";
+				"cd" = "z";
 				".." = "cd ../";
 				"..." = "cd ../..";
 			};
@@ -25,6 +26,7 @@
 				enable = true;
 			};
 			initExtra = ''
+				bindkey -e
 				eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
 			'';
 		};

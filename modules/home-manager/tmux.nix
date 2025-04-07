@@ -14,8 +14,7 @@
 			disableConfirmationPrompt = true;
 			keyMode = "vi";
 			prefix = "C-space";
-			shell = "${pkgsUnstable.zsh}/bin/zsh";
-			# terminal = "screen-256color";
+			shell = "${pkgsUnstable.zsh}/bin/sh";
 
 			extraConfig = ''
 				# Status Bar Position
@@ -54,7 +53,6 @@
 				}
 				{
 					plugin = gruvbox;
-					extraConfig = "set -g @tmux-gruvbox 'dark256'";
 				}
             ];
 		};

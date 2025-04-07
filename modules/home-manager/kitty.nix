@@ -9,7 +9,7 @@
 		programs.kitty = {
 			enable = true;
 			
-			themeFile = "GruvboxMaterialDarkSoft";	
+			themeFile = "GruvboxMaterialDarkMedium";	
 			font.name = "IBM Plex Mono";
 			font.size = 16;
 
