@@ -138,6 +138,7 @@
 
 	# Modules to Enable
 	arduino.enable = false;
+	audacity.enable = true;
 	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
@@ -151,9 +152,7 @@
 	picom.enable = true;
 	tauon.enable = true;
 	teamspeak.enable = true;
-	# tmux.enable = true;
 	virtualbox.enable = true;
-	# zsh.enable = true;
 
 	# User
 	users.users.L0L1P0P = {
