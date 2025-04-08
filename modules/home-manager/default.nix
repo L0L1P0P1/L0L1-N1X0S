@@ -4,6 +4,7 @@
 		./zsh.nix
 		./tmux.nix
 		./kitty.nix
+		./qtile.nix
 	];
 
 	_module.args.pkgsUnstable = import inputs.nixpkgs-unstable {

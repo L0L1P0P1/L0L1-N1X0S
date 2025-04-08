@@ -33,6 +33,15 @@
 	zsh.enable = true;
 	tmux.enable = true;
 	kitty.enable = true;
+	qtile = {
+		enable = true;
+		autostartOnce = ''
+#!/usr/bin/env bash
+
+nekoray -tray &
+lxqt-policykit-agent &
+		'';
+	};
 	home.file = {
 		# # Building this configuration will create a copy of 'dotfiles/screenrc' in
 		# # the Nix store. Activating the configuration will then make '~/.screenrc' a
