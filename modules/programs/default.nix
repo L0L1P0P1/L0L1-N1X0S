@@ -2,6 +2,7 @@
 {
 	imports = [
 		./arduino.nix
+		./audacity.nix
 		./cli-tools.nix
 		./environments.nix
 		./latex.nix
