@@ -113,6 +113,7 @@
 	i18n.defaultLocale = "en_US.UTF-8";
 
 	# Modules to Enable
+	audacity.enable = true;
 	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
