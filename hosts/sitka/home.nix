@@ -31,6 +31,20 @@
     
 	home.enableNixpkgsReleaseCheck = false;
 	zsh.enable = true;
+	tmux.enable = true;
+	kitty.enable = true;
+	qtile = {
+		enable = true;
+		margin = 6; 
+		borderWidth = 4;
+		autostartOnce = ''
+#!/usr/bin/env bash
+
+openrgb --startminimized &
+nekoray -tray &
+lxqt-policykit-agent &
+		'';
+	};
 	home.file = {
 		# # Building this configuration will create a copy of 'dotfiles/screenrc' in
 		# # the Nix store. Activating the configuration will then make '~/.screenrc' a

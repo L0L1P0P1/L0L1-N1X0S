@@ -24,7 +24,7 @@
 nitrogen --restore &
 /home/L0L1P0P/.config/polybar/launch.sh &
 setxkbmap -layout us,ir -option 'grp:alt_shift_toggle' &
-				'';
+'';
 			};
 			autostartOnce = lib.mkOption {
 				description = "Shellscript to Run Once On Login";
@@ -34,7 +34,7 @@ setxkbmap -layout us,ir -option 'grp:alt_shift_toggle' &
 
 nekoray -tray &
 lxqt-policykit-agent &
-				'';
+'';
 			};
 		};
 	};
@@ -144,9 +144,7 @@ floating_layout = layout.Floating(
 )
 
 layouts = [
-	layout.Columns(border_focus='#689d6a', border_normal='#83a598', border_focus_stack='#fe8019', 
-					border_normal_stack='#d79921', border_width=${builtins.toString config.qtile.borderWidth}, 
-					margin=${builtins.toString config.qtile.margin}),
+	layout.Columns(border_focus='#689d6a', border_normal='#83a598', border_focus_stack='#fe8019', border_normal_stack='#d79921', border_width=${builtins.toString config.qtile.borderWidth}, margin=${builtins.toString config.qtile.margin}),
 	layout.Max(border_focus='#689d6a', border_normal='#83a598', border_width=${builtins.toString config.qtile.borderWidth}, margin=${builtins.toString config.qtile.margin}),
 ]
 
@@ -192,7 +190,7 @@ def autostart():
 	subprocess.run([home + '/.config/qtile/autostart.sh'])
 
 wmname = "LG3D"
-			'';	
+'';	
 		};
 	};
 }

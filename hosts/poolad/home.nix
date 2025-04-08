@@ -32,7 +32,10 @@
 	home.enableNixpkgsReleaseCheck = false;
 	zsh.enable = true;
 	tmux.enable = true;
-	kitty.enable = true;
+	kitty = {
+		enable = true;
+		fontSize = 16;
+	};
 	qtile = {
 		enable = true;
 		autostartOnce = ''
