@@ -14,7 +14,7 @@
 			disableConfirmationPrompt = true;
 			keyMode = "vi";
 			prefix = "C-space";
-			shell = "${pkgsUnstable.zsh}/bin/sh";
+			shell = "${pkgsUnstable.zsh}/bin/zsh";
 
 			extraConfig = ''
 				# Status Bar Position
@@ -38,7 +38,7 @@
 					plugin = continuum;
 					extraConfig = ''
 					   set -g @continuum-restore 'on'
-					   set -g @continuum-save-interval '5' # minutes
+					   set -g @continuum-save-interval '1' # minutes
 					'';
                 }
 				{
