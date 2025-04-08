@@ -14,7 +14,7 @@
 			disableConfirmationPrompt = true;
 			keyMode = "vi";
 			prefix = "C-space";
-			shell = "${pkgsUnstable.zsh}/bin/sh";
+			shell = "${pkgsUnstable.zsh}/bin/zsh";
 
 			extraConfig = ''
 				# Status Bar Position

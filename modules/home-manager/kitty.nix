@@ -2,7 +2,14 @@
 {
 
 	options = {
-		kitty.enable = lib.mkEnableOption "enables kitty";
+		kitty = {
+			enable = lib.mkEnableOption "enables kitty";
+			fontSize = lib.mkOption {
+				description = "Default Terminal Font Size";
+				type = lib.types.int;
+				default = 11;
+			};
+		};
 	};
 
 	config = lib.mkIf config.kitty.enable {
@@ -11,7 +18,7 @@
 			
 			themeFile = "GruvboxMaterialDarkMedium";	
 			font.name = "IBM Plex Mono";
-			font.size = 16;
+			font.size = config.kitty.fontSize;
 
 			settings = {
 				 confirm_os_window_close = 0;
