@@ -43,6 +43,7 @@
 				neogit.enable = true;
 				gitsigns.enable = true;
 				dressing.enable = true;
+				nix.enable = true;
 				noice.enable = true;
 				render-markdown.enable = true;
 				vim-dadbod.enable = true;
