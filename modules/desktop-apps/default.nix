@@ -3,6 +3,7 @@
 {
 
 	imports = [
+        ./clash-verge.nix
 		./droidcamOBS.nix
 		./picom.nix
 		./tauon.nix
@@ -49,8 +50,9 @@
 				# From Unstable Channel
 				persepolis
 				nekoray
-				v2rayn
+                clash-nyanpasu
 				telegram-desktop
+
 				kitty
 				vesktop
 				obsidian

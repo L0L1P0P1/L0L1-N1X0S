@@ -114,6 +114,7 @@
 
 	# Modules to Enable
 	audacity.enable = true;
+    clash-verge.enable = true;
 	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = false;
