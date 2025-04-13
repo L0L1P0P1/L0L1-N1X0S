@@ -86,8 +86,7 @@
 
 		syncthing = {
 			enable = true;
-			user = "L0L1P0P";
-			openDefaultPorts = true;
+			user = "L0L1P0P"; openDefaultPorts = true;
 			dataDir = "/home/L0L1P0P/Documents"; 
 			configDir= "/home/L0L1P0P/.config/syncthing";
 		};
@@ -156,6 +155,18 @@
 
 	# polkit
 	security.polkit.enable = true;
+    security.sudo = {
+      enable = true;
+      extraRules = [{
+        commands = [
+          {
+          command = "${pkgsUnstable.clash-nyanpasu}/bin/clash-nyanpasu";
+          options = [ "NOPASSWD" ];
+          }
+        ];
+      }]
+      ;
+    };
 
 	fonts = {
 		enableDefaultPackages = true;

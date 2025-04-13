@@ -50,7 +50,6 @@
 				# From Unstable Channel
 				persepolis
 				nekoray
-                clash-nyanpasu
 				telegram-desktop
 
 				kitty
