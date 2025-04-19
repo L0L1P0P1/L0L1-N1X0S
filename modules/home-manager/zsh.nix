@@ -25,8 +25,10 @@
 			autosuggestion = {
 				enable = true;
 			};
+            initExtraFirst = ''
+                bindkey -e
+            '';
 			initExtra = ''
-				bindkey -e
 				eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
 			'';
 		};
