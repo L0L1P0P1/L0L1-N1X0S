@@ -8,6 +8,7 @@
 	config = lib.mkIf config.cli-tools.enable {
 		environment.systemPackages = with pkgs; [
 			bat
+            bluetuith
 			btop
 			gh
 			git
@@ -27,7 +28,7 @@
 			ripgrep
 			starship
 			stow
-			tldr
+            tealdeer
 			tree
 			tree-sitter
 			unzip
