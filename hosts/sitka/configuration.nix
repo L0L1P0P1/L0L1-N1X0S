@@ -139,6 +139,7 @@
 	# Modules to Enable
 	arduino.enable = false;
 	audacity.enable = true;
+    clash-verge.enable = true;
 	cli-tools.enable = true;
 	desktopApps.enable = true;
 	droidcamOBS.enable = true;
@@ -182,7 +183,18 @@
 
 	# Polkit
 	security.polkit.enable = true;
-	security.rtkit.enable = true;
+    security.sudo = {
+      enable = true;
+      extraRules = [{
+        commands = [
+          {
+          command = "${pkgsUnstable.clash-nyanpasu}/bin/clash-nyanpasu";
+          options = [ "NOPASSWD" ];
+          }
+        ];
+      }]
+      ;
+    };
 
 	fonts = {
 		enableDefaultPackages = true;
