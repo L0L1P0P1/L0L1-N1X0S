@@ -36,6 +36,10 @@
 		programs.starship = {
 			enable = true;	
 			enableZshIntegration= true;
+            settings = {
+              add_newline = true;
+              command_timeout = 36000;
+            };
 		};
 
 		programs.zoxide = {
