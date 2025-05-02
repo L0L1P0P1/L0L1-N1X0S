@@ -77,9 +77,6 @@
 						"--pythonpath"
 						"$(eval \"which python\")"
 					];
-					# settings = {
-					# 	pythonPath = {__raw = ''vim.fn.exepath("python")'';};
-					# };
 				};
 				lua_ls.enable = true;
 				nixd.enable = true;
