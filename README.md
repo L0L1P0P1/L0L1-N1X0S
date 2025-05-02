@@ -109,13 +109,14 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [ ] Configure Qt/GTK themes
 - [ ] Add Home Manager for managing dotfiles
-- [ ] Fix some HiDPI settings for `poolad`
+- [ ] lockscreen and suspend stuff for poolad
 - [ ] Configure Display Manager
 - [ ] Setup some new keybinds for stuff life volume control
 - [ ] Notifications with something like `dunst`
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
 - [ ] Add `home.nix` support for all hosts
+- [x] Fix some HiDPI settings for `poolad`
 - [x] Setup store sharing for multiple devices
 - [x] Add keybinds for NixVim Neogit
 
