@@ -6,7 +6,7 @@
 			lib.mkEnableOption "enables heroic";
 	};
 
-	config = lib.mkIf config.picom.enable {
+	config = lib.mkIf config.heroic.enable {
 		environment.systemPackages = [
 			pkgs.heroic
 		];
