@@ -112,17 +112,18 @@
 	i18n.defaultLocale = "en_US.UTF-8";
 
 	# Modules to Enable
-	audacity.enable = true;
+    audacity.enable = true;
     clash-verge.enable = true;
-	cli-tools.enable = true;
-	desktopApps.enable = true;
-	droidcamOBS.enable = false;
-	environments.enable = true;
-	heroic.enable = true;
-	nixvim.enable = true;
-	picom.enable = false;
-	tauon.enable = true;
-	teamspeak.enable = true;
+    cli-tools.enable = true;
+    desktopApps.enable = true;
+    droidcamOBS.enable = false;
+    environments.enable = true;
+    heroic.enable = true;
+    libreOffice.enable = true;
+    nixvim.enable = true;
+    picom.enable = false;
+    tauon.enable = true;
+    teamspeak.enable = true;
 
 	# User
 	users.users.L0L1P0P = {
