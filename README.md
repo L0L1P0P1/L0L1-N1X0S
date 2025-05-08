@@ -74,15 +74,6 @@ nixos
 - **`LICENSE`**: Repository licensing
 - **`README.md`**: This documentation fils
 
-### Key Directories
-
-- **`flake.nix`** and **`flake.lock`**: The main flake file defines the system configuration and dependencies. The lockfile ensures deterministic builds.
-- **`hosts/`**: Contains host-specific configurations for individual machines.
-- **`nixosModules/`**: Custom Nix modules for reusable configurations, organized by functionality (e.g., `desktopApps`, `devTools`).
-- **`nixosModules/nixvim/`**: NixVim Configuration. [NixVim](https://github.com/nix-community/nixvim) is a *Neovim* distribution and configuration system built around *Nix* modules.
-- **`LICENSE`**: License file for the repository.
-- **`README.md`**: Documentation for the repository.
-
 ## Usage
 
 ### Cloning the Repository
