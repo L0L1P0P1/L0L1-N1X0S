@@ -50,6 +50,19 @@
 					]; 
 				};
 
+				basedpyright = {
+					enable = true;
+					package = pkgsUnstable.basedpyright;
+					cmd = [
+						"${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
+						"--stdio"
+						"--pythonpath"
+						"$(eval \"which python\")"
+					];
+				};
+				lua_ls.enable = true;
+				nixd.enable = true;
+
 				# pylsp = {
 				# 	enable = true;
 				# 	settings.plugins = {
@@ -68,18 +81,16 @@
 				# 	};
 				# };
 
-				pyright = {
-					enable = true;
-					package = pkgsUnstable.pyright;
-					cmd = [
-						"${pkgsUnstable.pyright}/bin/pyright-langserver"
-						"--stdio"
-						"--pythonpath"
-						"$(eval \"which python\")"
-					];
-				};
-				lua_ls.enable = true;
-				nixd.enable = true;
+				# pyright = {
+				# 	enable = true;
+				# 	package = pkgsUnstable.pyright;
+				# 	cmd = [
+				# 		"${pkgsUnstable.pyright}/bin/pyright-langserver"
+				# 		"--stdio"
+				# 		"--pythonpath"
+				# 		"$(eval \"which python\")"
+				# 	];
+				# };
 			};
 		};	
 

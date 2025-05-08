@@ -36,20 +36,20 @@
 
 			# Plugins
 			plugins = {
-				bufferline.enable = true;
-				web-devicons.enable = true;
-				nvim-autopairs.enable = true;
-				tmux-navigator.enable = true;
-				neoscroll.enable = true;
-				neogit.enable = true;
-				gitsigns.enable = true;
-				dressing.enable = true;
-				nix.enable = true;
-				noice.enable = true;
-				render-markdown.enable = true;
-				vim-dadbod.enable = true;
-				vim-dadbod-ui.enable = true;
-				vim-dadbod-completion.enable = true;
+                bufferline.enable = true;
+                dressing.enable = true;
+                gitsigns.enable = true;
+                neogit.enable = true;
+                neoscroll.enable = true;
+                nix.enable = true;
+                noice.enable = true;
+                nvim-autopairs.enable = true;
+                render-markdown.enable = true;
+                tmux-navigator.enable = true;
+                vim-dadbod-completion.enable = true;
+                vim-dadbod-ui.enable = true;
+                vim-dadbod.enable = true;
+                web-devicons.enable = true;
 
 				presence-nvim = {
 					enable = true;
@@ -110,12 +110,26 @@
 					};
 				};
 
+                luasnip = {
+                  enable = true;
+                  fromVscode = [
+                    { }
+                  ];
+                };
+                friendly-snippets = {
+                  enable = true;
+                  package = pkgsUnstable.vimPlugins.friendly-snippets;
+                };
+
+                cmp-nvim-lsp.enable = true;
+                cmp_luasnip.enable = true;
 				cmp = {
 					enable = true;
 					autoEnableSources = true;
 					settings = {
 						sources = [
 							{name = "nvim_lsp";}
+							{name = "luasnip";}
 							{name = "vim-dadbod-completion";}
 							{name = "path";}
 							{name = "buffer";}
