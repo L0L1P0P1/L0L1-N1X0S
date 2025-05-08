@@ -1,61 +1,67 @@
-{config, lib, pkgs, pkgsUnstable, inputs, ... } :
+{
+  config,
+  lib,
+  pkgs,
+  pkgsUnstable,
+  inputs,
+  ...
+}:
 
 {
 
-	imports = [
-        ./clash-verge.nix
-		./droidcamOBS.nix
-		./picom.nix
-		./tauon.nix
-		./virtualbox.nix
-		./heroic.nix
-		./libreOffice.nix
-		./photoPrism.nix
-		./immich.nix
-		./teamspeak.nix
-	];
+  imports = [
+    ./clash-verge.nix
+    ./droidcamOBS.nix
+    ./picom.nix
+    ./tauon.nix
+    ./virtualbox.nix
+    ./heroic.nix
+    ./libreOffice.nix
+    ./photoPrism.nix
+    ./immich.nix
+    ./teamspeak.nix
+  ];
 
-	options = {
-		desktopApps.enable = 
-			lib.mkEnableOption "enables desktopApps";
-	};
-	
-	config = lib.mkIf config.desktopApps.enable {
+  options = {
+    desktopApps.enable = lib.mkEnableOption "enables desktopApps";
+  };
 
-		environment.systemPackages = 
-			(with pkgs; [
-				# From Stable Channel
-				brave
-				syncthing
-				vlc
-				sioyek
-				xfce.thunar
-				puddletag
-				maim
+  config = lib.mkIf config.desktopApps.enable {
 
-				polybarFull
-				rofi
-				rofi-power-menu
-				networkmanager_dmenu
-				papirus-icon-theme
+    environment.systemPackages =
+      (with pkgs; [
+        # From Stable Channel
+        brave
+        syncthing
+        vlc
+        sioyek
+        xfce.thunar
+        puddletag
+        maim
 
-				localsend
-				pwvucontrol
-				nitrogen
-				qpwgraph
-				alsa-utils
-				xclip
-			]) ++ 
-			(with pkgsUnstable; [
-				# From Unstable Channel
-				persepolis
-				nekoray
-				telegram-desktop
+        polybarFull
+        rofi
+        rofi-power-menu
+        networkmanager_dmenu
+        papirus-icon-theme
 
-				kitty
-				vesktop
-				obsidian
-			]);
-	};
+        localsend
+        pwvucontrol
+        nitrogen
+        qpwgraph
+        alsa-utils
+        xclip
+      ])
+      ++ (with pkgsUnstable; [
+        # From Unstable Channel
+        persepolis
+        nekoray
+        telegram-desktop
+
+        kitty
+        vesktop
+        obsidian
+      ]);
+  };
 
 }

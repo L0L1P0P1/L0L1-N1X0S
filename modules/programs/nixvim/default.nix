@@ -1,192 +1,207 @@
-{ config, lib, pkgs, pkgsUnstable, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgsUnstable,
+  inputs,
+  ...
+}:
 {
 
-	options = {
-		nixvim.enable =
-			lib.mkEnableOption "enables nixvim";
-	};
+  options = {
+    nixvim.enable = lib.mkEnableOption "enables nixvim";
+  };
 
-	imports = [
-		./keymaps.nix
-		./alpha.nix
-        ./lsp.nix
-	];
+  imports = [
+    ./keymaps.nix
+    ./alpha.nix
+    ./lsp.nix
+  ];
 
-	config = lib.mkIf config.nixvim.enable {
-		
-		programs.nixvim = {
-			enable = true;
-			enableMan = true;
+  config = lib.mkIf config.nixvim.enable {
 
-			# Color Schemes
-			colorschemes.gruvbox.enable = true;
-			
-			# Options
-			opts = {
-				number = true;
-				relativenumber = true;
-				shiftwidth = 4;
-				tabstop = 4;
-				fillchars.eob = " ";
-			};
+    programs.nixvim = {
+      enable = true;
+      enableMan = true;
 
-			globals = {
-				mapleader = " ";
-			};
+      # Color Schemes
+      colorschemes.gruvbox.enable = true;
 
-			# Plugins
-			plugins = {
-                bufferline.enable = true;
-                dressing.enable = true;
-                gitsigns.enable = true;
-                neogit.enable = true;
-                neoscroll.enable = true;
-                nix.enable = true;
-                noice.enable = true;
-                nvim-autopairs.enable = true;
-                render-markdown.enable = true;
-                tmux-navigator.enable = true;
-                vim-dadbod-completion.enable = true;
-                vim-dadbod-ui.enable = true;
-                vim-dadbod.enable = true;
-                web-devicons.enable = true;
+      # Options
+      opts = {
+        number = true;
+        relativenumber = true;
+        shiftwidth = 4;
+        tabstop = 4;
+        fillchars.eob = " ";
+      };
 
-				presence-nvim = {
-					enable = true;
-				};
+      globals = {
+        mapleader = " ";
+      };
 
-				indent-blankline = {
-					enable = true;
-					settings = {
-						indent.char = "┊";
-						scope = {
-							enabled = true;
-							show_end = true;
-							show_exact_scope = true;
-							show_start = true;
-						};
-					};
-				};
-				
-				which-key = {
-					enable = true;
-					settings.delay = 400;
-				};
+      # Plugins
+      plugins = {
+        bufferline.enable = true;
+        dressing.enable = true;
+        gitsigns.enable = true;
+        neogit.enable = true;
+        neoscroll.enable = true;
+        nix.enable = true;
+        noice.enable = true;
+        nvim-autopairs.enable = true;
+        render-markdown.enable = true;
+        tmux-navigator.enable = true;
+        vim-dadbod-completion.enable = true;
+        vim-dadbod-ui.enable = true;
+        vim-dadbod.enable = true;
+        web-devicons.enable = true;
 
-				nvim-tree = {
-					enable = true;
-					ignoreFtOnSetup = ["dashboard" ""]; 
-					openOnSetup = true;
-					filters.dotfiles = true;
-					renderer.groupEmpty = true;
-					updateFocusedFile = {
-						enable = true;
-						updateRoot = true;
-					};
-				};
+        presence-nvim = {
+          enable = true;
+        };
 
-				lualine = {
-					enable = true;
-					package = pkgs.vimPlugins.lualine-nvim;
-				};
+        indent-blankline = {
+          enable = true;
+          settings = {
+            indent.char = "┊";
+            scope = {
+              enabled = true;
+              show_end = true;
+              show_exact_scope = true;
+              show_start = true;
+            };
+          };
+        };
 
-				telescope = {
-					enable = true;
-					extensions = {
-						file-browser.enable = true;
-					};
-					keymaps = {
-						"<C-q>" = {action = "send_selected_to_qflist"; mode = ["i" "n"];}; 
-					};
-					settings.mappings = {
-						i = {
-							"<C-j>" = {
-								__raw = "require('telescope.actions').move_selection_next";
-							};
-							"<C-k>" = {
-								__raw = "require('telescope.actions').move_selection_previous";
-							};
-						};
-					};
-				};
+        which-key = {
+          enable = true;
+          settings.delay = 400;
+        };
 
-                luasnip = {
-                  enable = true;
-                  fromVscode = [
-                    { }
-                  ];
-                };
-                friendly-snippets = {
-                  enable = true;
-                  package = pkgsUnstable.vimPlugins.friendly-snippets;
-                };
+        nvim-tree = {
+          enable = true;
+          ignoreFtOnSetup = [
+            "dashboard"
+            ""
+          ];
+          openOnSetup = true;
+          filters.dotfiles = true;
+          renderer.groupEmpty = true;
+          updateFocusedFile = {
+            enable = true;
+            updateRoot = true;
+          };
+        };
 
-                cmp-nvim-lsp.enable = true;
-                cmp_luasnip.enable = true;
-				cmp = {
-					enable = true;
-					autoEnableSources = true;
-					settings = {
-						sources = [
-							{name = "nvim_lsp";}
-							{name = "luasnip";}
-							{name = "vim-dadbod-completion";}
-							{name = "path";}
-							{name = "buffer";}
-							{name = "render-markdown";}
-						]; 
-						mapping = {
-							"<C-k>" = "cmp.mapping.select_prev_item()";
-							"<C-j>" = "cmp.mapping.select_next_item()";
-							"<C-b>" = "cmp.mapping.scroll_docs(-4)";
-							"<C-f>" = "cmp.mapping.scroll_docs(4)";
-							"<C-space>" = "cmp.mapping.complete()"; 
-							"<C-e>" = "cmp.mapping.abort()";
-							"<CR>" = "cmp.mapping.confirm({ select = true })";
-						};
-					};
-				};
+        lualine = {
+          enable = true;
+          package = pkgs.vimPlugins.lualine-nvim;
+        };
 
-				treesitter = {
-					enable = true;
-					settings = {
-						auto_install = true;
-						highlight.enable = true;
-						ensure_installed = [
-							"json"
-							"javascript"
-							"python"
-							"cpp"
-							"c"
-							"rust"
-							"lua"
-							"nix"
-							"sql"
-							"vim"
-							"regex"
-							"bash"
-							"markdown"
-							"markdown_inline"
-						];
-					};
-				};
+        telescope = {
+          enable = true;
+          extensions = {
+            file-browser.enable = true;
+          };
+          keymaps = {
+            "<C-q>" = {
+              action = "send_selected_to_qflist";
+              mode = [
+                "i"
+                "n"
+              ];
+            };
+          };
+          settings.mappings = {
+            i = {
+              "<C-j>" = {
+                __raw = "require('telescope.actions').move_selection_next";
+              };
+              "<C-k>" = {
+                __raw = "require('telescope.actions').move_selection_previous";
+              };
+            };
+          };
+        };
 
-				notify = {
-					enable = true;
-					settings = {
-						background_colour = "#000000";
-						render = "wrapped-compact";
-						fps = 60;
-						stages = "slide";
-					};
-				};
-			};
-			
-			# Extra Plugins
-			# extraPlugins = [
-			# 	pkgsUnstable.vimPlugins.cord-nvim
-			# ];
-			# extraConfigLua = "require('cord').setup({})";
-		};
-	};
+        luasnip = {
+          enable = true;
+          fromVscode = [
+            { }
+          ];
+        };
+        friendly-snippets = {
+          enable = true;
+          package = pkgsUnstable.vimPlugins.friendly-snippets;
+        };
+
+        cmp-nvim-lsp.enable = true;
+        cmp_luasnip.enable = true;
+        cmp = {
+          enable = true;
+          autoEnableSources = true;
+          settings = {
+            sources = [
+              { name = "nvim_lsp"; }
+              { name = "luasnip"; }
+              { name = "vim-dadbod-completion"; }
+              { name = "path"; }
+              { name = "buffer"; }
+              { name = "render-markdown"; }
+            ];
+            mapping = {
+              "<C-k>" = "cmp.mapping.select_prev_item()";
+              "<C-j>" = "cmp.mapping.select_next_item()";
+              "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+              "<C-f>" = "cmp.mapping.scroll_docs(4)";
+              "<C-space>" = "cmp.mapping.complete()";
+              "<C-e>" = "cmp.mapping.abort()";
+              "<CR>" = "cmp.mapping.confirm({ select = true })";
+            };
+          };
+        };
+
+        treesitter = {
+          enable = true;
+          settings = {
+            auto_install = true;
+            highlight.enable = true;
+            ensure_installed = [
+              "json"
+              "javascript"
+              "python"
+              "cpp"
+              "c"
+              "rust"
+              "lua"
+              "nix"
+              "sql"
+              "vim"
+              "regex"
+              "bash"
+              "markdown"
+              "markdown_inline"
+            ];
+          };
+        };
+
+        notify = {
+          enable = true;
+          settings = {
+            background_colour = "#000000";
+            render = "wrapped-compact";
+            fps = 60;
+            stages = "slide";
+          };
+        };
+      };
+
+      # Extra Plugins
+      # extraPlugins = [
+      # 	pkgsUnstable.vimPlugins.cord-nvim
+      # ];
+      # extraConfigLua = "require('cord').setup({})";
+    };
+  };
 }

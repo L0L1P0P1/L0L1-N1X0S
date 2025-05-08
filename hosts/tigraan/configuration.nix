@@ -1,173 +1,186 @@
-{ config, lib, pkgs, pkgsUnstable, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgsUnstable,
+  inputs,
+  ...
+}:
 
 {
-	# nix settings	
-	nix.settings = {
-		experimental-features = [ "nix-command" "flakes" ];
-		substituters = [ 
-			"https://cache.nixos.org"
-			"http://192.168.1.100:8080"
-		];
-
-		# have this enabled only if you are using absolutely trusted caches (mines local)
-		require-sigs = false;
-	};
-
-	# adds pkgsUnstable 
-	_module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
-		inherit (pkgs.stdenv.hostPlatform) system;
-		inherit (config.nixpkgs) config;
-	};
-
-	nixpkgs.config.allowUnfree = true;
-
-	# modules to Import
-	imports = [ 	
-		./hardware-configuration.nix
-		../../modules
+  # nix settings
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = [
+      "https://cache.nixos.org"
+      "http://192.168.1.100:8080"
     ];
 
-	boot.loader = {
-		systemd-boot.enable = false;
-		efi= {
-			canTouchEfiVariables = true;
-			efiSysMountPoint = "/boot";
-		};
-		grub = {
-			efiSupport = true;
-			enable = true;
-			useOSProber = true;
-			device = "nodev";
-			gfxmodeEfi = "1366x768";
-		};
-	};
+    # have this enabled only if you are using absolutely trusted caches (mines local)
+    require-sigs = false;
+  };
 
-	time.timeZone = "Asia/Tehran";
+  # adds pkgsUnstable
+  _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
 
-	networking = {
-		hostName = "tigraan"; 
-		networkmanager.enable = true;  
-		nameservers = [ "8.8.8.8" "8.8.4.4" ];
+  nixpkgs.config.allowUnfree = true;
 
-		# Configure network proxy if necessary
-		# proxy.default = "http://user:password@proxy:port/";
-		# proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # modules to Import
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules
+  ];
 
-		# Open ports in the firewall.
-		# firewall.allowedTCPPorts = [ ... ];
-		# firewall.allowedUDPPorts = [ ... ];
-		firewall.enable = false;
-	};
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      efiSupport = true;
+      enable = true;
+      useOSProber = true;
+      device = "nodev";
+      gfxmodeEfi = "1366x768";
+    };
+  };
 
-	services = {
-		xserver = {
-			enable = true;
-			windowManager.qtile.enable = true;
-		};
+  time.timeZone = "Asia/Tehran";
 
-		libinput = {
-			enable = true;
-			mouse = {
-				accelProfile = "flat";
-				accelSpeed = "1";
-			};
-			touchpad = {
-				accelProfile = "flat";
-				accelSpeed = "1";
-				disableWhileTyping = true;
-			};
-		};
+  networking = {
+    hostName = "tigraan";
+    networkmanager.enable = true;
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
 
-		pipewire = {
-			enable = true;
-			pulse.enable = true;
-		};
+    # Configure network proxy if necessary
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-		syncthing = {
-			enable = true;
-			user = "L0L1P0P";
-			openDefaultPorts = true;
-			dataDir = "/home/L0L1P0P/Documents"; 
-			configDir= "/home/L0L1P0P/.config/syncthing";
-		};
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
+    firewall.enable = false;
+  };
 
-		# Configure keymap in X11
-		# xserver.xkb.layout = "us";
-		# xserver.xkb.options = "eurosign:e,caps:escape";
+  services = {
+    xserver = {
+      enable = true;
+      windowManager.qtile.enable = true;
+    };
 
-		# Enable CUPS to print documents.
-		printing.enable = true;
+    libinput = {
+      enable = true;
+      mouse = {
+        accelProfile = "flat";
+        accelSpeed = "1";
+      };
+      touchpad = {
+        accelProfile = "flat";
+        accelSpeed = "1";
+        disableWhileTyping = true;
+      };
+    };
 
-		# Enable touchpad support (enabled default in most desktopManager).
-		# libinput.enable = true;
-		tumbler.enable = true;
-		gvfs.enable = true;
-	};
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
 
+    syncthing = {
+      enable = true;
+      user = "L0L1P0P";
+      openDefaultPorts = true;
+      dataDir = "/home/L0L1P0P/Documents";
+      configDir = "/home/L0L1P0P/.config/syncthing";
+    };
 
-	# Select internationalisation properties.
-	# i18n.defaultLocale = "en_US.UTF-8";
-	# console = {
-	#   font = "Lat2-Terminus16";
-	#   keyMap = "us";
-	#   useXkbConfig = true; # use xkb.options in tty.
-	# };
+    # Configure keymap in X11
+    # xserver.xkb.layout = "us";
+    # xserver.xkb.options = "eurosign:e,caps:escape";
 
-	# Modules to Enable
-	cli-tools.enable = true;
-	desktopApps.enable = true;
-	droidcamOBS.enable = false;
-	environments.enable = true;
-	nixvim.enable = true;
-	tauon.enable = true;
-	tmuxold.enable = true;
-	zshold.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
 
-	users.users.L0L1P0P = {
-		isNormalUser = true;
-		extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-		shell = pkgs.zsh;
-		# packages = with pkgs; [];
-	};
+    # Enable touchpad support (enabled default in most desktopManager).
+    # libinput.enable = true;
+    tumbler.enable = true;
+    gvfs.enable = true;
+  };
 
+  # Select internationalisation properties.
+  # i18n.defaultLocale = "en_US.UTF-8";
+  # console = {
+  #   font = "Lat2-Terminus16";
+  #   keyMap = "us";
+  #   useXkbConfig = true; # use xkb.options in tty.
+  # };
 
-	# List packages installed in system profile. To search, run:
-	# $ nix search wget
-	environment.systemPackages = with pkgs; [
-		tree
-		lxqt.lxqt-policykit
-	];
+  # Modules to Enable
+  cli-tools.enable = true;
+  desktopApps.enable = true;
+  droidcamOBS.enable = false;
+  environments.enable = true;
+  nixvim.enable = true;
+  tauon.enable = true;
+  tmuxold.enable = true;
+  zshold.enable = true;
 
-	# Dconf
-	programs.dconf.enable = true;
+  users.users.L0L1P0P = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    # packages = with pkgs; [];
+  };
 
-	# polkit
-	security.polkit.enable = true;
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    tree
+    lxqt.lxqt-policykit
+  ];
 
-	fonts = {
-		enableDefaultPackages = true;
-		packages = with pkgs; [ 
-			nerdfonts
-			noto-fonts-emoji
-			ipafont
-			iso-flags
-			liberation_ttf
-			ibm-plex
-			sahel-fonts
-			vazir-fonts
-		];
-		fontconfig = {
-			defaultFonts = {
-				serif = [  "Liberation Serif" "Sahel" ];
-				sansSerif = [  "Sahel" ];
-				monospace = [ "IBM Plex Mono" ];
-			};
-			useEmbeddedBitmaps = true;
-		};
-	};
+  # Dconf
+  programs.dconf.enable = true;
 
-	# Do Not Touch or NixGODs will condemn you to eternal suffering
-	system.stateVersion = "24.05";
+  # polkit
+  security.polkit.enable = true;
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      nerdfonts
+      noto-fonts-emoji
+      ipafont
+      iso-flags
+      liberation_ttf
+      ibm-plex
+      sahel-fonts
+      vazir-fonts
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [
+          "Liberation Serif"
+          "Sahel"
+        ];
+        sansSerif = [ "Sahel" ];
+        monospace = [ "IBM Plex Mono" ];
+      };
+      useEmbeddedBitmaps = true;
+    };
+  };
+
+  # Do Not Touch or NixGODs will condemn you to eternal suffering
+  system.stateVersion = "24.05";
 
 }
-

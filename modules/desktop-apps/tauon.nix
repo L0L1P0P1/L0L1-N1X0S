@@ -1,16 +1,20 @@
-{config, lib, pkgsUnstable, ... }:
+{
+  config,
+  lib,
+  pkgsUnstable,
+  ...
+}:
 {
 
-	options = {
-		tauon.enable =
-			lib.mkEnableOption "enables Tauon";
-	};
+  options = {
+    tauon.enable = lib.mkEnableOption "enables Tauon";
+  };
 
-	config = lib.mkIf config.tauon.enable {
-		environment.systemPackages = [
-			pkgsUnstable.tauon
-		];
+  config = lib.mkIf config.tauon.enable {
+    environment.systemPackages = [
+      pkgsUnstable.tauon
+    ];
 
-		services.playerctld.enable = true;
-	};
+    services.playerctld.enable = true;
+  };
 }
