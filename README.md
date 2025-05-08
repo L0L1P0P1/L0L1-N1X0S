@@ -9,23 +9,25 @@ nixos
 ├── flake.lock                 # Lockfile for flake dependencies
 ├── flake.nix                  # Main entry point for the Nix flake
 ├── hosts                      # Host-specific configurations
-│   ├── merdas                 # Configuration for the host 'merdas'
+│   ├── merdas
 │   │   ├── configuration.nix
 │   │   └── hardware-configuration.nix
-│   ├── poolad                 # Configuration for the host 'poolad'
-│   │   ├── configuration.nix
-│   │   └── hardware-configuration.nix
-│   ├── sitka                  # Configuration for the host 'sitka'
+│   ├── poolad
 │   │   ├── configuration.nix
 │   │   ├── hardware-configuration.nix
 │   │   └── home.nix
-│   └── tigraan                # Configuration for the host 'tigraan'
+│   ├── sitka
+│   │   ├── configuration.nix
+│   │   ├── hardware-configuration.nix
+│   │   └── home.nix
+│   └── tigraan
 │       ├── configuration.nix
 │       └── hardware-configuration.nix
 ├── LICENSE                    # License for this repository
-├── nixosModules               # Modular NixOS configurations
+├── modules                    # Modular Nix configurations
 │   ├── default.nix            # Entry point for custom modules
-│   ├── desktopApps            # Desktop applications
+│   ├── desktop-apps           # Desktop applications
+│   │   ├── clash-verge.nix
 │   │   ├── default.nix
 │   │   ├── droidcamOBS.nix
 │   │   ├── heroic.nix
@@ -36,21 +38,41 @@ nixos
 │   │   ├── tauon.nix
 │   │   ├── teamspeak.nix
 │   │   └── virtualbox.nix
-│   ├── devTools               # Development tools
-│   │   ├── arduino.nix
+│   ├── home-manager           # Home Manager Modules
 │   │   ├── default.nix
-│   │   └── latex.nix
-│   ├── nixvim                 # NixVim configuration modules
-│   │   ├── alpha.nix
-│   │   ├── default.nix
-│   │   ├── keymaps.nix
-│   │   └── README.md
-│   ├── tmux                   # Tmux configuration modules
-│   │   ├── default.nix
-│   │   └── README.md
-│   └── zsh.nix                # Zsh shell configuration
+│   │   ├── kitty.nix
+│   │   ├── qtile.nix
+│   │   ├── tmux.nix
+│   │   └── zsh.nix
+│   └── programs               # User and dev tools
+│       ├── arduino.nix
+│       ├── audacity.nix
+│       ├── cli-tools.nix
+│       ├── default.nix
+│       ├── environments.nix
+│       ├── latex.nix
+│       ├── nixvim
+│       │   ├── alpha.nix
+│       │   ├── default.nix
+│       │   ├── keymaps.nix
+│       │   ├── lsp.nix
+│       │   └── README.md
+│       ├── tmux
+│       │   ├── default.nix
+│       │   └── README.md
+│       └── zsh.nix
 └── README.md                  # YOU ARE HERE!
 ```
+
+### Key Directories 
+- **`flake.nix`** and **`flake.lock`**: The main flake file defines system inputs and outputs. The lock file ensures reproducibility.
+- **`hosts/`**: Contains machine-specific configurations. Each host has its own NixOS and optional Home Manager files.
+- **`modules/`**: Custom, reusable Nix modules split into:
+- `desktop-apps`: GUI applications and services Nix Modules
+- `home-manager`: Home Manager Modules
+- `programs`: CLI and development tools including NixVim
+- **`LICENSE`**: Repository licensing
+- **`README.md`**: This documentation fils
 
 ### Key Directories
 
