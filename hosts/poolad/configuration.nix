@@ -137,6 +137,7 @@
   picom.enable = false;
   tauon.enable = true;
   teamspeak.enable = true;
+  virtualbox.enable = true;
 
   # User
   users.users.L0L1P0P = {
