@@ -22,13 +22,13 @@
       shell = "${pkgsUnstable.zsh}/bin/zsh";
 
       extraConfig = ''
-        				# Status Bar Position
-        				set-option -g status-position top
+        # Status Bar Position
+        set-option -g status-position top
 
-        				# Split in Current Directory
-        				bind '"' split-window -v -c "#{pane_current_path}"
-        				bind '%' split-window -h -c "#{pane_current_path}"
-        			'';
+        # Split in Current Directory
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind '%' split-window -h -c "#{pane_current_path}"
+      '';
 
       plugins = with pkgsUnstable.tmuxPlugins; [
         cpu
@@ -39,12 +39,12 @@
         {
           plugin = tmux-sessionx;
           extraConfig = ''
-            						set -g @sessionx-bind 'o'
-            						set -g @sessionx-custom-paths-subdirectories 'false'
-            						set -g @sessionx-tree-mode 'off'
-            						set -g @sessionx-zoxide-mode 'on'
-            						set -g @sessionx-additional-options "--color pointer:9,spinner:92,marker:46"
-            					'';
+            set -g @sessionx-bind 'o'
+            set -g @sessionx-custom-paths-subdirectories 'false'
+            set -g @sessionx-tree-mode 'off'
+            set -g @sessionx-zoxide-mode 'on'
+            set -g @sessionx-additional-options "--color pointer:9,spinner:92,marker:46"
+          '';
         }
         {
           plugin = resurrect;
@@ -56,9 +56,9 @@
         {
           plugin = continuum;
           extraConfig = ''
-            					   set -g @continuum-restore 'on'
-                                   set -g @continuum-save-interval '5'
-            					'';
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '5'
+          '';
         }
       ];
     };

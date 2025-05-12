@@ -29,8 +29,8 @@
         bindkey -e
       '';
       initExtra = ''
-        				eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
-        			'';
+        eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
+      '';
     };
 
     programs.starship = {
