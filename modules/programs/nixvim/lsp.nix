@@ -56,16 +56,28 @@
           ];
         };
 
-        basedpyright = {
-          enable = true;
-          package = pkgsUnstable.basedpyright;
-          cmd = [
-            "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
-            "--stdio"
-            "--pythonpath"
-            "$(eval \"which python\")"
-          ];
+        # basedpyright = {
+        #   enable = true;
+        #   package = pkgsUnstable.basedpyright;
+        #   cmd = [
+        #     "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
+        #     "--stdio"
+        #     "--pythonpath"
+        #     "$(eval \"which python\")"
+        #   ];
+        # };
+
+        pyright = {
+        	enable = true;
+        	package = pkgsUnstable.pyright;
+        	cmd = [
+        		"${pkgsUnstable.pyright}/bin/pyright-langserver"
+        		"--stdio"
+        		"--pythonpath"
+        		"$(eval \"which python\")"
+        	];
         };
+
         lua_ls.enable = true;
         nixd.enable = true;
 
@@ -85,17 +97,6 @@
         # 		jedi_references.enable = true;
         # 		jedi_hover.enable = true;
         # 	};
-        # };
-
-        # pyright = {
-        # 	enable = true;
-        # 	package = pkgsUnstable.pyright;
-        # 	cmd = [
-        # 		"${pkgsUnstable.pyright}/bin/pyright-langserver"
-        # 		"--stdio"
-        # 		"--pythonpath"
-        # 		"$(eval \"which python\")"
-        # 	];
         # };
       };
     };
