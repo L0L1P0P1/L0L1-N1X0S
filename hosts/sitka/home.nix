@@ -41,8 +41,9 @@
 
       openrgb --startminimized &
       nekoray -tray &
+      clash-nyanpasu & 
       lxqt-policykit-agent &
-      		'';
+    '';
   };
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
