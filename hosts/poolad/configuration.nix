@@ -133,6 +133,7 @@
   environments.enable = true;
   heroic.enable = true;
   libreOffice.enable = true;
+  nekoray.enable = true;
   nixvim.enable = true;
   picom.enable = false;
   tauon.enable = true;

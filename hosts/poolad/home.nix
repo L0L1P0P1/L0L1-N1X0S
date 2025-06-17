@@ -45,7 +45,7 @@
     autostartOnce = ''
       #!/usr/bin/env bash
 
-      clash-verge-rev & 
+      clash-verge & 
       lxqt-policykit-agent &
     '';
   };

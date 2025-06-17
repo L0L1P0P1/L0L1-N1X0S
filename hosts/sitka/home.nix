@@ -40,7 +40,7 @@
       #!/usr/bin/env bash
 
       openrgb --startminimized &
-      clash-verge-rev & 
+      clash-verge & 
       lxqt-policykit-agent &
     '';
   };

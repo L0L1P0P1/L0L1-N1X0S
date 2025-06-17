@@ -12,14 +12,15 @@
   imports = [
     ./clash-verge.nix
     ./droidcamOBS.nix
+    ./heroic.nix
+    ./immich.nix
+    ./libreOffice.nix
+    ./nekoray.nix
+    ./photoPrism.nix
     ./picom.nix
     ./tauon.nix
-    ./virtualbox.nix
-    ./heroic.nix
-    ./libreOffice.nix
-    ./photoPrism.nix
-    ./immich.nix
     ./teamspeak.nix
+    ./virtualbox.nix
   ];
 
   options = {
@@ -56,7 +57,6 @@
         # From Unstable Channel
         persepolis
         telegram-desktop
-
         kitty
         vesktop
         obsidian

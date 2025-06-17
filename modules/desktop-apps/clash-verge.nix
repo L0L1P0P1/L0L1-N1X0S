@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgsUnstable,
   ...
 }:
 {
@@ -13,10 +14,6 @@
     programs.clash-verge = {
       package = pkgs.clash-verge-rev;
       enable = true;
-    };
-    programs.nekoray = {
-      enable = true;
-      tunMode.enable = true;
     };
   };
 }
