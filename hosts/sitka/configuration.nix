@@ -215,8 +215,11 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      nerdfonts
-      noto-fonts-emoji
+      nerdfonts.blex-mono
+      nerdfonts .hack
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.jetbrains-mono
+      noto-fonts-color-emoji
       ipafont
       iso-flags
       liberation_ttf

@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgsUnstable,
+  pkgs,
   ...
 }:
 {
@@ -11,9 +11,8 @@
 
   config = lib.mkIf config.clash-verge.enable {
     programs.clash-verge = {
-      package = pkgsUnstable.clash-nyanpasu;
+      package = pkgs.clash-nyanpasu;
       enable = true;
-      tunMode = true;
     };
   };
 }
