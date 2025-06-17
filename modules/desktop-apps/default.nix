@@ -55,7 +55,6 @@
       ++ (with pkgsUnstable; [
         # From Unstable Channel
         persepolis
-        nekoray
         telegram-desktop
 
         kitty

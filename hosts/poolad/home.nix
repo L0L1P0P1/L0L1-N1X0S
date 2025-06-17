@@ -45,9 +45,9 @@
     autostartOnce = ''
       #!/usr/bin/env bash
 
-      nekoray -tray &
+      clash-verge-rev & 
       lxqt-policykit-agent &
-      		'';
+    '';
   };
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

@@ -11,8 +11,12 @@
 
   config = lib.mkIf config.clash-verge.enable {
     programs.clash-verge = {
-      package = pkgs.clash-nyanpasu;
+      package = pkgs.clash-verge-rev;
       enable = true;
+    };
+    programs.nekoray = {
+      enable = true;
+      tunMode.enable = true;
     };
   };
 }

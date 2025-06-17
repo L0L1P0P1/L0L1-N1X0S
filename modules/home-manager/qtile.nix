@@ -37,7 +37,7 @@
         default = ''
           #!/usr/bin/env bash
 
-          nekoray -tray &
+          clash-verge-rev &
           lxqt-policykit-agent &
         '';
       };

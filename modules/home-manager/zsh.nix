@@ -25,12 +25,17 @@
       autosuggestion = {
         enable = true;
       };
-      initExtraFirst = ''
-        bindkey -e
-      '';
-      initExtra = ''
-        eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
-      '';
+      initContent =
+        let
+          zshConfigEarlyInit = lib.mkOrder 500 ''bindkey -e'';
+          zshConfig = lib.mkOrder 1000 ''
+            eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
+          '';
+        in
+        lib.mkMerge [
+          zshConfigEarlyInit
+          zshConfig
+        ];
     };
 
     programs.starship = {

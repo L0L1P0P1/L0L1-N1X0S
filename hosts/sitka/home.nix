@@ -40,8 +40,7 @@
       #!/usr/bin/env bash
 
       openrgb --startminimized &
-      nekoray -tray &
-      clash-nyanpasu & 
+      clash-verge-rev & 
       lxqt-policykit-agent &
     '';
   };
