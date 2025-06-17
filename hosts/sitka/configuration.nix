@@ -215,8 +215,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      nerdfonts.blex-mono
-      nerdfonts .hack
+      nerd-fonts.blex-mono
+      nerd-fonts.hack
       nerd-fonts.ubuntu-mono
       nerd-fonts.jetbrains-mono
       noto-fonts-color-emoji
