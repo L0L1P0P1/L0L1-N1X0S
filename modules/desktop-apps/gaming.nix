@@ -21,7 +21,6 @@
     };
 
     environment.systemPackages = [
-      pkgs.heroic
       pkgs.mangohud
       pkgs.protonup-qt
       pkgs.protonup-ng

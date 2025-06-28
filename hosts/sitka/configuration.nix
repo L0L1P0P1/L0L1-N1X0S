@@ -156,7 +156,6 @@
   desktopApps.enable = true;
   droidcamOBS.enable = true;
   environments.enable = true;
-  # heroic.enable = true;
   immich.enable = true;
   latex.enable = true;
   libreOffice.enable = true;
@@ -164,7 +163,6 @@
   nixvim.enable = true;
   photoPrism.enable = false;
   picom.enable = true;
-  # steam.enable = true;
   tauon.enable = true;
   teamspeak.enable = true;
   virtualbox.enable = true;

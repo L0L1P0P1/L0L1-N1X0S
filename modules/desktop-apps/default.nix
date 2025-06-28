@@ -13,13 +13,11 @@
     ./clash-verge.nix
     ./droidcamOBS.nix
     ./gaming.nix
-    ./heroic.nix
     ./immich.nix
     ./libreOffice.nix
     ./nekoray.nix
     ./photoPrism.nix
     ./picom.nix
-    ./steam.nix
     ./tauon.nix
     ./teamspeak.nix
     ./virtualbox.nix

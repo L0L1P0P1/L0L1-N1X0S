@@ -131,7 +131,6 @@
   desktopApps.enable = true;
   droidcamOBS.enable = false;
   environments.enable = true;
-  heroic.enable = true;
   libreOffice.enable = true;
   nekoray.enable = true;
   nixvim.enable = true;
@@ -139,6 +138,10 @@
   tauon.enable = true;
   teamspeak.enable = true;
   virtualbox.enable = true;
+  gaming = {
+    enable = true;
+    heroic.enable = true;
+  };
 
   # User
   users.users.L0L1P0P = {
