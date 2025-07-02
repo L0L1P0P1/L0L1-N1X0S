@@ -56,11 +56,14 @@
 
   networking = {
     hostName = "poolad";
-    networkmanager.enable = true;
-    nameservers = [
-      "8.8.8.8"
-      "8.8.4.4"
-    ];
+    networkmanager = {
+      enable = true;
+      dns = "dnsmasq";
+      # insertNameservers = [
+      #   "8.8.8.8"
+      #   "8.8.4.4"
+      # ];
+    };
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
@@ -79,6 +82,7 @@
       windowManager.qtile.enable = true;
       videoDrivers = [ "amdgpu" ];
     };
+
     libinput = {
       enable = true;
       mouse = {
@@ -105,6 +109,14 @@
       configDir = "/home/L0L1P0P/.config/syncthing";
     };
 
+    dnsmasq = {
+      enable = true;
+      settings.server = [
+        "1.1.1.1"
+        "9.9.9.9"
+      ];
+    };
+
     # Configure keymap in X11
     # xserver.xkb.layout = "us";
     # xserver.xkb.options = "eurosign:e,caps:escape";
@@ -117,8 +129,8 @@
     tumbler.enable = true;
     gvfs.enable = true;
     udev.extraRules = ''
-      			ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
-      		'';
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+    '';
   };
 
   # Select internationalisation properties.

@@ -15,6 +15,8 @@
       bat
       bluetuith
       btop
+      busybox
+      dnsmasq
       gh
       git
       gnumake
