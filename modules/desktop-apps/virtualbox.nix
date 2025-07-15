@@ -12,8 +12,8 @@
 
   config = lib.mkIf config.virtualbox.enable {
 
-    virtualisation.virtualbox = {
-      host.enable = true;
+    virtualisation.virtualbox.host = {
+      enable = true;
     };
     users.extraGroups.vboxusers.members = [ "L0L1P0P" ];
   };
