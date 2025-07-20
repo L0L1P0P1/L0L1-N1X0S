@@ -34,8 +34,9 @@
   ];
 
   home.enableNixpkgsReleaseCheck = false;
-  zsh.enable = true;
+  gruvbox.enable = true;
   tmux.enable = true;
+  zsh.enable = true;
   kitty = {
     enable = true;
     fontSize = 16;

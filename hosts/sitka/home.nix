@@ -29,9 +29,12 @@
   ];
 
   home.enableNixpkgsReleaseCheck = false;
-  zsh.enable = true;
-  tmux.enable = true;
+
+  gruvbox.enable = true;
   kitty.enable = true;
+  tmux.enable = true;
+  zsh.enable = true;
+
   qtile = {
     enable = true;
     margin = 6;

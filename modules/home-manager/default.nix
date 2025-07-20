@@ -7,10 +7,11 @@
 }:
 {
   imports = [
-    ./zsh
-    ./tmux
+    ./gruvbox.nix
     ./kitty.nix
     ./qtile.nix
+    ./tmux
+    ./zsh
   ];
 
   _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {

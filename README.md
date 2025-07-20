@@ -120,7 +120,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 
 ### TODO
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
-- [ ] Configure Qt/GTK themes
+- [x] Configure Qt/GTK themes
 - [ ] Add Home Manager for managing dotfiles
 - [ ] lockscreen and suspend stuff for poolad
 - [ ] Configure Display Manager
