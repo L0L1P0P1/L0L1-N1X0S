@@ -7,8 +7,8 @@
 }:
 {
   imports = [
-    ./zsh.nix
-    ./tmux.nix
+    ./zsh
+    ./tmux
     ./kitty.nix
     ./qtile.nix
   ];

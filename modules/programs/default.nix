@@ -13,9 +13,7 @@
     ./cli-tools.nix
     ./environments.nix
     ./latex.nix
-    ./zsh.nix
 
     ./nixvim
-    # ./tmux
   ];
 }
