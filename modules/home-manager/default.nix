@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ./gruvbox.nix
+    ./gruvbox
     ./kitty.nix
     ./qtile.nix
     ./tmux

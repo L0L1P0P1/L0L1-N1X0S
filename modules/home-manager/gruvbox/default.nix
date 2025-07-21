@@ -30,7 +30,7 @@
     };
 
     xdg.configFile = {
-      "Kvantum/Gruvbox-Dark-Brown".source = "${pkgs.gruvbox-kvantum}/share/Kvantum/Gruvbox-Dark-Brown";
+      "Kvantum/Gruvbox-Dark-Brown".source = ./Gruvbox-Dark-Brown;
       "Kvantum/kvantum.kvconfig".text = "theme=Gruvbox-Dark-Brown";
     };
 
