@@ -25,3 +25,4 @@ tmux ls or Leader + s to list sessions
 Leader + w to see session with windows
 Leader + d to detach
 tmux attach -t "name" to attach to a certain session
+tmux attach -c "directory" to attach to a certain working directory
