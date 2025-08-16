@@ -14,9 +14,13 @@
       "nix-command"
       "flakes"
     ];
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
     substituters = [
+      "https://nix-community.cachix.org"
       "https://cache.nixos.org"
-      #			"http://192.168.1.100:8080"
+      #	"http://192.168.1.100:8080"
     ];
 
     # have this enabled only if you are using absolutely trusted caches (mines local)
