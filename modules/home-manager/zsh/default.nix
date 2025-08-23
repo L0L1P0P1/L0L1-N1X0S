@@ -11,6 +11,7 @@
       shellAliases = {
         "ls" = "ls --color";
         "cd" = "z";
+        "s" = "sesh connect $(sesh list --icons | fzf --ansi --preview 'sesh preview {}')";
         ".." = "cd ../";
         "..." = "cd ../..";
       };
@@ -64,12 +65,11 @@
         "--tmux center,60% "
         "--layout reverse "
         "--inline-info "
-        "--preview 'bat -n "
-        "--color=always {}' "
+        "--preview 'bat -n --color=always {}' "
         "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
       ];
       historyWidgetOptions = [
-        "--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'"
+        "--bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)+abort'"
         "--color header:italic"
         "--header 'Press CTRL-Y to copy command into clipboard'"
         "--preview-window hidden"

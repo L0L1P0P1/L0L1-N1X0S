@@ -51,25 +51,5 @@
         ];
       };
 
-      # Merdas Host, Laptop Old
-      nixosConfigurations.merdas = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.nixvim.nixosModules.nixvim
-          inputs.home-manager.nixosModules.default
-          ./hosts/merdas/configuration.nix
-        ];
-      };
-
-      # Tigraan Host, Laptop Alt
-      nixosConfigurations.tigraan = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.nixvim.nixosModules.nixvim
-          inputs.home-manager.nixosModules.default
-          ./hosts/tigraan/configuration.nix
-        ];
-      };
-
     };
 }

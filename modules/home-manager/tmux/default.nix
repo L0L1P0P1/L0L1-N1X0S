@@ -14,6 +14,7 @@
     programs.sesh = {
       enable = true;
       package = pkgsUnstable.sesh;
+      enableAlias = false;
     };
     programs.tmux = {
       enable = true;

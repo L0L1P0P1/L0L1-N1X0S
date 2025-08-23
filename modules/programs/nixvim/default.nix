@@ -86,11 +86,13 @@
             ""
           ];
           openOnSetup = true;
-          filters.dotfiles = true;
-          renderer.groupEmpty = true;
-          updateFocusedFile = {
-            enable = true;
-            updateRoot = true;
+          settings = {
+            filters.dotfiles = true;
+            renderer.group_empty = true;
+            update_focused_file = {
+              enable = true;
+              update_root = true;
+            };
           };
         };
 
