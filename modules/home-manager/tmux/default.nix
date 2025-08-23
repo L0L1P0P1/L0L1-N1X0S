@@ -11,6 +11,10 @@
   };
 
   config = lib.mkIf config.tmux.enable {
+    programs.sesh = {
+      enable = true;
+      package = pkgsUnstable.sesh;
+    };
     programs.tmux = {
       enable = true;
 
@@ -36,16 +40,6 @@
         sensible
         vim-tmux-navigator
         gruvbox
-        {
-          plugin = tmux-sessionx;
-          extraConfig = ''
-            set -g @sessionx-bind 'o'
-            set -g @sessionx-custom-paths-subdirectories 'false'
-            set -g @sessionx-tree-mode 'off'
-            set -g @sessionx-zoxide-mode 'on'
-            set -g @sessionx-additional-options "--color pointer:9,spinner:92,marker:46"
-          '';
-        }
         {
           plugin = resurrect;
           extraConfig = ''
