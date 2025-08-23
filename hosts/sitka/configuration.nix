@@ -162,6 +162,7 @@
   latex.enable = true;
   libreOffice.enable = true;
   nekoray.enable = true;
+  nix-ld.enable = true;
   nixvim.enable = true;
   photoPrism.enable = false;
   picom.enable = true;

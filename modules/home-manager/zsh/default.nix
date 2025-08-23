@@ -28,15 +28,18 @@
       initContent =
         let
           zshConfigEarlyInit = lib.mkOrder 500 ''bindkey -e'';
-          zshConfig = lib.mkOrder 1000 ''
-            eval $(keychain -q --nogui --eval --agents ssh ~/.ssh/id_ed25519)
-          '';
         in
         lib.mkMerge [
           zshConfigEarlyInit
-          zshConfig
         ];
     };
+
+    programs.ssh = {
+      enable = true;
+      addKeysToAgent = "yes";
+    };
+
+    services.ssh-agent.enable = true;
 
     programs.starship = {
       enable = true;
