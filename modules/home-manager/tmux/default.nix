@@ -21,6 +21,7 @@
 
       baseIndex = 1;
       clock24 = true;
+      customPaneNavigationAndResize = true;
       disableConfirmationPrompt = true;
       keyMode = "vi";
       prefix = "C-space";

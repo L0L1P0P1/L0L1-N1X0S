@@ -25,6 +25,7 @@
       lua-language-server
       lua52Packages.lua-lsp
       nodejs_22
+      uv
     ];
   };
 }
