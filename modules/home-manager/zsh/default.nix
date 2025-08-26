@@ -26,6 +26,9 @@
       autosuggestion = {
         enable = true;
       };
+      localVariables = {
+        TERM = "xterm-256color";
+      };
       initContent =
         let
           zshConfigEarlyInit = lib.mkOrder 500 ''bindkey -e'';
