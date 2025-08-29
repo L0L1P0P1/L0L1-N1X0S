@@ -17,6 +17,7 @@
       btop
       busybox
       dnsmasq
+      dua
       gh
       git
       gnumake
