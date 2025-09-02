@@ -9,20 +9,14 @@ nixos
 ├── flake.lock                 # Lockfile for flake dependencies
 ├── flake.nix                  # Main entry point for the Nix flake
 ├── hosts                      # Host-specific configurations
-│   ├── merdas
-│   │   ├── configuration.nix
-│   │   └── hardware-configuration.nix
 │   ├── poolad
 │   │   ├── configuration.nix
 │   │   ├── hardware-configuration.nix
 │   │   └── home.nix
-│   ├── sitka
-│   │   ├── configuration.nix
-│   │   ├── hardware-configuration.nix
-│   │   └── home.nix
-│   └── tigraan
+│   └── sitka
 │       ├── configuration.nix
-│       └── hardware-configuration.nix
+│       ├── hardware-configuration.nix
+│       └── home.nix
 ├── LICENSE                    # License for this repository
 ├── modules                    # Modular Nix configurations
 │   ├── default.nix            # Entry point for custom modules
@@ -122,6 +116,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [x] Configure Qt/GTK themes
 - [ ] Add Home Manager for managing dotfiles
+- [ ] better powermanagement on poolad (`pstates` and stuff)
 - [ ] lockscreen and suspend stuff for poolad
 - [ ] Configure Display Manager
 - [ ] Setup some new keybinds for stuff life volume control
