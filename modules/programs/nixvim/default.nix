@@ -61,6 +61,11 @@
           enable = true;
         };
 
+        hardtime = {
+          enable = true;
+          settings.restriction_mode = "hint";
+        };
+
         indent-blankline = {
           enable = true;
           settings = {

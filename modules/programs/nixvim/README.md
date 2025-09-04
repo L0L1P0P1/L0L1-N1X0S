@@ -25,10 +25,12 @@
 - <Ctrl+W> to see Window Movement
 
 ## Other Movement guide
-- <Ctrl + y> Moves screen up one line 
-- <Ctrl + e> Moves screen down one line
+- <Ctrl + y> Moves screen up  
+- <Ctrl + e> Moves screen down 
 - <Ctrl + u> Moves cursor and screen 1/2 up  
 - <Ctrl + d> Moves cursor and screen 1/2 down 
+- <Ctrl + f> Moves cursor and screen 1 page down
+- <Ctrl + b> Moves cursor and screen 1 page up
 - `a` to append after cursor and `A` to append to line
 - `$` to go to end of a line
 - `%` to go to a matching {} or () or ...
