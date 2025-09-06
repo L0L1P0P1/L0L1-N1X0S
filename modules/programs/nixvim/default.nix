@@ -62,7 +62,7 @@
         };
 
         hardtime = {
-          enable = true;
+          enable = false;
           settings.restriction_mode = "hint";
         };
 
