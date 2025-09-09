@@ -17,10 +17,23 @@
     "usb_storage"
     "sd_mod"
   ];
+
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.zenpower
+  ];
+
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot.blacklistedKernelModules = [ "k10temp" ];
+
+  boot.kernelParams = [ 
+    "kvm.enable_virt_at_load=0"
+    "amd_pstate=active"
+  ];
+
+  boot.kernelModules = [ 
+    "kvm-amd"
+    "zenpower"
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXROOT";
