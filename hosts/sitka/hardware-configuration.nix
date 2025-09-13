@@ -30,8 +30,9 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/badba080-d4d5-448b-bef3-6779bc2d91a8";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/2698864f-c1f3-46fd-a5cc-dc7ea3583225";
+    fsType = "btrfs";
+    options = [ "subvol=@" ];
   };
 
   fileSystems."/boot" = {
@@ -43,10 +44,22 @@
     ];
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-label/NIXHOME";
-    fsType = "ext4";
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/2698864f-c1f3-46fd-a5cc-dc7ea3583225";
+    fsType = "btrfs";
+    options = [ "subvol=@nix" ];
   };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/2698864f-c1f3-46fd-a5cc-dc7ea3583225";
+    fsType = "btrfs";
+    options = [ "subvol=@home" ];
+  };
+
+  # fileSystems."/home" = {
+  #   device = "/dev/disk/by-label/NIXHOME";
+  #   fsType = "ext4";
+  # };
 
   fileSystems."/mnt/d" = {
     device = "/dev/disk/by-uuid/6422C87222C84AAE";
@@ -111,3 +124,4 @@
     forceFullCompositionPipeline = true;
   };
 }
+
