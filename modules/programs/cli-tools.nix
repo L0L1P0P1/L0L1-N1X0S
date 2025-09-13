@@ -15,6 +15,7 @@
       bat
       bluetuith
       btop
+      btrfs-progs
       busybox
       dnsmasq
       dua
@@ -34,6 +35,7 @@
       pkg-config
       rar
       ripgrep
+      sqlite
       starship
       stow
       tealdeer

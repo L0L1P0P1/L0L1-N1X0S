@@ -32,6 +32,7 @@
     environment.systemPackages =
       (with pkgs; [
         # From Stable Channel
+        arandr
         brave
         syncthing
         vlc
