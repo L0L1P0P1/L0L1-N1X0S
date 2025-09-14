@@ -56,11 +56,6 @@
     options = [ "subvol=@home" ];
   };
 
-  # fileSystems."/home" = {
-  #   device = "/dev/disk/by-label/NIXHOME";
-  #   fsType = "ext4";
-  # };
-
   fileSystems."/mnt/d" = {
     device = "/dev/disk/by-uuid/6422C87222C84AAE";
     fsType = "ntfs-3g";
@@ -124,4 +119,3 @@
     forceFullCompositionPipeline = true;
   };
 }
-
