@@ -258,6 +258,15 @@
 
     {
       mode = "n";
+      key = "<leader>F";
+      action = ":Format<CR>";
+      options = {
+        desc = "Format file";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<leader>ff";
       action = "<cmd>Telescope find_files<CR>";
       options = {
@@ -298,6 +307,15 @@
       action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
       options = {
         desc = "Fuzzy Find in current buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>fc";
+      action = "<cmd>Telescope git_commits<CR>";
+      options = {
+        desc = "Find Commits in Git Repository";
       };
     }
 

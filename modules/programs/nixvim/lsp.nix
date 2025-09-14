@@ -9,6 +9,11 @@
   programs.nixvim.plugins = {
     lsp-status.enable = true;
     lspkind.enable = true;
+    lsp-format = {
+      enable = true;
+      lspServersToEnable = "all";
+    };
+
     lsp = {
       enable = true;
       inlayHints = true;
@@ -37,11 +42,15 @@
       '';
 
       servers = {
+        lua_ls.enable = true;
+        nixd.enable = true;
+
         rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
+
         clangd = {
           enable = true;
           package = pkgsUnstable.clang-tools;
@@ -56,56 +65,30 @@
           ];
         };
 
-        # basedpyright = {
-        #   enable = true;
-        #   package = pkgsUnstable.basedpyright;
-        #   cmd = [
-        #     "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
-        #     "--stdio"
-        #     "--pythonpath"
-        #     "$(eval \"which python\")"
-        #   ];
-        # };
-
-        pyright = {
-        	enable = true;
-        	package = pkgsUnstable.pyright;
-        	cmd = [
-        		"${pkgsUnstable.pyright}/bin/pyright-langserver"
-        		"--stdio"
-        		"--pythonpath"
-        		"$(eval \"which python\")"
-        	];
+        basedpyright = {
+          enable = true;
+          package = pkgsUnstable.basedpyright;
+          cmd = [
+            "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
+            "--stdio"
+            "--pythonpath"
+            "$(eval \"which python\")"
+          ];
+          settings = {
+            basedpyright.analysis = {
+              autoImportCompletions = true;
+              autoSearchPaths = true;
+              diagnosticMode = "workspace";
+              typeCheckingMode = "basic";
+            };
+          };
         };
 
-        lua_ls.enable = true;
-        nixd.enable = true;
+        ruff = {
+          enable = true;
+        };
 
-        # pylsp = {
-        # 	enable = true;
-        # 	settings.plugins = {
-        # 		autopep8.enable = true;
-        # 		black.enable = true;
-        # 		flake8.enable = true;
-        # 		pylint.enable = true;
-        # 		isort.enable = true;
-        # 		pycodestyle.enable = true;
-        # 		jedi_completion = {
-        # 			enable = true;
-        # 			cache_for = ["manim" "manimlib" "matplotlib" "numpy" "pandas"];
-        # 		};
-        # 		jedi_references.enable = true;
-        # 		jedi_hover.enable = true;
-        # 	};
-        # };
       };
     };
-
-    # none-ls = {
-    # 	enable = true;
-    # 	sources.diagnostics = {
-    # 		pylint.enable = true;
-    # 	};
-    # };
   };
 }
