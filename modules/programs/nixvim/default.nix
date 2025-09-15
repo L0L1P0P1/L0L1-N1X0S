@@ -25,7 +25,7 @@
       enableMan = true;
 
       # Color Schemes
-      colorschemes.gruvbox.enable = true;
+      colorschemes.gruvbox-material.enable = true;
 
       # Options
       opts = {
@@ -122,8 +122,8 @@
             };
           };
           settings.defaults.mappings.i = {
-              "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
-              "<C-j>".__raw = "require('telescope.actions').move_selection_next";
+            "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
+            "<C-j>".__raw = "require('telescope.actions').move_selection_next";
           };
         };
 
