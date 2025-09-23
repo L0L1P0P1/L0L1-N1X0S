@@ -160,6 +160,7 @@
   desktopApps.enable = true;
   droidcamOBS.enable = true;
   environments.enable = true;
+  gimp.enable = true;
   immich.enable = true;
   latex.enable = true;
   libreOffice.enable = true;

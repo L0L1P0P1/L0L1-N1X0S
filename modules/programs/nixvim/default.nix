@@ -25,7 +25,7 @@
       enableMan = true;
 
       # Color Schemes
-      colorschemes.gruvbox-material.enable = true;
+      colorschemes.gruvbox-material-nvim.enable = true;
 
       # Options
       opts = {

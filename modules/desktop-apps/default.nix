@@ -13,6 +13,7 @@
     ./clash-verge.nix
     ./droidcamOBS.nix
     ./gaming.nix
+    ./gimp.nix
     ./immich.nix
     ./libreOffice.nix
     ./nekoray.nix
