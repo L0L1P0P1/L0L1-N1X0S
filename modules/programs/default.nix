@@ -14,6 +14,7 @@
     ./environments.nix
     ./latex.nix
     ./nix-ld.nix
+    ./pdfTools.nix
 
     ./nixvim
   ];
