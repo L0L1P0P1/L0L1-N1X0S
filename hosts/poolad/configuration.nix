@@ -165,7 +165,7 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgsUnstable.zsh;
     ignoreShellProgramCheck = true;
-    # packages = with pkgs; [];
+    packages = with pkgs; [ matlab ];
   };
 
   # shell environment

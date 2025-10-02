@@ -187,7 +187,7 @@
       "dialout"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgsUnstable.zsh;
-    # packages = with pkgs; [];
+    packages = with pkgs; [ matlab ];
   };
 
   # shell environment

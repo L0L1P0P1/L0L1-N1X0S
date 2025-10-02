@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-matlab = {
+      url = "gitlab:doronbehar/nix-matlab";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -27,16 +32,22 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      nix-matlab,
       ...
     }@inputs:
+    let
+      flake-overlays = [
+        nix-matlab.overlay
+      ];
+    in
     {
-
       # Sitka Host, Home PC
       nixosConfigurations.sitka = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
+          { nixpkgs.overlays = flake-overlays; }
           ./hosts/sitka/configuration.nix
         ];
       };
@@ -47,9 +58,9 @@
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
+          { nixpkgs.overlays = flake-overlays; }
           ./hosts/poolad/configuration.nix
         ];
       };
-
     };
 }
