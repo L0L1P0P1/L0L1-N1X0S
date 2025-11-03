@@ -41,6 +41,7 @@
         xfce.thunar
         puddletag
         maim
+        varia
 
         polybarFull
         rofi
@@ -57,7 +58,6 @@
       ])
       ++ (with pkgsUnstable; [
         # From Unstable Channel
-        persepolis
         telegram-desktop
         kitty
         vesktop

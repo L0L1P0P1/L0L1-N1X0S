@@ -167,6 +167,7 @@
   nekoray.enable = true;
   nix-ld.enable = true;
   nixvim.enable = true;
+  pdfTools.enable = true;
   photoPrism.enable = false;
   picom.enable = true;
   tauon.enable = true;
