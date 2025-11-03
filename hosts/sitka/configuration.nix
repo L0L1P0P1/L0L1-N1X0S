@@ -158,6 +158,7 @@
   clash-verge.enable = true;
   cli-tools.enable = true;
   desktopApps.enable = true;
+  docker.enable = true;
   droidcamOBS.enable = true;
   environments.enable = true;
   gimp.enable = true;
@@ -186,6 +187,7 @@
     extraGroups = [
       "wheel"
       "dialout"
+      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgsUnstable.zsh;
     packages = with pkgs; [ matlab ];
