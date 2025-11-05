@@ -40,6 +40,20 @@
         mapleader = " ";
       };
 
+      autoCmd = [
+        {
+          command = "set shiftwidth=2 tabstop=2";
+          event = [
+            "BufEnter"
+            "BufWinEnter"
+          ];
+          pattern = [
+            "*.c"
+            "*.cpp"
+            "*.h"
+          ];
+        }
+      ];
       # Plugins
       plugins = {
         bufferline.enable = true;
