@@ -22,11 +22,6 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
-
-    # sshServe = {
-    # 	enable = true;
-    # 	keys = [];
-    # };
   };
 
   # adds pkgsUnstable
@@ -63,18 +58,6 @@
   networking = {
     hostName = "sitka";
     networkmanager.enable = true;
-    # nameservers = [
-    #   "1.1.1.1"
-    #   "8.8.8.8"
-    # ];
-
-    # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
     firewall.enable = false;
   };
 
@@ -83,6 +66,7 @@
   services = {
     xserver = {
       enable = true;
+      dpi = 100;
       windowManager.qtile.enable = true;
     };
 
@@ -118,9 +102,9 @@
       ports = [ 22 ];
       settings = {
         PasswordAuthentication = true;
-        AllowUsers = [ "L0L1P0P" ]; # Allows all users by default. Can be [ "user1" "user2" ]
+        AllowUsers = [ "L0L1P0P" ];
         UseDns = true;
-        PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+        PermitRootLogin = "no";
       };
     };
 
@@ -129,11 +113,6 @@
       port = 8080;
     };
 
-    # Configure keymap in X11
-    # xserver.xkb.layout = "us";
-    # xserver.xkb.options = "eurosign:e,caps:escape";
-
-    # Enable CUPS to print documents.
     printing.enable = true;
 
     avahi = {
@@ -141,9 +120,6 @@
       nssmdns4 = true;
       openFirewall = true;
     };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # libinput.enable = true;
 
     tumbler.enable = true;
     gvfs.enable = true;
@@ -206,6 +182,7 @@
   environment.systemPackages = with pkgs; [
     tree
     lxqt.lxqt-policykit
+    sddm-astronaut
   ];
 
   # Dconf

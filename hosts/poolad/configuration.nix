@@ -63,19 +63,8 @@
     networkmanager = {
       enable = true;
       dns = "dnsmasq";
-      # insertNameservers = [
-      #   "8.8.8.8"
-      #   "8.8.4.4"
-      # ];
     };
 
-    # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
     firewall.enable = false;
   };
 
@@ -137,15 +126,6 @@
       };
     };
 
-    # Configure keymap in X11
-    # xserver.xkb.layout = "us";
-    # xserver.xkb.options = "eurosign:e,caps:escape";
-
-    # Enable CUPS to print documents.
-    # printing.enable = true;
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # libinput.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;
     udev.extraRules = ''
@@ -194,7 +174,6 @@
   };
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     tree
     lxqt.lxqt-policykit

@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    ./cursor-theme.nix
     ./gruvbox
     ./kitty.nix
     ./qtile.nix

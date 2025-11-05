@@ -66,7 +66,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
 - [ ] Boot Animation For Laptop
-- [ ] Cursor Themes
+- [x] Cursor Themes
 - [x] better powermanagement on poolad (`pstates` and stuff)
 - [x] Configure Qt/GTK themes
 - [x] Fix some HiDPI settings for `poolad`
