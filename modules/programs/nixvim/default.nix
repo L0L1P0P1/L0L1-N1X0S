@@ -25,7 +25,13 @@
       enableMan = true;
 
       # Color Schemes
-      colorschemes.gruvbox-material-nvim.enable = true;
+      colorschemes.gruvbox-material-nvim = {
+        enable = true;
+        settings = {
+          italics = true;
+          comments.italics = true;
+        };
+      };
 
       # Options
       opts = {
