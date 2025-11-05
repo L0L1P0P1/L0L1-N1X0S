@@ -37,6 +37,8 @@
       ripgrep
       sqlite
       starship
+      stdman
+      stdmanpages
       stow
       tealdeer
       tree
