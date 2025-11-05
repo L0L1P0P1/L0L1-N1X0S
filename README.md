@@ -57,17 +57,18 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- [ ] xdg/memo opening files—opening directories is a pain, e.g.
-- [x] Configure Qt/GTK themes
-- [ ] Add Home Manager for managing dotfiles
-- [x] better powermanagement on poolad (`pstates` and stuff)
 - [ ] lockscreen and suspend stuff for poolad
-- [ ] Configure Display Manager
-- [ ] Setup some new keybinds for stuff life volume control
+- [ ] xdg/memo opening files—opening directories is a pain, e.g.
+- [ ] Home Manager modules for `rofi`, `polybar`, `picom`
+- [ ] display manager theme
+- [ ] fix function keys for laptop and pc 
 - [ ] Notifications with something like `dunst`
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
-- [ ] Add `home.nix` support for all hosts
+- [ ] Boot Animation For Laptop
+- [ ] Cursor Themes
+- [x] better powermanagement on poolad (`pstates` and stuff)
+- [x] Configure Qt/GTK themes
 - [x] Fix some HiDPI settings for `poolad`
 - [x] Setup store sharing for multiple devices
 - [x] Add keybinds for NixVim Neogit
