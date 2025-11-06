@@ -40,6 +40,7 @@
 
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false;
       matchBlocks."*" = {
         forwardAgent = false;
         compression = false;

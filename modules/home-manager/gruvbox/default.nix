@@ -5,6 +5,18 @@
   pkgsUnstable,
   ...
 }:
+let
+  gruvbox = pkgsUnstable.gruvbox-gtk-theme.override {
+    colorVariants = [ "dark" ];
+    sizeVariants = [ "compact" ];
+    themeVariants = [ "teal" ];
+    tweakVariants = [
+      "medium"
+      "macos"
+      "float"
+    ];
+  };
+in
 {
 
   options = {
@@ -15,12 +27,12 @@
     gtk = {
       enable = true;
       iconTheme = {
-        package = pkgs.gruvbox-plus-icons;
-        name = "Gruvbox-Plus-Dark";
+        package = pkgsUnstable.gruvbox-material-gtk-theme;
+        name = "Gruvbox-Material-Dark";
       };
       theme = {
-        name = "Gruvbox-Dark";
-        package = pkgsUnstable.gruvbox-gtk-theme;
+        name = "Gruvbox-Teal-Dark-Compact-Medium";
+        package = gruvbox;
       };
     };
 
