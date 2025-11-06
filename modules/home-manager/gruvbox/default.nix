@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  pkgsUnstable,
   ...
 }:
 {
@@ -18,8 +19,8 @@
         name = "Gruvbox-Plus-Dark";
       };
       theme = {
-        name = "Gruvbox-Material-Dark";
-        package = pkgs.gruvbox-material-gtk-theme;
+        name = "Gruvbox-Dark";
+        package = pkgsUnstable.gruvbox-gtk-theme;
       };
     };
 

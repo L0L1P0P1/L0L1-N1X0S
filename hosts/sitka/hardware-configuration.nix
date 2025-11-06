@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgsUnstable,
   modulesPath,
   ...
 }:
@@ -74,12 +75,12 @@
   };
 
   # OpenRGB
-  services.udev.packages = [ pkgs.openrgb-with-all-plugins ];
+  services.udev.packages = [ pkgsUnstable.openrgb-with-all-plugins ];
   hardware.i2c.enable = true;
   users.groups.i2c.members = [ "L0L1P0P" ];
   services.hardware.openrgb = {
     enable = true;
-    package = pkgs.openrgb-with-all-plugins;
+    package = pkgsUnstable.openrgb-with-all-plugins;
   };
 
   swapDevices = [ ];

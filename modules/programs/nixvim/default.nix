@@ -60,6 +60,7 @@
           ];
         }
       ];
+
       # Plugins
       plugins = {
         bufferline.enable = true;
@@ -70,16 +71,13 @@
         nix.enable = true;
         noice.enable = true;
         nvim-autopairs.enable = true;
+        presence.enable = true;
         render-markdown.enable = true;
         tmux-navigator.enable = true;
         vim-dadbod-completion.enable = true;
         vim-dadbod-ui.enable = true;
         vim-dadbod.enable = true;
         web-devicons.enable = true;
-
-        presence-nvim = {
-          enable = true;
-        };
 
         hardtime = {
           enable = false;

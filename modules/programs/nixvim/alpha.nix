@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
   programs.nixvim.plugins.alpha.enable = true;
-  programs.nixvim.plugins.alpha.layout = [
+  programs.nixvim.plugins.alpha.settings.layout = [
     {
       type = "padding";
       val = 8;
