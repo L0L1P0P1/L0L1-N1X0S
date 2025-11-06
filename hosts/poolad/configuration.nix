@@ -136,6 +136,7 @@
   libreOffice.enable = true;
   nekoray.enable = true;
   nixvim.enable = true;
+  sddm.enable = true;
   picom.enable = false;
   tauon.enable = true;
   teamspeak.enable = true;

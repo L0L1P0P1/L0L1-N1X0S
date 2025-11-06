@@ -16,6 +16,7 @@
     ./latex.nix
     ./nix-ld.nix
     ./pdfTools.nix
+    ./sddm.nix
 
     ./nixvim
   ];

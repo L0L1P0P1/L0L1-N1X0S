@@ -99,7 +99,7 @@
         	Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
         	Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
         	Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-        	Key([mod, "control"], "q", lazy.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu"), desc="Shutdown Qtile"),
+        	Key([mod, "control"], "q", lazy.spawn("rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"), desc="Shutdown Qtile"),
         	Key([mod], "r", lazy.spawn("rofi -monitor -1 -show drun -show-icons"), desc="Spawn a command using a prompt widget"),
         	Key([mod, "shift"], "s", lazy.spawn(home + "/.config/qtile/screenshot.sh", shell=True)),
         ]
@@ -181,7 +181,6 @@
         auto_minimize = True
         wl_input_rules = None
         wl_xcursor_theme = None
-        wl_xcursor_size = 32 
         os.environ["XDG_CURRENT_DESKTOP"] = "qtile"
 
         @hook.subscribe.startup_once

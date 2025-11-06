@@ -30,6 +30,7 @@
       nitch
       nixfmt-rfc-style
       nixpkgs-manual
+      nix-tree
       nixpkgs-review
       ntfs3g
       pkg-config
