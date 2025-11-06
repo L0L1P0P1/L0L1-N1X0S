@@ -138,6 +138,7 @@
   droidcamOBS.enable = true;
   environments.enable = true;
   gimp.enable = true;
+  sddm.enable = true;
   immich.enable = true;
   latex.enable = true;
   libreOffice.enable = true;
