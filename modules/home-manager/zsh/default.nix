@@ -40,7 +40,18 @@
 
     programs.ssh = {
       enable = true;
-      addKeysToAgent = "yes";
+      matchBlocks."*" = {
+        forwardAgent = false;
+        compression = false;
+        addKeysToAgent = "yes";
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        hashKnownHosts = false;
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlMaster = "no";
+        controlPersist = "no";
+      };
     };
 
     services.ssh-agent.enable = true;

@@ -60,13 +60,11 @@
 
   networking = {
     hostName = "poolad";
-    networkmanager = {
-      enable = true;
-      dns = "dnsmasq";
-    };
-
+    networkmanager.enable = true;
     firewall.enable = false;
   };
+
+  environment.etc."resolv.conf".enable = false;
 
   services = {
     xserver = {
@@ -100,14 +98,6 @@
       openDefaultPorts = true;
       dataDir = "/home/L0L1P0P/Documents";
       configDir = "/home/L0L1P0P/.config/syncthing";
-    };
-
-    dnsmasq = {
-      enable = true;
-      settings.server = [
-        "1.1.1.1"
-        "9.9.9.9"
-      ];
     };
 
     tlp = {
