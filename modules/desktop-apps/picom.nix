@@ -16,18 +16,17 @@
     services.picom = {
       enable = true;
       package = pkgsUnstable.picom;
-      backend = "xrender";
+      backend = "glx";
       opacityRules = [
-        "94:class_g = 'kitty'"
+        "96:class_g = 'kitty'"
         "85:class_g = 'Rofi'"
         "90:class_g = 'tauonmb'"
         "90:class_g = 'Thunar'"
-        "90:class_g = 'vesktop'"
       ];
       settings = {
         blur = {
           method = "gaussian";
-          size = 15;
+          size = 20;
           deviation = 7.5;
         };
         blur-background-exclude = [
