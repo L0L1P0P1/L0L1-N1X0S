@@ -165,7 +165,6 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    tree
     lxqt.lxqt-policykit
   ];
 
@@ -176,16 +175,9 @@
   security.polkit.enable = true;
   security.sudo = {
     enable = true;
-    extraRules = [
-      {
-        commands = [
-          {
-            command = "${pkgsUnstable.clash-nyanpasu}/bin/clash-nyanpasu";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-      }
-    ];
+  };
+  security.pam.services = {
+    i3lock.enable = true;
   };
 
   fonts = {

@@ -15,6 +15,13 @@
 
   home.enableNixpkgsReleaseCheck = false;
 
+  betterlockscreen = {
+    enable = true;
+    arguments = [
+      "dimblur"
+      "--show-layout"
+    ];
+  };
   cursor-theme.enable = true;
   gruvbox.enable = true;
   kitty.enable = true;

@@ -181,9 +181,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    tree
     lxqt.lxqt-policykit
-    sddm-astronaut
   ];
 
   # Dconf
@@ -193,6 +191,9 @@
   security.polkit.enable = true;
   security.sudo = {
     enable = true;
+  };
+  security.pam.services = {
+    i3lock.enable = true;
   };
 
   fonts = {

@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    ./betterlockscreen.nix
     ./cursor-theme.nix
     ./gruvbox
     ./kitty.nix
