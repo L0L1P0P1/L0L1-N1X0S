@@ -59,6 +59,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 ### TODO
 - [ ] Fix nixvim autocomplete for "Text" with enter and fix nix-lsp
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
+- [ ] fix suspend for sitka
 - [ ] Home Manager modules for `rofi`, `polybar`, `picom`
 - [ ] fix function keys for laptop and pc 
 - [ ] Notifications with something like `dunst`
