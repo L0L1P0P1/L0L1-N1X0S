@@ -131,13 +131,12 @@
   clash-verge.enable = true;
   cli-tools.enable = true;
   desktopApps.enable = true;
-  droidcamOBS.enable = false;
   environments.enable = true;
   libreOffice.enable = true;
   nekoray.enable = true;
   nixvim.enable = true;
   sddm.enable = true;
-  picom.enable = false;
+  picom.enable = true;
   tauon.enable = true;
   teamspeak.enable = true;
   virtualbox.enable = true;
