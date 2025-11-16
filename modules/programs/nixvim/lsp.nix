@@ -3,21 +3,13 @@
   lib,
   pkgs,
   pkgsUnstable,
+  hostname,
   ...
 }:
 {
-  programs.nixvim.plugins = {
-    lsp-status.enable = true;
-    lspkind.enable = true;
-    lsp-format = {
-      enable = true;
-      lspServersToEnable = "all";
-    };
-
+  programs.nixvim = {
     lsp = {
-      enable = true;
-      inlayHints = true;
-      preConfig = ''
+      luaConfig.pre = ''
         vim.diagnostic.config {
           virtual_text = true,
           signs = {
@@ -43,18 +35,30 @@
 
       servers = {
         lua_ls.enable = true;
-        nixd.enable = true;
+        nixd = {
+          enable = true;
+          package = pkgsUnstable.nixd;
+          config = {
+            nixpkgs.expr = "import (builtins.getFlake \"/home/L0L1P0P/nixos\").inputs.nixpkgs { }";
+            options = {
+              home-manager.expr = "(builtins.getFlake \"/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []";
+              nixos.expr = "(builtins.getFlake \"/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options";
+            };
+          };
+        };
 
         rust_analyzer = {
           enable = true;
-          installCargo = true;
-          installRustc = true;
+          config = {
+            installCargo = true;
+            installRustc = true;
+          };
         };
 
         clangd = {
           enable = true;
           package = pkgsUnstable.clang-tools;
-          cmd = [
+          config.cmd = [
             "${pkgsUnstable.clang-tools}/bin/clangd"
             "--function-arg-placeholders"
             "--completion-style=detailed"
@@ -68,18 +72,20 @@
         basedpyright = {
           enable = true;
           package = pkgsUnstable.basedpyright;
-          cmd = [
-            "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
-            "--stdio"
-            "--pythonpath"
-            "$(eval \"which python\")"
-          ];
-          settings = {
-            basedpyright.analysis = {
-              autoImportCompletions = true;
-              autoSearchPaths = true;
-              diagnosticMode = "workspace";
-              typeCheckingMode = "basic";
+          config = {
+            cmd = [
+              "${pkgsUnstable.basedpyright}/bin/basedpyright-langserver"
+              "--stdio"
+              "--pythonpath"
+              "$(eval \"which python\")"
+            ];
+            settings = {
+              basedpyright.analysis = {
+                autoImportCompletions = true;
+                autoSearchPaths = true;
+                diagnosticMode = "workspace";
+                typeCheckingMode = "basic";
+              };
             };
           };
         };
@@ -88,6 +94,20 @@
           enable = true;
         };
 
+      };
+    };
+
+    plugins = {
+      lsp-status.enable = true;
+      lspkind.enable = true;
+      lsp-format = {
+        enable = true;
+        lspServersToEnable = "all";
+      };
+
+      lsp = {
+        enable = true;
+        inlayHints = true;
       };
     };
   };

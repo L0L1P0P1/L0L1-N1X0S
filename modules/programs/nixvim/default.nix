@@ -167,7 +167,6 @@
               { name = "luasnip"; }
               { name = "vim-dadbod-completion"; }
               { name = "path"; }
-              { name = "buffer"; }
               { name = "render-markdown"; }
             ];
             mapping = {

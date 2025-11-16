@@ -43,7 +43,10 @@
     {
       # Sitka Host, Home PC
       nixosConfigurations.sitka = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inputs = inputs;
+          hostname = "sitka";
+        };
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
@@ -54,7 +57,10 @@
 
       # Poolad Host, Main Laptop
       nixosConfigurations.poolad = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inputs = inputs;
+          hostname = "poolad";
+        };
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
