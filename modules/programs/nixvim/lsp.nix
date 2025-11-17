@@ -35,17 +35,6 @@
 
       servers = {
         lua_ls.enable = true;
-        nixd = {
-          enable = true;
-          package = pkgsUnstable.nixd;
-          config = {
-            nixpkgs.expr = "import (builtins.getFlake \"/home/L0L1P0P/nixos\").inputs.nixpkgs { }";
-            options = {
-              home-manager.expr = "(builtins.getFlake \"/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []";
-              nixos.expr = "(builtins.getFlake \"/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options";
-            };
-          };
-        };
 
         rust_analyzer = {
           enable = true;
@@ -61,7 +50,7 @@
           config.cmd = [
             "${pkgsUnstable.clang-tools}/bin/clangd"
             "--function-arg-placeholders"
-            "--completion-style=detailed"
+            "--completion-style=bundled"
             "--background-index"
             "--clang-tidy"
             "--header-insertion=iwyu"
@@ -108,6 +97,18 @@
       lsp = {
         enable = true;
         inlayHints = true;
+        servers.nixd = {
+          enable = true;
+          package = pkgs.nixd;
+          settings = {
+            nixpkgs.expr = "import (builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").inputs.nixpkgs { }";
+            options = {
+              home-manager.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []";
+              nixos.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options";
+              nixvim.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").inputs.nixvim.outputs.nixvimConfigurations.x86_64-linux.default.options";
+            };
+          };
+        };
       };
     };
   };
