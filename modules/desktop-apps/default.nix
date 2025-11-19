@@ -15,6 +15,7 @@
     ./gaming.nix
     ./gimp.nix
     ./immich.nix
+    ./kdenlive.nix
     ./libreOffice.nix
     ./nekoray.nix
     ./photoPrism.nix

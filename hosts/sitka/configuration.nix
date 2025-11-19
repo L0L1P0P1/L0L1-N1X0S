@@ -138,8 +138,8 @@
   droidcamOBS.enable = true;
   environments.enable = true;
   gimp.enable = true;
-  sddm.enable = true;
   immich.enable = true;
+  kdenlive.enable = true;
   latex.enable = true;
   libreOffice.enable = true;
   nekoray.enable = true;
@@ -148,6 +148,7 @@
   pdfTools.enable = true;
   photoPrism.enable = false;
   picom.enable = true;
+  sddm.enable = true;
   tauon.enable = true;
   teamspeak.enable = true;
   virtualbox.enable = true;
