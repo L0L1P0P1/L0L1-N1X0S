@@ -63,7 +63,6 @@
 
       # Plugins
       plugins = {
-        bufferline.enable = true;
         dressing.enable = true;
         gitsigns.enable = true;
         neogit.enable = true;
@@ -119,9 +118,25 @@
           };
         };
 
+        bufferline = {
+          enable = true;
+        };
+
         lualine = {
           enable = true;
           package = pkgs.vimPlugins.lualine-nvim;
+          settings = {
+            options = {
+              disabled_filetypes = [
+                "NvimTree"
+              ];
+              ignore_focus = [ "NvimTree" ];
+              section_separators = {
+                left = "";
+                right = "";
+              };
+            };
+          };
         };
 
         telescope = {
