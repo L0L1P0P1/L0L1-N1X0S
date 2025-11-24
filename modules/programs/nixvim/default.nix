@@ -285,35 +285,6 @@
             signature.enabled = true;
           };
         };
-        # cmp-nvim-lsp.enable = true;
-        # cmp_luasnip.enable = true;
-        # cmp = {
-        #   enable = true;
-        #   autoEnableSources = true;
-        #   settings = {
-        #     sources = [
-        #       { name = "nvim_lsp"; }
-        #       { name = "luasnip"; }
-        #       { name = "vim-dadbod-completion"; }
-        #       { name = "path"; }
-        #       { name = "render-markdown"; }
-        #     ];
-        #     mapping = {
-        #       "<C-k>" = "cmp.mapping.select_prev_item()";
-        #       "<C-j>" = "cmp.mapping.select_next_item()";
-        #       "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-        #       "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        #       "<C-space>" = "cmp.mapping.complete()";
-        #       "<C-e>" = "cmp.mapping.abort()";
-        #       "<CR>" = "cmp.mapping.confirm({ select = true })";
-        #     };
-        #   };
-        # };
-        # Extra Plugins
-        # extraPlugins = [
-        # 	pkgsUnstable.vimPlugins.cord-nvim
-        # ];
-        # extraConfigLua = "require('cord').setup({})";
       };
     };
   };

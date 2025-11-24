@@ -30,7 +30,7 @@ To apply a specific host configuration using Nix flakes:
 nixos-rebuild switch --flake PATH_TO_YOUR_NIXOS_CONF#<hostname>
 ```
 
-Replace `<hostname>` with the name of the desired host (e.g., `merdas`, `poolad`, `sitka`, or `tigraan`).
+Replace `<hostname>` with the name of the desired host (e.g., `poolad` or `sitka`).
 
 ### Updating the System
 
@@ -57,7 +57,6 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- [ ] Fix nixvim autocomplete for "Text" with enter and fix nix-lsp
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [ ] fix suspend for sitka
 - [ ] Home Manager modules for `rofi`, `polybar`, `picom`
@@ -66,13 +65,5 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
 - [ ] Boot Animation For Laptop
-- [x] display manager theme
-- [x] lockscreen and suspend stuff for poolad
-- [x] Cursor Themes
-- [x] better powermanagement on poolad (`pstates` and stuff)
-- [x] Configure Qt/GTK themes
-- [x] Fix some HiDPI settings for `poolad`
-- [x] Setup store sharing for multiple devices
-- [x] Add keybinds for NixVim Neogit
 
 Happy hacking with NixOS!
