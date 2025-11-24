@@ -48,6 +48,8 @@
         rofi-power-menu
         networkmanager_dmenu
         papirus-icon-theme
+        pdf4qt
+        stremio
 
         localsend
         pwvucontrol

@@ -19,6 +19,7 @@
       busybox
       dnsmasq
       dua
+      ffmpeg
       gh
       git
       gnumake
@@ -28,9 +29,9 @@
       man-pages
       mlocate
       nitch
+      nix-tree
       nixfmt-rfc-style
       nixpkgs-manual
-      nix-tree
       nixpkgs-review
       ntfs3g
       pkg-config
@@ -46,6 +47,7 @@
       tree-sitter
       unzip
       wget
+      yazi
       zip
     ];
   };
