@@ -57,6 +57,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
+- [ ] Switch to `snacks.picker` or `fzf-lua` for faster picker
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [ ] fix suspend for sitka
 - [ ] Home Manager modules for `rofi`, `polybar`, `picom`

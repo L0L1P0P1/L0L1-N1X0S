@@ -71,7 +71,7 @@
         noice.enable = true;
         nvim-autopairs.enable = true;
         presence.enable = true;
-        render-markdown.enable = true;
+        markview.enable = true;
         tmux-navigator.enable = true;
         vim-dadbod-completion.enable = true;
         vim-dadbod-ui.enable = true;
@@ -85,6 +85,25 @@
 
         bufferline = {
           enable = true;
+        };
+
+        obsidian = {
+          enable = true;
+          package = pkgsUnstable.vimPlugins.obsidian-nvim;
+          settings = {
+            "legacy_commands" = false;
+            completion = {
+              blink-cmp = true;
+            };
+            new_notes_location = "current_dir";
+            workspaces = [
+              {
+                name = "Übermensch";
+                path = "/home/L0L1P0P/Documents/Documents-Sync/Obsidian/Übermensch";
+              }
+            ];
+          };
+
         };
 
         notify = {
@@ -197,6 +216,7 @@
           fromVscode = [
             { }
           ];
+          settings.enable_autosnippets = true;
         };
 
         friendly-snippets = {
@@ -286,6 +306,24 @@
           };
         };
       };
+      extraPlugins = [
+        (pkgs.vimUtils.buildVimPlugin {
+          name = "luasnip-latex-snippets";
+          src = pkgs.fetchFromGitHub {
+            owner = "iurimateus";
+            repo = "luasnip-latex-snippets.nvim";
+            rev = "57e4330f967da6ac64bf9b05b06ecb3c4a120ec3";
+            hash = "sha256-QWZIw/ZafnNa1j20TI361X9+x3nleZgBchiJ5tMw+Qw=";
+          };
+          doCheck = false;
+        })
+      ];
+      extraConfigLuaPost = ''
+        require("luasnip-latex-snippets").setup({
+          use_treesitter = true,
+          allow_on_markdown = true,
+        })
+      '';
     };
   };
 }
