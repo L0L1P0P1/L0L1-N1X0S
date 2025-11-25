@@ -77,7 +77,6 @@
         noice.enable = true;
         nvim-autopairs.enable = true;
         presence.enable = true;
-        markview.enable = true;
         tmux-navigator.enable = true;
         vim-dadbod-completion.enable = true;
         vim-dadbod-ui.enable = true;
@@ -91,6 +90,15 @@
 
         bufferline = {
           enable = true;
+        };
+
+        markview = {
+          enable = true;
+          settings.preview = {
+            hybrid_modes = [
+              "n"
+            ];
+          };
         };
 
         obsidian = {
@@ -284,12 +292,17 @@
                 auto_show = true;
               };
             };
+            snippets = {
+              preset = "luasnip";
+            };
             sources = {
               default = [
                 "lsp"
                 "path"
                 "snippets"
-                "buffer"
+                "dadbod"
+                "obsidian"
+                "obsidian_tags"
               ];
               per_filetype = {
                 sql = [
@@ -308,6 +321,7 @@
           };
         };
       };
+
       extraPlugins = [
         (pkgs.vimUtils.buildVimPlugin {
           name = "luasnip-latex-snippets";
@@ -315,17 +329,19 @@
             owner = "iurimateus";
             repo = "luasnip-latex-snippets.nvim";
             rev = "57e4330f967da6ac64bf9b05b06ecb3c4a120ec3";
-            hash = "sha256-QWZIw/ZafnNa1j20TI361X9+x3nleZgBchiJ5tMw+Qw=";
+            hash = "sha256-JziRu7Ff0SaF6o/Ubfpx1FWb+k/Qywckp9oI9wUsvfA=";
           };
           doCheck = false;
         })
       ];
+
       extraConfigLuaPost = ''
         require("luasnip-latex-snippets").setup({
           use_treesitter = true,
           allow_on_markdown = true,
         })
       '';
+
     };
   };
 }
