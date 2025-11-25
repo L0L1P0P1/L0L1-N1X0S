@@ -134,7 +134,6 @@
   environments.enable = true;
   libreOffice.enable = true;
   nekoray.enable = true;
-  nixvim.enable = true;
   sddm.enable = true;
   picom.enable = true;
   tauon.enable = true;
@@ -143,6 +142,19 @@
   gaming = {
     enable = true;
     heroic.enable = true;
+  };
+  nixvim = {
+    enable = true;
+    obsidianWorkspaces = [
+      {
+        name = "Übermensch";
+        path = "/home/L0L1P0P/Documents-Sync/Obsidian/Übermensch";
+      }
+      {
+        name = "TheWoodenBox";
+        path = "/home/L0L1P0P/Documents-Sync/Obsidian/TheWoodenBox";
+      }
+    ];
   };
 
   # User

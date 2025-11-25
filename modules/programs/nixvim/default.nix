@@ -10,6 +10,11 @@
 
   options = {
     nixvim.enable = lib.mkEnableOption "enables nixvim";
+    nixvim.obsidianWorkspaces = lib.mkOption {
+      description = "Obsidian Workspaces for obsidian.nvim";
+      type = lib.types.listOf (lib.types.attrsOf lib.types.anything);
+      default = [ ];
+    };
   };
 
   imports = [
@@ -57,6 +62,7 @@
             "*.c"
             "*.cpp"
             "*.h"
+            "*.md"
           ];
         }
       ];
@@ -92,18 +98,14 @@
           package = pkgsUnstable.vimPlugins.obsidian-nvim;
           settings = {
             "legacy_commands" = false;
+            frontmatter.enabled = false;
+            new_notes_location = "current_dir";
             completion = {
               blink-cmp = true;
             };
-            new_notes_location = "current_dir";
-            workspaces = [
-              {
-                name = "Übermensch";
-                path = "/home/L0L1P0P/Documents/Documents-Sync/Obsidian/Übermensch";
-              }
-            ];
+            templates.folder = "Templates";
+            workspaces = config.nixvim.obsidianWorkspaces;
           };
-
         };
 
         notify = {

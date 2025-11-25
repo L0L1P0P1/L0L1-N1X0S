@@ -144,7 +144,6 @@
   libreOffice.enable = true;
   nekoray.enable = true;
   nix-ld.enable = true;
-  nixvim.enable = true;
   pdfTools.enable = true;
   photoPrism.enable = false;
   picom.enable = true;
@@ -157,6 +156,19 @@
     steam.enable = true;
     heroic.enable = true;
     prismlauncher.enable = true;
+  };
+  nixvim = {
+    enable = true;
+    obsidianWorkspaces = [
+      {
+        name = "Übermensch";
+        path = "/home/L0L1P0P/Documents/Documents-Sync/Obsidian/Übermensch";
+      }
+      {
+        name = "TheWoodenBox";
+        path = "/home/L0L1P0P/Documents/Documents-Sync/Obsidian/TheWoodenBox";
+      }
+    ];
   };
 
   # User
