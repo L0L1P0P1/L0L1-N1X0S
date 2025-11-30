@@ -65,6 +65,6 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Notifications with something like `dunst`
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
-- [ ] Boot Animation For Laptop
+- [x] Boot Animation For Laptop
 
 Happy hacking with NixOS!

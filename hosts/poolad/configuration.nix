@@ -41,18 +41,23 @@
     ../../modules
   ];
 
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    grub = {
-      efiSupport = true;
+  boot = {
+    plymouth = {
       enable = true;
-      useOSProber = true;
-      device = "nodev";
-      gfxmodeEfi = "2880x1800";
+    };
+    loader = {
+      systemd-boot.enable = false;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        efiSupport = true;
+        enable = true;
+        useOSProber = true;
+        device = "nodev";
+        gfxmodeEfi = "2880x1800";
+      };
     };
   };
 

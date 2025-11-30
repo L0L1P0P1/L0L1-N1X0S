@@ -22,12 +22,18 @@
     config.boot.kernelPackages.zenpower
   ];
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd = {
+    kernelModules = [
+      "amdgpu"
+    ];
+  };
   boot.blacklistedKernelModules = [ "k10temp" ];
 
   boot.kernelParams = [
     "kvm.enable_virt_at_load=0"
     "amd_pstate=active"
+    "quiet"
+    "splash"
   ];
 
   boot.kernelModules = [
