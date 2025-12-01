@@ -17,10 +17,10 @@
     ./immich.nix
     ./kdenlive.nix
     ./libreOffice.nix
-    ./nekoray.nix
     ./photoPrism.nix
     ./tauon.nix
     ./teamspeak.nix
+    ./throne.nix
     ./virtualbox.nix
   ];
 
@@ -48,7 +48,7 @@
         networkmanager_dmenu
         papirus-icon-theme
         pdf4qt
-        stremio
+        # stremio
 
         localsend
         pwvucontrol

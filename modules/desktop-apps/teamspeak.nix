@@ -11,14 +11,13 @@
   };
 
   config = lib.mkIf config.teamspeak.enable {
-    networking.extraHosts =
-      ''
-        127.0.0.1 blacklist.teamspeak.com
-        127.0.0.1 blacklist2.teamspeak.com
-      '';
+    networking.extraHosts = ''
+      127.0.0.1 blacklist.teamspeak.com
+      127.0.0.1 blacklist2.teamspeak.com
+    '';
 
     environment.systemPackages = [
-      pkgs.teamspeak3
+      pkgs.teamspeak6-client
     ];
 
   };

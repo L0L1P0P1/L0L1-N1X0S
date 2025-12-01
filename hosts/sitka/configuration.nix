@@ -142,7 +142,7 @@
   kdenlive.enable = true;
   latex.enable = true;
   libreOffice.enable = true;
-  nekoray.enable = true;
+  throne.enable = true;
   nix-ld.enable = true;
   pdfTools.enable = true;
   photoPrism.enable = false;
@@ -179,12 +179,13 @@
       "dialout"
       "docker"
     ]; # Enable ‘sudo’ for the user.
-    shell = pkgsUnstable.zsh;
+    shell = pkgs.zsh;
     packages = with pkgs; [ matlab ];
   };
 
   # shell environment
-  environment.shells = [ pkgsUnstable.zsh ];
+  environment.shells = [ pkgs.zsh ];
+  programs.zsh.enable = true;
 
   # Home Manager
   home-manager = {

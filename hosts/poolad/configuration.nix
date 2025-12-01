@@ -138,7 +138,7 @@
   desktopApps.enable = true;
   environments.enable = true;
   libreOffice.enable = true;
-  nekoray.enable = true;
+  throne.enable = true;
   sddm.enable = true;
   picom.enable = true;
   tauon.enable = true;
@@ -166,13 +166,14 @@
   users.users.L0L1P0P = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgsUnstable.zsh;
+    shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     packages = with pkgs; [ matlab ];
   };
 
   # shell environment
-  environment.shells = [ pkgsUnstable.zsh ];
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
 
   # Home Manager
   home-manager = {
