@@ -19,7 +19,6 @@
     ./libreOffice.nix
     ./nekoray.nix
     ./photoPrism.nix
-    ./picom.nix
     ./tauon.nix
     ./teamspeak.nix
     ./virtualbox.nix

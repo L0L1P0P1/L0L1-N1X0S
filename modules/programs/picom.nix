@@ -18,16 +18,15 @@
       package = pkgsUnstable.picom;
       backend = "glx";
       opacityRules = [
-        "96:class_g = 'kitty'"
+        "93:class_g = 'kitty'"
         "85:class_g = 'Rofi'"
         "90:class_g = 'tauonmb'"
         "90:class_g = 'Thunar'"
       ];
       settings = {
         blur = {
-          method = "gaussian";
-          size = 20;
-          deviation = 7.5;
+          method = "dual_kawase";
+          strength = 5;
         };
         blur-background-exclude = [
           "window_type = 'menu'"
