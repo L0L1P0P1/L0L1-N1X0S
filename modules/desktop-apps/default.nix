@@ -60,7 +60,6 @@
       ])
       ++ (with pkgsUnstable; [
         # From Unstable Channel
-        varia
         telegram-desktop
         kitty
         vesktop

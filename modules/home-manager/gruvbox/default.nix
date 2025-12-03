@@ -47,9 +47,9 @@ in
       "Kvantum/kvantum.kvconfig".text = "theme=Gruvbox-Dark-Brown";
     };
 
-    # home.sessionVariables = {
-    #   QT_STYLE_OVERRIDE = lib.mkForce "qt6ct-style";
-    # };
+    home.sessionVariables = {
+      QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
+    };
 
   };
 
