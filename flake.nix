@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -32,6 +36,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      nix-flatpak,
       nix-matlab,
       ...
     }@inputs:
@@ -50,6 +55,7 @@
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
+          inputs.nix-flatpak.nixosModules.nix-flatpak
           { nixpkgs.overlays = flake-overlays; }
           ./hosts/sitka/configuration.nix
         ];
@@ -64,6 +70,7 @@
         modules = [
           inputs.nixvim.nixosModules.nixvim
           inputs.home-manager.nixosModules.default
+          inputs.nix-flatpak.nixosModules.nix-flatpak
           { nixpkgs.overlays = flake-overlays; }
           ./hosts/poolad/configuration.nix
         ];

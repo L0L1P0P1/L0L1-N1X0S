@@ -149,8 +149,13 @@
   picom.enable = true;
   sddm.enable = true;
   tauon.enable = true;
-  teamspeak.enable = true;
+  teamspeak.enable = false;
   virtualbox.enable = true;
+  flatpak = {
+    enable = true;
+    stremio.enable = true;
+    teamspeak3.enable = true;
+  };
   gaming = {
     enable = true;
     steam.enable = true;

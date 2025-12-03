@@ -14,6 +14,7 @@
     ./droidcamOBS.nix
     ./gaming.nix
     ./gimp.nix
+    ./flatpak.nix
     ./immich.nix
     ./kdenlive.nix
     ./libreOffice.nix
