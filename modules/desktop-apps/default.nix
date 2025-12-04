@@ -57,6 +57,7 @@
         qpwgraph
         alsa-utils
         xclip
+        zoom-us
       ])
       ++ (with pkgsUnstable; [
         # From Unstable Channel
