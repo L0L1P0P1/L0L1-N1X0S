@@ -27,6 +27,7 @@
           ];
           filesystems = [
             "/home/L0L1P0P/.config/Kvantum:ro"
+            "/home/L0L1P0P/Pictures:ro"
           ];
         };
       };
