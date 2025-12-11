@@ -135,6 +135,7 @@
   audacity.enable = true;
   clash-verge.enable = true;
   cli-tools.enable = true;
+  droidcamOBS.enable = true;
   desktopApps.enable = true;
   environments.enable = true;
   libreOffice.enable = true;
