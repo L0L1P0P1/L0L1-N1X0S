@@ -57,11 +57,17 @@
 
   networking = {
     hostName = "sitka";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
     firewall.enable = false;
-  };
 
-  environment.etc."resolv.conf".enable = false;
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
+  };
 
   services = {
     xserver = {

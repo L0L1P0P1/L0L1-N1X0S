@@ -65,11 +65,16 @@
 
   networking = {
     hostName = "poolad";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
     firewall.enable = false;
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
   };
-
-  environment.etc."resolv.conf".enable = false;
 
   services = {
     xserver = {
