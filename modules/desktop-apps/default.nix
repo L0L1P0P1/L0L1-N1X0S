@@ -49,7 +49,7 @@
         networkmanager_dmenu
         papirus-icon-theme
         pdf4qt
-        # stremio
+        nicotine-plus
 
         localsend
         pwvucontrol
