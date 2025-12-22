@@ -55,6 +55,8 @@
         pwvucontrol
         nitrogen
         qpwgraph
+        easyeffects
+        helvum
         alsa-utils
         xclip
         zoom-us

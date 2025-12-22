@@ -76,6 +76,14 @@
       windowManager.qtile.enable = true;
     };
 
+    kubo = {
+      enable = true;
+      settings.Addresses = {
+        Gateway = "/ip4/127.0.0.1/tcp/8085";
+        API = [ "/ip4/127.0.0.1/tcp/5001" ];
+      };
+    };
+
     libinput = {
       enable = true;
       mouse = {
@@ -88,6 +96,7 @@
         disableWhileTyping = true;
       };
     };
+
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -186,6 +195,7 @@
   users.users.L0L1P0P = {
     isNormalUser = true;
     extraGroups = [
+      config.services.kubo.group
       "wheel"
       "dialout"
       "docker"
