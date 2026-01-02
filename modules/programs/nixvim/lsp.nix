@@ -44,20 +44,6 @@
           };
         };
 
-        clangd = {
-          enable = true;
-          package = pkgsUnstable.clang-tools;
-          config.cmd = [
-            "${pkgsUnstable.clang-tools}/bin/clangd"
-            "--function-arg-placeholders"
-            "--completion-style=bundled"
-            "--background-index"
-            "--clang-tidy"
-            "--header-insertion=iwyu"
-            "--fallback-style=mozilla"
-          ];
-        };
-
         basedpyright = {
           enable = true;
           package = pkgsUnstable.basedpyright;
@@ -108,6 +94,20 @@
               nixvim.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").inputs.nixvim.outputs.nixvimConfigurations.x86_64-linux.default.options";
             };
           };
+        };
+        servers.clangd = {
+          enable = true;
+          package = null;
+          cmd = [
+            "clangd"
+            "--query-driver=/run/current-system/sw/bin/clang++"
+            "--function-arg-placeholders"
+            "--completion-style=bundled"
+            "--background-index"
+            "--clang-tidy"
+            "--header-insertion=iwyu"
+            "--fallback-style=mozilla"
+          ];
         };
       };
     };

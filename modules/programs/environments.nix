@@ -12,9 +12,9 @@
 
   config = lib.mkIf config.environments.enable {
     environment.systemPackages = with pkgs; [
-      gcc
-      clang-tools
       clang
+      clang-tools
+      llvm-manpages
       conda
       cmake
       rustc

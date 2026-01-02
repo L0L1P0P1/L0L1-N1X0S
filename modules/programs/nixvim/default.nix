@@ -196,29 +196,24 @@
 
         treesitter = {
           enable = true;
-          settings = {
-            auto_install = true;
-            highlight.enable = true;
-            indent = {
-              enable = true;
-            };
-            ensure_installed = [
-              "json"
-              "javascript"
-              "python"
-              "cpp"
-              "c"
-              "rust"
-              "lua"
-              "nix"
-              "sql"
-              "vim"
-              "regex"
-              "bash"
-              "markdown"
-              "markdown_inline"
-            ];
-          };
+          highlight.enable = true;
+          indent.enable = true;
+          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            json
+            javascript
+            python
+            cpp
+            c
+            rust
+            lua
+            nix
+            sql
+            vim
+            regex
+            bash
+            markdown
+            markdown_inline
+          ];
         };
 
         luasnip = {

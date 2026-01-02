@@ -20,6 +20,7 @@
       enable = true;
       enableCompletion = true;
 
+      dotDir = "${config.xdg.configHome}/zsh";
       syntaxHighlighting = {
         enable = true;
       };
