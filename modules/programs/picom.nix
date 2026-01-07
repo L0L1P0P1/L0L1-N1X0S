@@ -15,8 +15,8 @@
   config = lib.mkIf config.picom.enable {
     services.picom = {
       enable = true;
-      package = pkgsUnstable.picom;
-      backend = "glx";
+      package = pkgsUnstable.picom-pijulius;
+      backend = "egl";
       opacityRules = [
         "93:class_g = 'kitty'"
         "85:class_g = 'Rofi'"
