@@ -71,8 +71,8 @@
     };
     firewall.enable = false;
     nameservers = [
-      "8.8.8.8"
       "1.1.1.1"
+      "8.8.8.8"
     ];
   };
 
@@ -146,7 +146,7 @@
   libreOffice.enable = true;
   throne.enable = true;
   sddm.enable = true;
-  picom.enable = true;
+  picom.enable = false;
   tauon.enable = true;
   teamspeak.enable = false;
   virtualbox.enable = true;

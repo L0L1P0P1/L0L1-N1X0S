@@ -16,7 +16,7 @@
     services.picom = {
       enable = true;
       package = pkgsUnstable.picom-pijulius;
-      backend = "egl";
+      backend = "glx";
       opacityRules = [
         "93:class_g = 'kitty'"
         "85:class_g = 'Rofi'"

@@ -64,8 +64,8 @@
     firewall.enable = false;
 
     nameservers = [
-      "8.8.8.8"
       "1.1.1.1"
+      "0.0.0.0"
     ];
   };
 
@@ -161,7 +161,7 @@
   nix-ld.enable = true;
   pdfTools.enable = true;
   photoPrism.enable = false;
-  picom.enable = true;
+  picom.enable = false;
   sddm.enable = true;
   tauon.enable = true;
   teamspeak.enable = false;
