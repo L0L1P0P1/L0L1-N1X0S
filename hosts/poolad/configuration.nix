@@ -144,7 +144,6 @@
   droidcamOBS.enable = true;
   desktopApps.enable = true;
   environments.enable = true;
-  kdeconnect.enable = true;
   libreOffice.enable = true;
   throne.enable = true;
   sddm.enable = true;

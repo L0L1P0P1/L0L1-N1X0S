@@ -16,7 +16,6 @@
     ./gimp.nix
     ./flatpak.nix
     ./immich.nix
-    ./kdeconnect.nix
     ./kdenlive.nix
     ./libreOffice.nix
     ./photoPrism.nix

@@ -24,6 +24,7 @@
   };
   cursor-theme.enable = true;
   gruvbox.enable = true;
+  kdeconnect.enable = true;
   kitty.enable = true;
   tmux.enable = true;
   zsh.enable = true;

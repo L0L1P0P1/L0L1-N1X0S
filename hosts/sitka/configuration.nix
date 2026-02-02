@@ -157,7 +157,6 @@
   environments.enable = true;
   gimp.enable = true;
   immich.enable = true;
-  kdeconnect.enable = true;
   kdenlive.enable = true;
   latex.enable = true;
   libreOffice.enable = true;

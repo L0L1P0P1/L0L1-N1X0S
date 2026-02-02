@@ -10,6 +10,7 @@
     ./betterlockscreen.nix
     ./cursor-theme.nix
     ./gruvbox
+    ./kdeconnect.nix
     ./kitty.nix
     ./qtile.nix
     ./tmux

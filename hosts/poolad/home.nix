@@ -28,6 +28,7 @@
   };
   cursor-theme.enable = true;
   gruvbox.enable = true;
+  kdeconnect.enable = true;
   tmux.enable = true;
   zsh.enable = true;
 
