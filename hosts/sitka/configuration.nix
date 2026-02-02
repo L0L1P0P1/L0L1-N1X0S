@@ -64,8 +64,11 @@
     firewall.enable = false;
 
     nameservers = [
+      "192.168.1.1"
       "1.1.1.1"
-      "0.0.0.0"
+      # "213.176.7.229"
+      # "193.134.100.10"
+      # "84.144.144.144"
     ];
   };
 
@@ -154,6 +157,7 @@
   environments.enable = true;
   gimp.enable = true;
   immich.enable = true;
+  kdeconnect.enable = true;
   kdenlive.enable = true;
   latex.enable = true;
   libreOffice.enable = true;

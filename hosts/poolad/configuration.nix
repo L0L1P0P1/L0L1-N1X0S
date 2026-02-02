@@ -71,6 +71,7 @@
     };
     firewall.enable = false;
     nameservers = [
+      "192.168.1.1"
       "1.1.1.1"
       "8.8.8.8"
     ];
@@ -143,6 +144,7 @@
   droidcamOBS.enable = true;
   desktopApps.enable = true;
   environments.enable = true;
+  kdeconnect.enable = true;
   libreOffice.enable = true;
   throne.enable = true;
   sddm.enable = true;
