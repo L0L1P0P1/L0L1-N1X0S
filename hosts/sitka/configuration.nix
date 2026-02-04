@@ -64,8 +64,9 @@
     firewall.enable = false;
 
     nameservers = [
-      "192.168.1.1"
       "1.1.1.1"
+      "8.8.8.8"
+      "192.168.1.1"
       # "213.176.7.229"
       # "193.134.100.10"
       # "84.144.144.144"
@@ -104,6 +105,7 @@
       enable = true;
       pulse.enable = true;
       alsa.enable = true;
+      jack.enable = true;
       alsa.support32Bit = true;
     };
 

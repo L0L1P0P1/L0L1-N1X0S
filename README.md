@@ -60,6 +60,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Switch to `snacks.picker` or `fzf-lua` for faster picker
 - [ ] xdg/memo opening files—opening directories is a pain, e.g.
 - [ ] fix suspend for sitka
+- [ ] easyeffects module for home-manager
 - [ ] Home Manager modules for `rofi`, `polybar`, `picom`
 - [ ] fix function keys for laptop and pc 
 - [ ] Notifications with something like `dunst`

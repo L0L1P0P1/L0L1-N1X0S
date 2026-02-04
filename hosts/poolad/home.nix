@@ -19,6 +19,7 @@
   ];
 
   home.enableNixpkgsReleaseCheck = false;
+
   betterlockscreen = {
     enable = true;
     arguments = [
@@ -26,6 +27,8 @@
       "--show-layout"
     ];
   };
+
+  easyeffects.enable = true;
   cursor-theme.enable = true;
   gruvbox.enable = true;
   kdeconnect.enable = true;
