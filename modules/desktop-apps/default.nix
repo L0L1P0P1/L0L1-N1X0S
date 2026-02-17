@@ -57,6 +57,7 @@
         qpwgraph
         helvum
         alsa-utils
+        nsxiv
         xclip
         zoom-us
       ])
