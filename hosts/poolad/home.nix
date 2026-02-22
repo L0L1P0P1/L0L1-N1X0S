@@ -32,6 +32,7 @@
   cursor-theme.enable = true;
   gruvbox.enable = true;
   kdeconnect.enable = true;
+  picom.enable = true;
   tmux.enable = true;
   zsh.enable = true;
 
@@ -42,6 +43,8 @@
 
   qtile = {
     enable = true;
+    borderWidth = 0;
+    margin = 8;
     autostartOnce = ''
       #!/usr/bin/env bash
 

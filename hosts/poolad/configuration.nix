@@ -147,7 +147,6 @@
   libreOffice.enable = true;
   throne.enable = true;
   sddm.enable = true;
-  picom.enable = false;
   tauon.enable = true;
   teamspeak.enable = false;
   virtualbox.enable = true;

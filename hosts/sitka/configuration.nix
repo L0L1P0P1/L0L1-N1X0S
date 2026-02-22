@@ -166,7 +166,6 @@
   nix-ld.enable = true;
   pdfTools.enable = true;
   photoPrism.enable = false;
-  picom.enable = false;
   sddm.enable = true;
   tauon.enable = true;
   teamspeak.enable = false;

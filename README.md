@@ -58,14 +58,15 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 
 ### TODO
 - [ ] Switch to `snacks.picker` or `fzf-lua` for faster picker
-- [ ] xdg/memo opening files—opening directories is a pain, e.g.
+- [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] fix suspend for sitka
-- [ ] easyeffects module for home-manager
-- [ ] Home Manager modules for `rofi`, `polybar`, `picom`
+- [ ] Home Manager modules for `rofi`, `polybar`
 - [ ] fix function keys for laptop and pc 
 - [ ] Notifications with something like `dunst`
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
+- [x] `picom` home-manager
+- [x] easyeffects module for home-manager
 - [x] Boot Animation For Laptop
 
 Happy hacking with NixOS!

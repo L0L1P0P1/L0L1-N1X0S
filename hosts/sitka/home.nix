@@ -28,13 +28,14 @@
   gruvbox.enable = true;
   kdeconnect.enable = true;
   kitty.enable = true;
+  picom.enable = true;
   tmux.enable = true;
   zsh.enable = true;
 
   qtile = {
     enable = true;
-    margin = 6;
-    borderWidth = 4;
+    margin = 8;
+    borderWidth = 0;
     autostartOnce = ''
       #!/usr/bin/env bash
 

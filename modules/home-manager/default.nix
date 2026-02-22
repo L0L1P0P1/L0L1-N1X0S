@@ -13,6 +13,7 @@
     ./gruvbox
     ./kdeconnect.nix
     ./kitty.nix
+    ./picom.nix
     ./qtile.nix
     ./tmux
     ./zsh
