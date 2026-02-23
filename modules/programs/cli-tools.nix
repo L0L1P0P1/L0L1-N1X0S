@@ -24,6 +24,7 @@
       git
       gnumake
       htop
+      iwd
       keychain
       killall
       man-pages
@@ -47,6 +48,7 @@
       tree-sitter
       unzip
       wget
+      xkbmon
       yazi
       zip
     ];

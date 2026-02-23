@@ -55,7 +55,10 @@
         inactive-dim = 0.14;
 
         corner-radius = 14;
-        rounded-corners-exclude = [ "class_g *= 'olybar'" ];
+        rounded-corners-exclude = [
+          "class_g *= 'olybar'"
+          "QTILE_INTERNAL = 1"
+        ];
 
         blur = {
           method = "dual_kawase";

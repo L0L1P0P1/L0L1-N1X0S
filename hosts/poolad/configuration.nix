@@ -81,7 +81,16 @@
     xserver = {
       enable = true;
       dpi = 150;
-      windowManager.qtile.enable = true;
+      windowManager.qtile = {
+        enable = true;
+        extraPackages =
+          python3Packages: with python3Packages; [
+            qtile-extras
+            qtile-bonsai
+            iwlib
+            requests
+          ];
+      };
       videoDrivers = [ "amdgpu" ];
     };
 

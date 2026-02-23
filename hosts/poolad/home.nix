@@ -48,6 +48,7 @@
     autostartOnce = ''
       #!/usr/bin/env bash
 
+      nm-applet &
       clash-verge & 
       lxqt-policykit-agent &
     '';

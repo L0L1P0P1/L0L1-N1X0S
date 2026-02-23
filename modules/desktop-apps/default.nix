@@ -60,6 +60,7 @@
         nsxiv
         xclip
         zoom-us
+        networkmanagerapplet
       ])
       ++ (with pkgsUnstable; [
         # From Unstable Channel
