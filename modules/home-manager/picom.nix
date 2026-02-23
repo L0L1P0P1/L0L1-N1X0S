@@ -41,6 +41,7 @@
         "window_type = 'dnd'"
         "window_type = 'dock'"
         "class_g = 'TelegramDesktop'"
+        "QTILE_INTERNAL = 1"
       ];
 
       fade = true;

@@ -20,6 +20,16 @@
         type = lib.types.int;
         default = 10;
       };
+      barScale = lib.mkOption {
+        description = "Bar GUI Scale";
+        type = lib.types.float;
+        default = 1.0;
+      };
+      batteryWidget = lib.mkOption {
+        description = "To turn on Battery Widget";
+        type = lib.types.bool;
+        default = false;
+      };
       autostart = lib.mkOption {
         description = "Shellscript To Run Eachtime Qtile is Restarted";
         type = lib.types.lines;
@@ -77,6 +87,10 @@
         home = os.path.expanduser("~")
         mod = "mod4"
         terminal = guess_terminal()
+
+        margin = ${builtins.toString config.qtile.margin}
+        border_width = ${builtins.toString config.qtile.borderWidth}
+        gui_scale = ${builtins.toString config.qtile.barScale}
 
         keys = [
             Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -217,15 +231,15 @@
                 border_normal=color["mint"],
                 border_focus_stack=color["orange"],
                 border_normal_stack=color["yellow"],
-                border_width=${builtins.toString config.qtile.borderWidth},
-                margin=${builtins.toString config.qtile.margin},
+                border_width=border_width,
+                margin=margin,
             ),
             Bonsai(),
             layout.Max(
                 border_focus=color["aqua"],
                 border_normal=color["mint"],
-                border_width=${builtins.toString config.qtile.borderWidth},
-                margin=${builtins.toString config.qtile.margin},
+                border_width=border_width,
+                margin=margin,
             ),
         ]
 
@@ -245,13 +259,16 @@
 
         widget_defaults = dict(
             font="JetBrainsMono Nerd Font Bold",
-            fontsize=12,
-            padding=3,
+            fontsize=int(12 * gui_scale),
+            padding=int(3 * gui_scale),
             foreground=color["foreground"],
         )
         extension_defaults = widget_defaults.copy()
         seperator_widget = widget.Sep(
-            padding=24, size_percent=60, linewidth=1, foreground=color["foreground"]
+            padding=int(24 * gui_scale),
+            size_percent=60,
+            linewidth=1,
+            foreground=color["foreground"],
         )
 
         screens = [
@@ -259,7 +276,6 @@
                 top=bar.Bar(
                     [
                         widget.GroupBox(
-                            fontsize=12,
                             highlight_method="line",
                             highlight_color=[color["background"], color["background_light"]],
                             active=color["foreground"],
@@ -271,17 +287,25 @@
                         ),
                         seperator_widget,
                         widget.CurrentLayoutIcon(
-                            scale=0.65, use_mask=True, foreground=color["orange"]
+                            scale=0.65,
+                            use_mask=True,
+                            foreground=color["orange"],
+                            fontsize=int(16 * gui_scale),
                         ),
                         widget.CurrentLayout(
-                            scale=0.6, icon_first=False, foreground=color["orange"], fontsize=14
+                            scale=0.6,
+                            icon_first=False,
+                            foreground=color["orange"],
+                            fontsize=int(14 * gui_scale),
                         ),
                         seperator_widget,
                         widget.ContinuousPoll(
                             cmd="xkbmon -u", fmt="󰌌  {}", foreground=color["green"]
                         ),
                         seperator_widget,
-                        widget.Systray(icon_size=14, padding=8),
+                        widget.Systray(
+                            icon_size=int(15 * gui_scale), padding=int(8 * gui_scale)
+                        ),
                         seperator_widget,
                         widget.Prompt(),
                         widget.WindowName(for_current_screen=True),
@@ -297,7 +321,7 @@
                         seperator_widget,
                         widget.CPU(
                             format="  CPU{freq_current: .2f}GHz {load_percent}%",
-                            foreground=color["yellow"],
+                            foreground=color["orange"],
                         ),
                         seperator_widget,
                         widget.Memory(
@@ -318,10 +342,25 @@
                         seperator_widget,
                         widget.Clock(
                             format="󰃰  %Y-%m-%d %a %H:%M:%S",
-                            foreground=[color["yellow"], color["orange"]],
-                            fontsize=12,
+                            foreground=color["foreground"],
+                            fontsize=int(12 * gui_scale),
                         ),
                         seperator_widget,
+                        ${lib.optionalString config.qtile.batteryWidget ''
+                          widget.Battery(
+                              charge_char="󰂄",
+                              charging_foreground=color["aqua"],
+                              full_char="󰁹",
+                              full_foreground=color["blue"],
+                              discharge_char="󰂍",
+                              foreground=color["yellow"],
+                              empty_char="󱉞",
+                              low_percentage=0.2,
+                              low_foreground=color["red"],
+                              update_interval=30,
+                              format="{char} {percent:2.0%} ~{hour:d}:{min:02d}  ",
+                          ),
+                        ''}
                         widget.TextBox(
                             "⏻  ",
                             foreground=color["red"],
@@ -332,8 +371,8 @@
                             },
                         ),
                     ],
-                    24,
-                    border_width=[0, 0, 2, 0],  # Draw top and bottom borders
+                    int(24 * gui_scale),
+                    border_width=[0, 0, int(2 * gui_scale), 0],  # Draw top and bottom borders
                     border_color=[
                         color["background"],
                         color["background"],
@@ -342,9 +381,6 @@
                     ],
                     background=color["background"],
                 ),
-                # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
-                # By default we handle these events delayed to already improve performance, however your system might still be struggling
-                # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
                 x11_drag_polling_rate=170,
             ),
         ]

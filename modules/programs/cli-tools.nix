@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [
       bat
       bluetuith
+      brightnessctl
       btop
       btrfs-progs
       busybox
@@ -49,6 +50,7 @@
       unzip
       wget
       xkbmon
+      xorg.xbacklight
       yazi
       zip
     ];

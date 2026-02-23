@@ -88,6 +88,7 @@
             qtile-extras
             qtile-bonsai
             iwlib
+            dbus-fast
             requests
           ];
       };
@@ -139,7 +140,8 @@
     tumbler.enable = true;
     gvfs.enable = true;
     udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl1", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
     '';
   };
 
@@ -185,7 +187,10 @@
   # User
   users.users.L0L1P0P = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "video"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     packages = with pkgs; [ matlab ];

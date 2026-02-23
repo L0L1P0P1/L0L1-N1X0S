@@ -45,6 +45,8 @@
     enable = true;
     borderWidth = 0;
     margin = 8;
+    barScale = 1.35;
+    batteryWidget = true;
     autostartOnce = ''
       #!/usr/bin/env bash
 
