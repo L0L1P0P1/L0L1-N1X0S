@@ -14,7 +14,7 @@
     ./kdeconnect.nix
     ./kitty.nix
     ./picom.nix
-    ./qtile.nix
+    ./qtile
     ./tmux
     ./zsh
   ];
