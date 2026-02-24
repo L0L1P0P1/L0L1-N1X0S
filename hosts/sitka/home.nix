@@ -34,7 +34,7 @@
 
   qtile = {
     enable = true;
-    margin = 8;
+    margin = 12;
     borderWidth = 0;
     autostartOnce = ''
       #!/usr/bin/env bash

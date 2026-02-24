@@ -57,14 +57,16 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- [ ] Switch to `snacks.picker` or `fzf-lua` for faster picker
+- [ ] Add `KeyChord`s to spawn apps faster in Qtile
+- [ ] Create a widget to show the current brightness for Qtile Bar
+- [ ] Home Manager module for `rofi`
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
+- [ ] Switch to `snacks.picker` or `fzf-lua` for faster picker
 - [ ] fix suspend for sitka
-- [ ] Home Manager modules for `rofi`, `polybar`
-- [ ] fix function keys for laptop and pc 
 - [ ] Notifications with something like `dunst`
 - [ ] Customize `starship` prompt
 - [ ] Add `molten.nvim` to NixVim
+- [x] fix function keys for laptop and pc 
 - [x] `picom` home-manager
 - [x] easyeffects module for home-manager
 - [x] Boot Animation For Laptop

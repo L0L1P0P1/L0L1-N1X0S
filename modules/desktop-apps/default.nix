@@ -37,6 +37,7 @@
         arandr
         brave
         syncthing
+        mpv
         vlc
         sioyek
         xfce.thunar

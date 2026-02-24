@@ -75,10 +75,10 @@
 
       "qtile/config.py".text = ''
         from libqtile import bar, layout, qtile, widget, hook
-        from libqtile.config import Click, Drag, Group, Key, Match, Screen
+        from libqtile.config import Click, Drag, Group, Key, EzKey, KeyChord, Match, Screen
         from libqtile.lazy import lazy
         from libqtile.utils import guess_terminal
-        from qtile_extras import widget
+        from qtile_extras import widget as widget_extras
         from qtile_bonsai import Bonsai
 
         import os
@@ -92,93 +92,172 @@
         border_width = ${builtins.toString config.qtile.borderWidth}
         gui_scale = ${builtins.toString config.qtile.barScale}
 
+        powermenu_cmd = (
+            "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
+        )
+        rofi_cmd = "rofi -monitor -1 -show drun -show-icons"
+        screenshot_cmd = home + "/.config/qtile/screenshot.sh"
+
+        #### START KEYBINDINGS ####
+        # fmt: off
         keys = [
-            Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-            Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-            Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-            Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-            Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+            # Reload Config
+            EzKey("M-C-r", lazy.reload_config(), desc="Reload the config"),
+
+            # Move Focus
+            EzKey("M-h", lazy.layout.left(), desc="Move focus to left"),
+            EzKey("M-l", lazy.layout.right(), desc="Move focus to right"),
+            EzKey("M-j", lazy.layout.down(), desc="Move focus down"),
+            EzKey("M-k", lazy.layout.up(), desc="Move focus up"),
+            EzKey("M-z", lazy.layout.next(), desc="Move window focus to other window"),
+
+            # Change Screen
             Key([mod], "period", lazy.next_screen(), desc="Focuses the next screen"),
             Key([mod], "comma", lazy.prev_screen(), desc="Focuses the previous screen"),
-            Key(
-                [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
-            ),
-            Key(
-                [mod, "shift"],
-                "l",
-                lazy.layout.shuffle_right(),
-                desc="Move window to the right",
-            ),
-            Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-            Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-            Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-            Key(
-                [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
-            ),
-            Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-            Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-            Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-            Key(
-                [mod, "shift"],
-                "Return",
-                lazy.layout.toggle_split(),
-                desc="Toggle between split and unsplit sides of stack",
-            ),
-            Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-            Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-            Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-            Key(
-                [mod],
-                "f",
-                lazy.window.toggle_fullscreen(),
-                desc="Toggle fullscreen on the focused window",
-            ),
-            Key(
-                [mod],
-                "t",
-                lazy.window.toggle_floating(),
-                desc="Toggle floating on the focused window",
-            ),
-            Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-            Key(
-                [mod, "control"],
-                "q",
-                lazy.spawn(
-                    "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
-                ),
-                desc="Open Powermenu",
-            ),
-            Key(
-                [mod],
-                "r",
-                lazy.spawn("rofi -monitor -1 -show drun -show-icons"),
-                desc="Spawn a command using rofi",
-            ),
-            Key(
-                [mod, "shift"],
-                "s",
-                lazy.spawn(home + "/.config/qtile/screenshot.sh", shell=True),
-            ),
+
+            # Change Layout
+            EzKey("M-<Tab>", lazy.next_layout(), desc="Toggle between layouts"),
+
+            # Toggle Fullscreen
+            EzKey("M-g", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
+
+            # Toggle Floating
+            EzKey("M-y", lazy.window.toggle_floating(), desc="Toggle floating on the focused window",),
+
+            # Move Windows
+            EzKey("M-S-h", lazy.layout.shuffle_left(), lazy.layout.swap("left").when(layout="bonsai"), desc="Move window to the left"),
+            EzKey("M-S-l", lazy.layout.shuffle_right(), lazy.layout.swap("right").when(layout="bonsai"), desc="Move window to the right"),
+            EzKey("M-S-j", lazy.layout.shuffle_down(), lazy.layout.swap("down").when(layout="bonsai"), desc="Move window down"),
+            EzKey("M-S-k", lazy.layout.shuffle_up(), lazy.layout.swap("up").when(layout="bonsai"), desc="Move window up"),
+
+            # Grow Windows
+            EzKey("M-C-h", lazy.layout.grow_left(), lazy.layout.resize("left", 100).when(layout="bonsai"), desc="Grow window to the left"),
+            EzKey("M-C-l", lazy.layout.grow_right(), lazy.layout.resize("right", 100).when(layout="bonsai"), desc="Grow window to the right"),
+            EzKey("M-C-j", lazy.layout.grow_down(), lazy.layout.resize("down", 100).when(layout="bonsai"), desc="Grow window down"),
+            EzKey("M-C-k", lazy.layout.grow_up(), lazy.layout.resize("up", 100).when(layout="bonsai"), desc="Grow window up"),
+            EzKey("M-n", lazy.layout.normalize(), desc="Reset all window sizes"),
+
+            # Split (Columns)
+            EzKey("M-S-<Return>", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
+
+            # Monad Layout Keys
+            EzKey("M-i", lazy.layout.grow(), desc="Monad Grow"),
+            EzKey("M-m", lazy.layout.shrink(), desc="Monad Shrink"),
+            EzKey("M-n", lazy.layout.reset(), desc="Monad Reset"),
+            EzKey("M-S-<space>", lazy.layout.flip(), desc="Monad Flip"),
+
+            # Terminal
+            EzKey("M-<Return>", lazy.spawn(terminal), desc="Launch terminal"),
+
+            # Spawn with Rofi
+            EzKey("M-r", lazy.spawn(rofi_cmd), desc="Spawn a command using rofi",),
+
+            # Kill Window
+            EzKey("M-w", lazy.window.kill(), desc="Kill focused window"),
+
+
+            # Open Powermenu
+            EzKey("M-C-q", lazy.spawn(powermenu_cmd), desc="Open Powermenu",),
+
+            # Screenshot
+            EzKey("M-S-s", lazy.spawn(screenshot_cmd, shell=True), desc="Screenshot"),
+
+            # Function Keys
+            Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%"), desc="Turn Up Brightness",),
+            Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-"), desc="Turn Down Brightness",),
+            Key([], "XF86AudioRaiseVolume", lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ .02+")),
+            Key([], "XF86AudioLowerVolume", lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ .02-"),),
+            Key([], "XF86AudioMute", lazy.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")),
+            Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+            Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
+            Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+            Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
         ]
 
 
-        color = {
-            "background": "#282828",
-            "background_light": "#383838",
-            "foreground": "#ebdbb2",
-            "alert": "#cc241d",
-            "green": "#98971a",
-            "yellow": "#d79921",
-            "blue": "#458588",
-            "purple": "#b16286",
-            "aqua": "#689d6a",
-            "mint": "#83a598",
-            "red": "#fb4934",
-            "orange": "#fe8019",
-            "disabled": "#707880",
-        }
+        ## Bonsai Layout Keys
+        keys.extend([
+              # Spawning
+              EzKey("M-v", lazy.layout.spawn_split(rofi_cmd, "x").when(layout="bonsai"), desc="Bonsai Vertical Split"),
+              EzKey("M-x", lazy.layout.spawn_split(rofi_cmd, "y").when(layout="bonsai"), desc="Bonsai Horizontal Split",),
+              EzKey("M-t", lazy.layout.spawn_tab(rofi_cmd).when(layout="bonsai")),
+              EzKey("M-S-t", lazy.layout.spawn_tab(rofi_cmd, new_level=True).when(layout="bonsai")),
+              EzKey("M-S-v", lazy.layout.spawn_split(rofi_cmd, "x", position="previous"), desc="Bonsai Vertical Split Previous Position",),
+              EzKey("M-S-x", lazy.layout.spawn_split(rofi_cmd, "y", position="previous", desc="Bonsai Horizontal Split Previous Position",),),
 
+              # Movement and Manimulation
+              EzKey("M-f", lazy.layout.next_tab().when(layout="bonsai"), desc="Bonsai Next Tab"),
+              EzKey("M-d", lazy.layout.prev_tab().when(layout="bonsai"), desc="Bonsai Previous Tab"),
+              EzKey("A-S-d", lazy.layout.swap_tabs("previous").when(layout="bonsai")),
+              EzKey("A-S-f", lazy.layout.swap_tabs("next").when(layout="bonsai")),
+              Key([mod], "o", lazy.layout.select_container_outer().when(layout="bonsai")),
+              Key([mod], "p", lazy.layout.select_container_inner().when(layout="bonsai")),
 
+              # Chords
+              KeyChord(
+                  [mod],
+                  "b",
+                  [
+                      # Spawning Terminals Fast
+                      EzKey("v", lazy.layout.spawn_split(terminal, "x")),
+                      EzKey("x", lazy.layout.spawn_split(terminal, "y")),
+                      EzKey("t", lazy.layout.spawn_tab(terminal)),
+                      EzKey("S-t", lazy.layout.spawn_tab(terminal, new_level=True)),
+
+                      # Toggle Container Select Mode
+                      EzKey("C-v", lazy.layout.toggle_container_select_mode()),
+
+                      # Pull Out
+                      EzKey("o", lazy.layout.pull_out()),
+                      EzKey("u", lazy.layout.pull_out_to_tab()),
+
+                      # Rename Tab
+                      EzKey("r", lazy.layout.rename_tab()),
+
+                      # Directional commands to merge windows with their neighbor into subtabs.
+                      KeyChord(
+                          [],
+                          "m",
+                          [
+                              EzKey("h", lazy.layout.merge_to_subtab("left")),
+                              EzKey("l", lazy.layout.merge_to_subtab("right")),
+                              EzKey("j", lazy.layout.merge_to_subtab("down")),
+                              EzKey("k", lazy.layout.merge_to_subtab("up")),
+
+                              # Merge entire tabs with each other as splits
+                              EzKey("S-h", lazy.layout.merge_tabs("previous")),
+                              EzKey("S-l", lazy.layout.merge_tabs("next")),
+                          ],
+                          mode=True,
+                          name="B-Merge"
+                      ),
+
+                      ## Directional commands for push_in() to move window inside neighbor space.
+                      KeyChord(
+                          [],
+                          "i",
+                          [
+                              EzKey("j", lazy.layout.push_in("down")),
+                              EzKey("k", lazy.layout.push_in("up")),
+                              EzKey("h", lazy.layout.push_in("left")),
+                              EzKey("l", lazy.layout.push_in("right")),
+
+                              # It's nice to be able to push directly into the deepest
+                              # neighbor node when desired. The default bindings above
+                              # will have us push into the largest neighbor container.
+                              EzKey("S-j", lazy.layout.push_in("down", dest_selection="mru_deepest"),),
+                              EzKey("S-k", lazy.layout.push_in("up", dest_selection="mru_deepest"),),
+                              EzKey("S-h",lazy.layout.push_in("left", dest_selection="mru_deepest"),),
+                              EzKey("S-l", lazy.layout.push_in("right", dest_selection="mru_deepest"),),
+                          ],
+                          mode=True,
+                          name="B-Push"
+                      ),
+                  ],
+                  mode=True,
+                  name="Bonsai",
+              ),
+        ])
         for vt in range(1, 8):
             keys.append(
                 Key(
@@ -208,11 +287,34 @@
                     ),
                 ]
             )
+        # fmt: on
+        #### END KEYBINDINGS ####
+
+        color = {
+            "background": "#282828",
+            "background_light": "#383838",
+            "foreground": "#ebdbb2",
+            "alert": "#cc241d",
+            "green": "#98971a",
+            "yellow": "#d79921",
+            "blue": "#458588",
+            "purple": "#b16286",
+            "aqua": "#689d6a",
+            "mint": "#83a598",
+            "red": "#fb4934",
+            "orange": "#fe8019",
+            "disabled": "#707880",
+        }
+
+        layout_kwargs = dict(
+            border_focus=color["aqua"],
+            border_normal=color["mint"],
+            border_width=border_width,
+            margin=margin,
+        )
 
         floating_layout = layout.Floating(
-            border_normal="#8ec07c",
-            border_focus="#8ec07c",
-            border_width=0,
+            **layout_kwargs,
             float_rules=[
                 # Run the utility of `xprop` to see the wm class and name of an X client.
                 *layout.Floating.default_float_rules,
@@ -226,21 +328,16 @@
         )
 
         layouts = [
-            layout.Columns(
-                border_focus=color["aqua"],
-                border_normal=color["mint"],
-                border_focus_stack=color["orange"],
-                border_normal_stack=color["yellow"],
-                border_width=border_width,
-                margin=margin,
+            layout.MonadTall(**layout_kwargs),
+            layout.MonadThreeCol(**layout_kwargs),
+            Bonsai(
+                **{
+                    "window.border_size": border_width,
+                    # "window.margin": margin // 3,
+                    "tab_bar.height": int(24 * gui_scale),
+                }
             ),
-            Bonsai(),
-            layout.Max(
-                border_focus=color["aqua"],
-                border_normal=color["mint"],
-                border_width=border_width,
-                margin=margin,
-            ),
+            layout.Max(**layout_kwargs),
         ]
 
         # Drag floating layouts.
@@ -284,9 +381,10 @@
                             other_current_screen_border=color["blue"],
                             this_screen_border=color["disabled"],
                             other_screen_border=color["disabled"],
+                            urgent_border=color["red"]
                         ),
                         seperator_widget,
-                        widget.CurrentLayoutIcon(
+                        widget_extras.CurrentLayoutIcon(
                             scale=0.65,
                             use_mask=True,
                             foreground=color["orange"],
@@ -299,7 +397,7 @@
                             fontsize=int(14 * gui_scale),
                         ),
                         seperator_widget,
-                        widget.ContinuousPoll(
+                        widget_extras.ContinuousPoll(
                             cmd="xkbmon -u", fmt="󰌌  {}", foreground=color["green"]
                         ),
                         seperator_widget,
@@ -308,8 +406,9 @@
                         ),
                         seperator_widget,
                         widget.Prompt(),
+                        widget.Chord(foreground=color["yellow"], fmt="<{}> "),
                         widget.WindowName(for_current_screen=True),
-                        widget.Mpris2(
+                        widget_extras.Mpris2(
                             format="{xesam:artist} - {xesam:title}",
                             no_metadata_text="",
                             paused_text="  {track}",
@@ -317,6 +416,7 @@
                             poll_interval=1,
                             stopped_text="󰽺",
                             foreground=color["aqua"],
+                            # mouse_callbacks={"Button3": lazy.widget.Mpris2.toggle_player()},
                         ),
                         seperator_widget,
                         widget.CPU(
@@ -338,29 +438,18 @@
                             foreground=color["green"],
                             mute_format="婢 muted",
                             mute_foreground=color["red"],
+                            mouse_callbacks={
+                                "Button2": lazy.spawn("helvum"),
+                                "Button3": lazy.spawn("pwvucontrol"),
+                            },
                         ),
                         seperator_widget,
+                        widget.TextBox("󰃰 ", foreground=color["red"]),
                         widget.Clock(
-                            format="󰃰  %Y-%m-%d %a %H:%M:%S",
+                            format="%Y-%m-%d %a %H:%M:%S",
                             foreground=color["foreground"],
-                            fontsize=int(12 * gui_scale),
                         ),
                         seperator_widget,
-                        ${lib.optionalString config.qtile.batteryWidget ''
-                          widget.Battery(
-                              charge_char="󰂄",
-                              charging_foreground=color["aqua"],
-                              full_char="󰁹",
-                              full_foreground=color["blue"],
-                              discharge_char="󰂍",
-                              foreground=color["yellow"],
-                              empty_char="󱉞",
-                              low_percentage=0.2,
-                              low_foreground=color["red"],
-                              update_interval=30,
-                              format="{char} {percent:2.0%} ~{hour:d}:{min:02d}  ",
-                          ),
-                        ''}
                         widget.TextBox(
                             "⏻  ",
                             foreground=color["red"],
