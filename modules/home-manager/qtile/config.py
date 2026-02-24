@@ -47,6 +47,7 @@ keys = [
 
     # Change Layout
     EzKey("M-<Tab>", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], 49, lazy.prev_layout(), desc="Previuous Layout"),
 
     # Toggle Fullscreen
     EzKey("M-g", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
@@ -236,6 +237,7 @@ color = {
     "disabled": "#707880",
 }
 
+# General Layout Kwargs
 layout_kwargs = dict(
     border_focus=color["aqua"],
     border_normal=color["mint"],
@@ -243,6 +245,7 @@ layout_kwargs = dict(
     margin=margin,
 )
 
+# Floating Window Settings
 floating_layout = layout.Floating(
     **layout_kwargs,
     float_rules=[
@@ -257,9 +260,10 @@ floating_layout = layout.Floating(
     ],
 )
 
+# Layouts
 layouts = [
     layout.MonadTall(**layout_kwargs),
-    layout.MonadThreeCol(**layout_kwargs),
+    layout.Max(**layout_kwargs),
     Bonsai(
         **{
             "window.border_size": border_width,
@@ -267,7 +271,7 @@ layouts = [
             "tab_bar.height": int(24 * gui_scale),
         }
     ),
-    layout.Max(**layout_kwargs),
+    layout.MonadThreeCol(**layout_kwargs),
 ]
 
 # Drag floating layouts.
@@ -290,7 +294,9 @@ widget_defaults = dict(
     padding=int(3 * gui_scale),
     foreground=color["foreground"],
 )
+
 extension_defaults = widget_defaults.copy()
+
 seperator_widget = widget.Sep(
     padding=int(24 * gui_scale),
     size_percent=60,
@@ -298,98 +304,113 @@ seperator_widget = widget.Sep(
     foreground=color["foreground"],
 )
 
+widget_list = [
+    widget.GroupBox(
+        highlight_method="line",
+        highlight_color=[color["background"], color["background_light"]],
+        active=color["foreground"],
+        inactive=color["disabled"],
+        this_current_screen_border=color["orange"],
+        other_current_screen_border=color["blue"],
+        this_screen_border=color["disabled"],
+        other_screen_border=color["disabled"],
+        urgent_border=color["red"],
+    ),
+    seperator_widget,
+    widget_extras.CurrentLayoutIcon(
+        scale=0.65,
+        use_mask=True,
+        foreground=color["orange"],
+        fontsize=int(16 * gui_scale),
+    ),
+    widget.CurrentLayout(
+        scale=0.6,
+        icon_first=False,
+        foreground=color["orange"],
+        fontsize=int(14 * gui_scale),
+    ),
+    seperator_widget,
+    widget_extras.ContinuousPoll(
+        cmd="xkbmon -u", fmt="󰌌  {}", foreground=color["green"]
+    ),
+    seperator_widget,
+    widget.Systray(icon_size=int(15 * gui_scale), padding=int(8 * gui_scale)),
+    seperator_widget,
+    widget.Prompt(),
+    widget.Chord(foreground=color["yellow"], fmt="<{}> "),
+    widget.WindowName(for_current_screen=True),
+    widget_extras.Mpris2(
+        format="{xesam:artist} - {xesam:title}",
+        no_metadata_text="",
+        paused_text="  {track}",
+        playing_text="󰝚  {track}",
+        poll_interval=1,
+        stopped_text="󰽺",
+        foreground=color["aqua"],
+        # mouse_callbacks={"Button3": lazy.widget.Mpris2.toggle_player()},
+    ),
+    seperator_widget,
+    widget.CPU(
+        format="  CPU{freq_current: .2f}GHz {load_percent}%",
+        foreground=color["orange"],
+    ),
+    seperator_widget,
+    widget.Memory(format="  RAM{MemPercent: .1f}%", foreground=color["blue"]),
+    seperator_widget,
+    widget.Net(
+        format="󰛳 NET 󰄠{down: .2f}{down_suffix} 󰄝{up: .2f}{up_suffix}",
+        foreground=color["purple"],
+    ),
+    seperator_widget,
+    widget.PulseVolume(
+        unmute_format="  {volume}%",
+        foreground=color["green"],
+        mute_format="婢 muted",
+        mute_foreground=color["red"],
+        mouse_callbacks={
+            "Button2": lazy.spawn("helvum"),
+            "Button3": lazy.spawn("pwvucontrol"),
+        },
+    ),
+    seperator_widget,
+    widget.TextBox("󰃰 ", foreground=color["red"]),
+    widget.Clock(
+        format="%Y-%m-%d %a %H:%M:%S",
+        foreground=color["foreground"],
+    ),
+    seperator_widget,
+    widget.TextBox(
+        "⏻  ",
+        foreground=color["red"],
+        mouse_callbacks={
+            "Button1": lazy.spawn(
+                "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
+            ),
+        },
+    ),
+]
+
+if battery_widget_switch:
+    battery_widget = widget.Battery(
+        charge_char="󰂄",
+        charging_foreground=color["aqua"],
+        full_char="󰁹",
+        full_foreground=color["blue"],
+        discharge_char="󰂍",
+        foreground=color["yellow"],
+        empty_char="󱉞",
+        low_percentage=0.2,
+        low_foreground=color["red"],
+        update_interval=30,
+        format="{char} {percent:2.0%} ~{hour:d}:{min:02d}  ",
+    )
+    widget_list.insert(-1, battery_widget)
+
+
 screens = [
     Screen(
         top=bar.Bar(
-            [
-                widget.GroupBox(
-                    highlight_method="line",
-                    highlight_color=[color["background"], color["background_light"]],
-                    active=color["foreground"],
-                    inactive=color["disabled"],
-                    this_current_screen_border=color["orange"],
-                    other_current_screen_border=color["blue"],
-                    this_screen_border=color["disabled"],
-                    other_screen_border=color["disabled"],
-                    urgent_border=color["red"],
-                ),
-                seperator_widget,
-                widget_extras.CurrentLayoutIcon(
-                    scale=0.65,
-                    use_mask=True,
-                    foreground=color["orange"],
-                    fontsize=int(16 * gui_scale),
-                ),
-                widget.CurrentLayout(
-                    scale=0.6,
-                    icon_first=False,
-                    foreground=color["orange"],
-                    fontsize=int(14 * gui_scale),
-                ),
-                seperator_widget,
-                widget_extras.ContinuousPoll(
-                    cmd="xkbmon -u", fmt="󰌌  {}", foreground=color["green"]
-                ),
-                seperator_widget,
-                widget.Systray(
-                    icon_size=int(15 * gui_scale), padding=int(8 * gui_scale)
-                ),
-                seperator_widget,
-                widget.Prompt(),
-                widget.Chord(foreground=color["yellow"], fmt="<{}> "),
-                widget.WindowName(for_current_screen=True),
-                widget_extras.Mpris2(
-                    format="{xesam:artist} - {xesam:title}",
-                    no_metadata_text="",
-                    paused_text="  {track}",
-                    playing_text="󰝚  {track}",
-                    poll_interval=1,
-                    stopped_text="󰽺",
-                    foreground=color["aqua"],
-                    # mouse_callbacks={"Button3": lazy.widget.Mpris2.toggle_player()},
-                ),
-                seperator_widget,
-                widget.CPU(
-                    format="  CPU{freq_current: .2f}GHz {load_percent}%",
-                    foreground=color["orange"],
-                ),
-                seperator_widget,
-                widget.Memory(
-                    format="  RAM{MemPercent: .1f}%", foreground=color["blue"]
-                ),
-                seperator_widget,
-                widget.Net(
-                    format="󰛳 NET 󰄠{down: .2f}{down_suffix} 󰄝{up: .2f}{up_suffix}",
-                    foreground=color["purple"],
-                ),
-                seperator_widget,
-                widget.PulseVolume(
-                    unmute_format="  {volume}%",
-                    foreground=color["green"],
-                    mute_format="婢 muted",
-                    mute_foreground=color["red"],
-                    mouse_callbacks={
-                        "Button2": lazy.spawn("helvum"),
-                        "Button3": lazy.spawn("pwvucontrol"),
-                    },
-                ),
-                seperator_widget,
-                widget.TextBox("󰃰 ", foreground=color["red"]),
-                widget.Clock(
-                    format="%Y-%m-%d %a %H:%M:%S",
-                    foreground=color["foreground"],
-                ),
-                seperator_widget,
-                widget.TextBox(
-                    "⏻  ",
-                    foreground=color["red"],
-                    mouse_callbacks={
-                        "Button1": lazy.spawn(
-                            "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
-                        ),
-                    },
-                ),
-            ],
+            widget_list,
             int(24 * gui_scale),
             border_width=[0, 0, int(2 * gui_scale), 0],  # Draw top and bottom borders
             border_color=[

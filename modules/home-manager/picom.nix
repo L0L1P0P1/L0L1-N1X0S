@@ -9,7 +9,14 @@
 {
 
   options = {
-    picom.enable = lib.mkEnableOption "enables Picom";
+    picom = {
+      enable = lib.mkEnableOption "enables Picom";
+      cornerRadius = lib.mkOption {
+        description = "Corner Radius for Rounded Corners";
+        type = lib.types.int;
+        default = 14;
+      };
+    };
   };
 
   config = lib.mkIf config.picom.enable {
@@ -55,7 +62,7 @@
         no-fading-openclose = true;
         inactive-dim = 0.14;
 
-        corner-radius = 14;
+        corner-radius = config.picom.cornerRadius;
         rounded-corners-exclude = [
           "class_g *= 'olybar'"
           "QTILE_INTERNAL = 1"

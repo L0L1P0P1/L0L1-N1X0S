@@ -32,7 +32,10 @@
   cursor-theme.enable = true;
   gruvbox.enable = true;
   kdeconnect.enable = true;
-  picom.enable = true;
+  picom = {
+    enable = true;
+    cornerRadius = 20;
+  };
   tmux.enable = true;
   zsh.enable = true;
 
@@ -44,7 +47,7 @@
   qtile = {
     enable = true;
     borderWidth = 0;
-    margin = 8;
+    margin = 12;
     barScale = 1.35;
     batteryWidget = true;
     autostartOnce = ''
