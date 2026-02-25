@@ -77,12 +77,15 @@
       enableZshIntegration = true;
       tmux.enableShellIntegration = true;
 
+      defaultCommand = "fd --type f";
+      fileWidgetCommand = "fd --type f";
       defaultOptions = [
         "--tmux center,60% "
         "--layout reverse "
         "--inline-info "
         "--preview 'bat -n --color=always {}' "
         "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
+        "--bind 'ctrl-h:reload:fd --type f -H'"
       ];
       historyWidgetOptions = [
         "--bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)+abort'"
@@ -92,5 +95,7 @@
       ];
       changeDirWidgetOptions = [ "--preview 'tree -C {}'" ];
     };
+
+    programs.fd.enable = true;
   };
 }

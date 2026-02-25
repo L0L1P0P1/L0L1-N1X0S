@@ -41,6 +41,7 @@
         pkg-config
         rar
         ripgrep
+        speedtest-go
         sqlite
         starship
         stdman
