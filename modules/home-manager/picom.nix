@@ -36,7 +36,6 @@
 
       settings = {
         no-fading-openclose = true;
-        inactive-dim = 0.14;
         corner-radius = config.picom.cornerRadius;
 
         blur = {
@@ -52,21 +51,21 @@
         detect-transient = true;
         use-ewmh-active-win = true;
         detect-rounded-corners = true;
-        mark-wmwin-focused = false;
         dithered-present = false;
       };
 
       extraConfig = ''
         rules: (
-          { match = "QTILE_INTERNAL = 1"; corner-radius = 0},
-          { match = "QTILE_INTERNAL = 1"; opacity = 1.0;},
-          { match = "class_g = 'obsidian'"; opacity = 0.95;},
-          { match = "class_g = 'sioyek'"; opacity = 0.95;},
-          { match = "class_g = 'kitty'"; opacity = 0.9;},
-          { match = "class_g = 'tauonmb'"; opacity = 0.9;},
-          { match = "class_g = 'Thunar'"; opacity = 0.9;},
-          { match = "class_g = 'rofi'"; opacity = 0.85;},
-          { match = "fullscreen"; opacity = 1.0; corner-radius = 0},
+          { match = "QTILE_INTERNAL = 1"; corner-radius = 0 },
+          { match = "QTILE_INTERNAL = 1"; opacity = 1.0; },
+          { match = "class_g = 'obsidian'"; opacity = 0.95; },
+          { match = "class_g = 'sioyek'"; opacity = 0.95; },
+          { match = "class_g = 'kitty' || class_g = 'yazi'"; opacity = 0.9; },
+          { match = "class_g = 'tauonmb'"; opacity = 0.9; },
+          { match = "class_g = 'Thunar'"; opacity = 0.9; },
+          { match = "class_g = 'Rofi'"; opacity = 0.85; },
+          { match = "fullscreen"; opacity = 1.0; corner-radius = 0 },
+          { match = "!focused || !group_focused"; dim = 0.14 },
           {
             match = "window_type = 'menu' 
                     || window_type = 'dropdown_menu' 
