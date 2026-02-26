@@ -23,34 +23,10 @@
     services.picom = {
       enable = true;
       package = pkgsUnstable.picom;
-
       backend = "glx";
+
       vSync = false;
-
-      opacityRules = [
-        "100:fullscreen"
-        "100:QTILE_INTERNAL = 1"
-        "90:class_g = 'kitty'"
-        "85:class_g = 'Rofi'"
-        "90:class_g = 'tauonmb'"
-        "90:class_g = 'Thunar'"
-        "95:class_g = 'obsidian'"
-        "95:class_g = 'sioyek'"
-      ];
-
       shadow = true;
-      shadowExclude = [
-        "window_type = 'menu'"
-        "window_type = 'dropdown_menu'"
-        "window_type = 'popup_menu'"
-        "window_type = 'tooltip'"
-        "window_type = 'utility'"
-        "window_type = 'dnd'"
-        "window_type = 'dock'"
-        "class_g = 'TelegramDesktop'"
-        "QTILE_INTERNAL = 1"
-      ];
-
       fade = true;
       fadeDelta = 5;
       fadeSteps = [
@@ -61,28 +37,12 @@
       settings = {
         no-fading-openclose = true;
         inactive-dim = 0.14;
-
         corner-radius = config.picom.cornerRadius;
-        rounded-corners-exclude = [
-          "class_g *= 'olybar'"
-          "QTILE_INTERNAL = 1"
-        ];
 
         blur = {
           method = "dual_kawase";
           strength = 5;
         };
-
-        blur-background-exclude = [
-          "window_type = 'menu'"
-          "window_type = 'dropdown_menu'"
-          "window_type = 'popup_menu'"
-          "window_type = 'tooltip'"
-          "window_type = 'utility'"
-          "window_type = 'dnd'"
-          "window_type = 'dock'"
-          "class_g = 'TelegramDesktop'"
-        ];
 
         # some settings to fix flickering and stuff
         unredir-if-possible = false;
@@ -97,6 +57,42 @@
       };
 
       extraConfig = ''
+        rules: (
+          { match = "QTILE_INTERNAL = 1"; corner-radius = 0},
+          { match = "QTILE_INTERNAL = 1"; opacity = 1.0;},
+          { match = "class_g = 'obsidian'"; opacity = 0.95;},
+          { match = "class_g = 'sioyek'"; opacity = 0.95;},
+          { match = "class_g = 'kitty'"; opacity = 0.9;},
+          { match = "class_g = 'tauonmb'"; opacity = 0.9;},
+          { match = "class_g = 'Thunar'"; opacity = 0.9;},
+          { match = "class_g = 'rofi'"; opacity = 0.85;},
+          { match = "fullscreen"; opacity = 1.0; corner-radius = 0},
+          {
+            match = "window_type = 'menu' 
+                    || window_type = 'dropdown_menu' 
+                    || window_type = 'popup_menu' 
+                    || window_type = 'utility' 
+                    || window_type = 'dnd' 
+                    || window_type = 'dock'
+                    || class_g = 'TelegramDesktop'";
+            blur-background = false; 
+            shadow = false;
+          },
+          {
+            match = "class_g = 'slop' || QTILE_INTERNAL = 1";
+            animations = (
+              {
+                  triggers = [ "open", "show" ];
+                  duration = 0;
+              },
+              {
+                  triggers = [ "close", "hide" ];
+                  duration = 0;
+              }
+            );
+          }
+        )
+
         animations = (
           {
             triggers = ["close"];
