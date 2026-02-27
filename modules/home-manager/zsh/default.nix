@@ -72,6 +72,15 @@
       enableZshIntegration = true;
     };
 
+    programs.git = {
+      enable = true;
+      settings = {
+        core = {
+          pager = "nvim -";
+        };
+      };
+    };
+
     programs.fzf = {
       enable = true;
       enableZshIntegration = true;
