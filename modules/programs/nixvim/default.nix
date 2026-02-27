@@ -117,7 +117,7 @@
         };
 
         notify = {
-          enable = true;
+          enable = false;
           settings = {
             background_colour = "#000000";
             render = "wrapped-compact";

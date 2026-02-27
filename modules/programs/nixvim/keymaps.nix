@@ -12,6 +12,42 @@
 
     {
       mode = "n";
+      key = "<leader>ww";
+      action = ":w<CR>";
+      options = {
+        desc = "Write to the buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>wa";
+      action = ":w<CR>";
+      options = {
+        desc = "Write to all buffers";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>qq";
+      action = ":q<CR>";
+      options = {
+        desc = "Quit this buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>qa";
+      action = ":qa<CR>";
+      options = {
+        desc = "Quit all buffers";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<leader>nh";
       action = ":nohl<CR>";
       options = {
@@ -177,7 +213,7 @@
       key = "gt";
       action = "<cmd>Telescope lsp_type_definitions<CR>";
       options = {
-        desc = "Show LSP definitions";
+        desc = "Show LSP type definitions";
       };
     }
 

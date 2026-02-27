@@ -74,11 +74,6 @@
 
     programs.git = {
       enable = true;
-      settings = {
-        core = {
-          pager = "nvim -";
-        };
-      };
     };
 
     programs.fzf = {

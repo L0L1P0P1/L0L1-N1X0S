@@ -15,6 +15,7 @@
       clang
       clang-tools
       llvm-manpages
+      lldb
       conda
       cmake
       rustc
