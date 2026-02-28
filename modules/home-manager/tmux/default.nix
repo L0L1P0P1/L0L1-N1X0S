@@ -32,6 +32,9 @@
         # Status Bar Position
         set-option -g status-position top
 
+        # TMUX-passthrough for kitty image
+        set -g allow-passthrough on
+
         # Split in Current Directory
         bind '"' split-window -v -c "#{pane_current_path}"
         bind '%' split-window -h -c "#{pane_current_path}"
@@ -47,15 +50,15 @@
             pkgsUnstable.tmuxPlugins.mkTmuxPlugin {
               pluginName = "tmux-gruvbox";
               rtpFilePath = "gruvbox.tmux";
-              version = "1.0"; 
+              version = "1.0";
               src = fetchFromGitHub {
                 owner = "z3z1ma";
                 repo = "tmux-gruvbox";
-                rev = "8f71abd479e60f9a663abdc42e06491b7e8e6a25"; 
-                sha256 = "wBhOKM85aOcV4jD7wdyB/zXKDdhODE5k1iud+cm6Wk0="; 
+                rev = "8f71abd479e60f9a663abdc42e06491b7e8e6a25";
+                sha256 = "wBhOKM85aOcV4jD7wdyB/zXKDdhODE5k1iud+cm6Wk0=";
               };
             }
-          ) {};
+          ) { };
           extraConfig = ''
             # gruvbox 
             set -ga terminal-overrides ",xterm-256color:Tc"

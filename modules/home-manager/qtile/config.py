@@ -185,7 +185,7 @@ keys.extend([
                   name="B-Push"
               ),
           ],
-          mode=True,
+          mode=False,
           name="Bonsai",
       ),
 ])
