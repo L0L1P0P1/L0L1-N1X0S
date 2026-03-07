@@ -19,7 +19,8 @@
         brightnessctl
         btop
         btrfs-progs
-        busybox
+        coreutils-full
+        dig
         dnsmasq
         dua
         ffmpeg
@@ -31,6 +32,7 @@
         keychain
         killall
         man-pages
+        man-pages-posix
         mlocate
         nitch
         nix-tree
@@ -38,6 +40,7 @@
         nixpkgs-manual
         nixpkgs-review
         ntfs3g
+        pandoc
         pkg-config
         rar
         ripgrep

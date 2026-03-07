@@ -91,7 +91,7 @@
     };
 
     kubo = {
-      enable = true;
+      enable = false;
       settings.Addresses = {
         Gateway = "/ip4/127.0.0.1/tcp/8085";
         API = [ "/ip4/127.0.0.1/tcp/5001" ];
