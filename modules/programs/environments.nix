@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [
       clang
       clang-tools
+      clang-manpages
       llvm-manpages
       lldb
       conda

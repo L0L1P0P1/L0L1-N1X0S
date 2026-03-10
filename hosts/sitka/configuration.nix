@@ -64,6 +64,7 @@
     firewall.enable = false;
 
     nameservers = [
+      "62.220.112.46"
       "1.1.1.1"
       "8.8.8.8"
       "192.168.1.1"
@@ -161,6 +162,7 @@
   # Modules to Enable
   arduino.enable = true;
   audacity.enable = true;
+  blender.enable = true;
   clash-verge.enable = true;
   cli-tools.enable = true;
   desktopApps.enable = true;
@@ -235,6 +237,20 @@
 
   # Dconf
   programs.dconf.enable = true;
+
+  # proxychains for simpler updating
+  programs.proxychains = {
+    enable = true;
+    proxyDNS = true;
+    proxies = {
+      throne = {
+        enable = true;
+        type = "socks5";
+        host = "127.0.0.1";
+        port = 2080;
+      };
+    };
+  };
 
   # Polkit
   security.polkit.enable = true;

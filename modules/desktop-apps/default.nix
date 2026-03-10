@@ -10,6 +10,7 @@
 {
 
   imports = [
+    ./blender.nix
     ./clash-verge.nix
     ./droidcamOBS.nix
     ./gaming.nix

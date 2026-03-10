@@ -22,6 +22,7 @@
         coreutils-full
         dig
         dnsmasq
+        drill
         dua
         ffmpeg
         gh
@@ -33,12 +34,14 @@
         killall
         man-pages
         man-pages-posix
+        massdns
         mlocate
         nitch
         nix-tree
         nixfmt-rfc-style
         nixpkgs-manual
         nixpkgs-review
+        nmap
         ntfs3g
         pandoc
         pkg-config
