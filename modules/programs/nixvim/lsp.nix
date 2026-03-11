@@ -106,7 +106,7 @@
             "--background-index"
             "--clang-tidy"
             "--header-insertion=iwyu"
-            "--fallback-style=mozilla"
+            "--fallback-style=LLVM"
           ];
         };
       };
