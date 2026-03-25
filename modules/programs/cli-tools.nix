@@ -14,6 +14,7 @@
   config = lib.mkIf config.cli-tools.enable {
     environment.systemPackages =
       (with pkgs; [
+        aria2
         bat
         bluetuith
         brightnessctl
@@ -30,12 +31,15 @@
         gnumake
         htop
         iwd
+        jq
         keychain
         killall
+        ldns
         man-pages
         man-pages-posix
         massdns
         mlocate
+        net-tools
         nitch
         nix-tree
         nixfmt-rfc-style
@@ -57,11 +61,14 @@
         tree
         tree-sitter
         unzip
+        whois
         wget
         xev
         xkbmon
         yazi
+        zdns
         zip
+        zmap
       ])
       ++ (with pkgsUnstable; [
         nox

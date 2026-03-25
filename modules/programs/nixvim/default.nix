@@ -45,6 +45,12 @@
         shiftwidth = 4;
         tabstop = 4;
         fillchars.eob = " ";
+
+        foldmethod = "expr";
+        # foldenable = false;
+        foldlevel = 99;
+        foldexpr = "v:lua.vim.treesitter.foldexpr()";
+
       };
 
       globals = {

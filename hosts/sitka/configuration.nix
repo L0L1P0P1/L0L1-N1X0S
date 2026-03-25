@@ -61,18 +61,26 @@
       enable = true;
       dns = "none";
     };
+    extraHosts = ''
+      45.133.251.255 behi-is-vasling
+      185.47.172.123 pouya
+      45.147.251.19 pouya2
+    '';
     firewall.enable = false;
 
-    nameservers = [
-      "62.220.112.46"
-      "1.1.1.1"
-      "8.8.8.8"
-      "192.168.1.1"
-      # "213.176.7.229"
-      # "193.134.100.10"
-      # "84.144.144.144"
-    ];
+    # nameservers = [
+    #   "178.239.147.139"
+    #   "62.220.112.46"
+    #   "1.1.1.1"
+    #   "8.8.8.8"
+    #   "192.168.1.1"
+    #   # "213.176.7.229"
+    #   # "193.134.100.10"
+    #   # "84.144.144.144"
+    # ];
   };
+
+  environment.etc."resolv.conf".enable = false;
 
   services = {
     xserver = {
@@ -242,6 +250,7 @@
   programs.proxychains = {
     enable = true;
     proxyDNS = true;
+    package = pkgs.proxychains-ng;
     proxies = {
       throne = {
         enable = true;

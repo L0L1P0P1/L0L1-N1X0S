@@ -119,8 +119,8 @@ keys.extend([
       # Movement and Manimulation
       EzKey("M-f", lazy.layout.next_tab().when(layout="bonsai"), desc="Bonsai Next Tab"),
       EzKey("M-d", lazy.layout.prev_tab().when(layout="bonsai"), desc="Bonsai Previous Tab"),
-      EzKey("A-S-d", lazy.layout.swap_tabs("previous").when(layout="bonsai")),
-      EzKey("A-S-f", lazy.layout.swap_tabs("next").when(layout="bonsai")),
+      EzKey("M-S-d", lazy.layout.swap_tabs("previous").when(layout="bonsai")),
+      EzKey("M-S-f", lazy.layout.swap_tabs("next").when(layout="bonsai")),
       Key([mod], "o", lazy.layout.select_container_outer().when(layout="bonsai")),
       Key([mod], "p", lazy.layout.select_container_inner().when(layout="bonsai")),
 
