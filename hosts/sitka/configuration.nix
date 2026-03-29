@@ -82,6 +82,10 @@
 
   environment.etc."resolv.conf".enable = false;
 
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
+  };
+
   services = {
     xserver = {
       enable = true;

@@ -9,6 +9,7 @@
   imports = [
     ./betterlockscreen.nix
     ./cursor-theme.nix
+    ./dunst.nix
     ./easyeffects.nix
     ./gruvbox
     ./kdeconnect.nix

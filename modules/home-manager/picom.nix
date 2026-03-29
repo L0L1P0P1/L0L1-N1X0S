@@ -89,6 +89,26 @@
                   duration = 0;
               }
             );
+          },
+          {
+            match = "class_g = 'Dunst'";
+            opacity = 0.8;
+            blur-background = true;
+            shadow = true;
+            animations = (
+            {
+                triggers = ["open", "show"];
+                offset-x = "(1 - scale-x) / 2 * window-width";
+                offset-y = "(1 - scale-y) / 2 * window-height";
+                scale-x = {
+                  curve = "cubic-bezier(0,1.28,1,1)";
+                  duration = 0.8;
+                  start = .65;
+                  end = 1;
+                };
+                scale-y = "scale-x";
+            },
+            );
           }
         )
 

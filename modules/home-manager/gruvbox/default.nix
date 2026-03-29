@@ -42,15 +42,17 @@ in
       style.name = "kvantum";
     };
 
+    home.packages = with pkgs; [
+      kdePackages.qqc2-desktop-style
+    ];
+
     xdg.configFile = {
       "Kvantum/Gruvbox-Dark-Brown".source = ./Gruvbox-Dark-Brown;
       "Kvantum/kvantum.kvconfig".text = "theme=Gruvbox-Dark-Brown";
     };
 
     home.sessionVariables = {
-      QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
+      QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
     };
-
   };
-
 }

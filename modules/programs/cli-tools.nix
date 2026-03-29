@@ -22,6 +22,7 @@
         btrfs-progs
         coreutils-full
         dig
+        dmenu
         dnsmasq
         drill
         dua
@@ -35,6 +36,7 @@
         keychain
         killall
         ldns
+        libnotify
         man-pages
         man-pages-posix
         massdns
@@ -61,8 +63,8 @@
         tree
         tree-sitter
         unzip
-        whois
         wget
+        whois
         xev
         xkbmon
         yazi

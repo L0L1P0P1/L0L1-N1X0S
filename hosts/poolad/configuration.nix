@@ -211,6 +211,10 @@
     lxqt.lxqt-policykit
   ];
 
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = lib.mkForce "qt6ct";
+  };
+
   # Dconf
   programs.dconf.enable = true;
 

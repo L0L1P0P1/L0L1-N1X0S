@@ -93,6 +93,9 @@ keys = [
     # Screenshot
     EzKey("M-S-s", lazy.spawn(screenshot_cmd, shell=True), desc="Screenshot"),
 
+    # Close Dunst Notifications
+    EzKey("M-c", lazy.spawn("dunstctl close", shell=True), desc="Close Dunst Notification"),
+
     # Function Keys
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%"), desc="Turn Up Brightness",),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-"), desc="Turn Down Brightness",),

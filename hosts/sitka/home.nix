@@ -23,8 +23,9 @@
     ];
   };
 
-  easyeffects.enable = true;
   cursor-theme.enable = true;
+  dunst.enable = true;
+  easyeffects.enable = true;
   gruvbox.enable = true;
   kdeconnect.enable = true;
   kitty.enable = true;
