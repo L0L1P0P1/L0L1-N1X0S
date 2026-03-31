@@ -11,6 +11,7 @@
       shellAliases = {
         "ls" = "ls --color";
         "cd" = "z";
+        "nv" = "nvim";
         "s" = "sesh connect $(sesh list --icons | fzf --ansi --preview 'sesh preview {}')";
         ".." = "cd ../";
         "..." = "cd ../..";
@@ -39,6 +40,8 @@
         ];
     };
 
+    programs.fd.enable = true;
+
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -58,15 +61,6 @@
 
     services.ssh-agent.enable = true;
 
-    programs.starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-        add_newline = true;
-        command_timeout = 36000;
-      };
-    };
-
     programs.zoxide = {
       enable = true;
       enableZshIntegration = true;
@@ -74,6 +68,16 @@
 
     programs.git = {
       enable = true;
+    };
+
+    programs.dircolors = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        OTHER_WRITABLE = "01;34;04";
+        ".sh" = "01;32";
+        ".csh" = "01;32";
+      };
     };
 
     programs.fzf = {
@@ -100,6 +104,34 @@
       changeDirWidgetOptions = [ "--preview 'tree -C {}'" ];
     };
 
-    programs.fd.enable = true;
+    programs.starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        add_newline = true;
+        command_timeout = 36000;
+        format = ''
+          [┌───](bold green) $all[└─](bold green) $username$hostname$character
+        '';
+        cmd_duration = {
+          min_time = 800;
+          show_milliseconds = false;
+        };
+        username = {
+          show_always = true;
+          format = "[$user]($style)";
+          style_root = "italic bold red";
+          style_user = "italic bold blue";
+        };
+        hostname = {
+          format = "[@$hostname](italic bold blue) ";
+          ssh_only = false;
+        };
+        character = {
+          success_symbol = "[⤳](bold green)";
+          error_symbol = "[⤳](bold red)";
+        };
+      };
+    };
   };
 }
