@@ -366,6 +366,24 @@
 
     {
       mode = "n";
+      key = "<M-j>";
+      action = "<cmd>cnext<CR>";
+      options = {
+        desc = "Go to the next in quickfix list";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<M-k>";
+      action = "<cmd>cprevious<CR>";
+      options = {
+        desc = "Go to the previous in quickfix list";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<leader>gg";
       action = "<cmd>Neogit<CR>";
       options = {
