@@ -373,7 +373,7 @@ widget_list = [
         mute_format="婢 muted",
         mute_foreground=color["red"],
         mouse_callbacks={
-            "Button2": lazy.spawn("helvum"),
+            "Button2": lazy.spawn("qpwgraph"),
             "Button3": lazy.spawn("pwvucontrol"),
         },
     ),
