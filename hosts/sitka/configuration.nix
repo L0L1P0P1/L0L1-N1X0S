@@ -254,6 +254,7 @@
   programs.proxychains = {
     enable = true;
     proxyDNS = true;
+    quietMode = true;
     package = pkgs.proxychains-ng;
     proxies = {
       throne = {

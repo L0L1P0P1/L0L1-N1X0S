@@ -21,6 +21,7 @@
       cmake
       rustc
       cargo
+      rustup
       rust-analyzer
       lua
       luarocks

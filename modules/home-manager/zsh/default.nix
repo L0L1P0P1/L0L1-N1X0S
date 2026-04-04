@@ -111,7 +111,7 @@
         add_newline = true;
         command_timeout = 36000;
         format = ''
-          [┌───](bold green) $all[└─](bold green) $username$hostname$character
+          [┌──────](bold green) $all[└─](bold green) $jobs$username$hostname$character
         '';
         cmd_duration = {
           min_time = 800;

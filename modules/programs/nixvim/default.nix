@@ -88,6 +88,59 @@
         vim-dadbod-ui.enable = true;
         vim-dadbod.enable = true;
         web-devicons.enable = true;
+        fzf-lua.enable = true; # yes i added fzf-lua, no I am too lazy to configure it atm
+
+        oil = {
+          enable = true;
+          settings = {
+            columns = [
+              "permissions"
+              "size"
+              "mtime"
+              "icon"
+            ];
+            keymaps = {
+              "<C-l>" = false;
+              "<C-h>" = false;
+              "<C-s>" = false;
+              "<C-r>" = "actions.refresh";
+              "y." = "actions.copy_entry_path";
+              "<leader>v" = {
+                __unkeyed-1 = "actions.select";
+                opts.vertical = true;
+              };
+              "<leader>x" = {
+                __unkeyed-1 = "actions.select";
+                opts.horizontal = true;
+              };
+              "<leader>ff" = {
+                __unkeyed-1.__raw = ''
+                  function()
+                    require("fzf-lua").files({
+                      cwd = require("oil").get_current_dir()
+                    })
+                  end
+                '';
+                desc = "Find files in the current directory";
+              };
+            };
+
+            skip_confirm_for_simple_edits = true;
+            view_options = {
+              show_hidden = false;
+            };
+            win_options = {
+              signcolumn = "yes:2";
+            };
+          };
+        };
+
+        oil-git-status = {
+          enable = true;
+          settings = {
+            show_ignored = true;
+          };
+        };
 
         which-key = {
           enable = true;
@@ -159,44 +212,6 @@
               show_exact_scope = true;
               show_start = true;
             };
-          };
-        };
-
-        nvim-tree = {
-          enable = true;
-          ignoreFtOnSetup = [
-            "dashboard"
-            ""
-          ];
-          openOnSetup = true;
-          settings = {
-            filters.dotfiles = true;
-            renderer.group_empty = true;
-            update_focused_file = {
-              enable = true;
-              update_root = true;
-            };
-          };
-        };
-
-        telescope = {
-          enable = true;
-          extensions = {
-            file-browser.enable = true;
-            fzf-native.enable = true;
-          };
-          keymaps = {
-            "<C-q>" = {
-              action = "send_selected_to_qflist";
-              mode = [
-                "i"
-                "n"
-              ];
-            };
-          };
-          settings.defaults.mappings.i = {
-            "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
-            "<C-j>".__raw = "require('telescope.actions').move_selection_next";
           };
         };
 

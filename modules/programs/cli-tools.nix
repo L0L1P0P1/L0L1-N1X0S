@@ -43,10 +43,11 @@
         mlocate
         net-tools
         nitch
-        nix-tree
         nixfmt-rfc-style
+        nix-index
         nixpkgs-manual
         nixpkgs-review
+        nix-tree
         nmap
         ntfs3g
         pandoc

@@ -138,44 +138,8 @@
 
     {
       mode = "n";
-      key = "<leader>ee";
-      action = "<cmd>NvimTreeToggle<CR>";
-      options = {
-        desc = "Toggle file explorer";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>ef";
-      action = "<cmd>NvimTreeFindFile<CR>";
-      options = {
-        desc = "Toggle file explorer on current file";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>ec";
-      action = "<cmd>NvimTreeCollapse<CR>";
-      options = {
-        desc = "Collapse file explorer";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>er";
-      action = "<cmd>NvimTreeRefresh<CR>";
-      options = {
-        desc = "Refresh file explorer";
-      };
-    }
-
-    {
-      mode = "n";
       key = "gR";
-      action = "<cmd>Telescope lsp_references<CR>";
+      action = "<cmd>FzfLua lsp_references<CR>";
       options = {
         desc = "Show LSP reference";
       };
@@ -193,7 +157,7 @@
     {
       mode = "n";
       key = "gd";
-      action = "<cmd>Telescope lsp_definitions<CR>";
+      action = "<cmd>FzfLua lsp_definitions<CR>";
       options = {
         desc = "Show LSP definition";
       };
@@ -202,7 +166,7 @@
     {
       mode = "n";
       key = "gi";
-      action = "<cmd>Telescope lsp_implementations<CR>";
+      action = "<cmd>FzfLua lsp_implementations<CR>";
       options = {
         desc = "Show LSP implementations";
       };
@@ -211,7 +175,7 @@
     {
       mode = "n";
       key = "gt";
-      action = "<cmd>Telescope lsp_type_definitions<CR>";
+      action = "<cmd>FzfLua lsp_typedefs<CR>";
       options = {
         desc = "Show LSP type definitions";
       };
@@ -241,7 +205,7 @@
     {
       mode = "n";
       key = "<leader>D";
-      action = "<cmd>Telescope diagnostics bufnr=0<CR>";
+      action = "<cmd>FzfLua diagnostics_document<CR>";
       options = {
         desc = "Show buffer diagnostics";
       };
@@ -303,8 +267,26 @@
 
     {
       mode = "n";
+      key = "<leader>.";
+      action = "<cmd>Oil .<CR>";
+      options = {
+        desc = "Open Current Working Directory";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>-";
+      action = "<cmd>Oil<CR>";
+      options = {
+        desc = "Open Parent Directory of Current Buffer";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<leader>ff";
-      action = "<cmd>Telescope find_files<CR>";
+      action = "<cmd>FzfLua files<CR>";
       options = {
         desc = "Fuzzy find files in current working directory";
       };
@@ -313,7 +295,7 @@
     {
       mode = "n";
       key = "<leader>fg";
-      action = "<cmd>Telescope live_grep<CR>";
+      action = "<cmd>FzfLua live_grep<CR>";
       options = {
         desc = "Find string in current working directory";
       };
@@ -322,7 +304,7 @@
     {
       mode = "n";
       key = "<leader>fr";
-      action = "<cmd>Telescope oldfiles<CR>";
+      action = "<cmd>FzfLua oldfiles<CR>";
       options = {
         desc = "Fuzzy find recent files";
       };
@@ -331,7 +313,7 @@
     {
       mode = "n";
       key = "<leader>fb";
-      action = "<cmd>Telescope buffers<CR>";
+      action = "<cmd>FzfLua buffers<CR>";
       options = {
         desc = "Search Between Open Buffers";
       };
@@ -340,7 +322,7 @@
     {
       mode = "n";
       key = "<leader>f/";
-      action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
+      action = "<cmd>FzfLua lgrep_curbuf<CR>";
       options = {
         desc = "Fuzzy Find in current buffer";
       };
@@ -348,10 +330,37 @@
 
     {
       mode = "n";
+      key = "<leader>fq";
+      action = "<cmd>FzfLua quickfix<CR>";
+      options = {
+        desc = "Find files in quickfix list";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<leader>fc";
-      action = "<cmd>Telescope git_commits<CR>";
+      action = "<cmd>FzfLua git_commits<CR>";
       options = {
         desc = "Find Commits in Git Repository";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>fs";
+      action = "<cmd>FzfLua git_status<CR>";
+      options = {
+        desc = "Interactive git status menu";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>fk";
+      action = "<cmd>FzfLua keymaps<CR>";
+      options = {
+        desc = "List Keymaps";
       };
     }
 

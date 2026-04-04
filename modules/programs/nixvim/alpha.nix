@@ -62,7 +62,7 @@
           val = 1;
         }
 
-        # Telescope Find Files
+        # fzf-lua Find Files
         {
           type = "button";
           val = "     Find File    ";
@@ -71,7 +71,7 @@
             keymap = [
               "n"
               "f"
-              "<cmd>Telescope find_files<CR>"
+              "<cmd>FzfLua files<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -89,17 +89,16 @@
           val = 1;
         }
 
-        # Telescope Recent Files
+        # fzf-lua Recent Files
         {
           type = "button";
           val = "     Recent Files    ";
-          on_press.__raw = "function() require('telescope.builtin').oldfiles() end";
           opts = {
             shortcut = "r";
             keymap = [
               "n"
               "r"
-              "<cmd>Telescope oldfiles<CR>"
+              "<cmd>FzfLua oldfiles<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -117,7 +116,7 @@
           val = 1;
         }
 
-        # Telescope live grep
+        # fzf-lua live grep
         {
           type = "button";
           val = "     Find Text    ";
@@ -126,7 +125,7 @@
             keymap = [
               "n"
               "g"
-              "<cmd>Telescope live_grep<CR>"
+              "<cmd>FzfLua live_grep<CR>"
               {
                 noremap = true;
                 silent = true;
