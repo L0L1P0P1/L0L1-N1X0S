@@ -218,6 +218,22 @@
   # Dconf
   programs.dconf.enable = true;
 
+  # proxychains for simpler updating
+  programs.proxychains = {
+    enable = true;
+    proxyDNS = true;
+    quietMode = true;
+    package = pkgs.proxychains-ng;
+    proxies = {
+      throne = {
+        enable = true;
+        type = "socks5";
+        host = "127.0.0.1";
+        port = 2080;
+      };
+    };
+  };
+
   # polkit
   security.polkit.enable = true;
   security.sudo = {
