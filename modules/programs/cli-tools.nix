@@ -39,6 +39,7 @@
         libnotify
         man-pages
         man-pages-posix
+        masscan
         massdns
         mlocate
         net-tools

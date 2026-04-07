@@ -23,6 +23,7 @@
       cargo
       rustup
       rust-analyzer
+      libpcap
       lua
       luarocks
       lua-language-server
