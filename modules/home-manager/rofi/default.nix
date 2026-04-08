@@ -29,6 +29,7 @@
         display-emoji = "  emoji:";
         display-calc = "󰪚  calc:";
         display-power-menu = "󰐥 power-menu:";
+        dpi = config.rofi.dpi;
       };
       terminal = "${pkgs.kitty}/bin/kitty";
       plugins = [

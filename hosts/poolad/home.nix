@@ -36,6 +36,10 @@
     enable = true;
     cornerRadius = 20;
   };
+  rofi = {
+    enable = true;
+    dpi = 130;
+  };
   tmux.enable = true;
   zsh.enable = true;
 
@@ -47,7 +51,7 @@
   qtile = {
     enable = true;
     borderWidth = 0;
-    margin = 12;
+    margin = 16;
     barScale = 1.35;
     batteryWidget = true;
     autostartOnce = ''
