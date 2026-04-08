@@ -22,10 +22,12 @@ gui_scale = options["bar_scale"]
 battery_widget_switch = options["battery_widget"]
 
 
-powermenu_cmd = (
-    "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
-)
+powermenu_cmd = "rofi -show power-menu -modi power-menu:rofi-power-menu -theme-str 'window {width: 12em;height: 0;} listview {lines: 6;}'"
 rofi_cmd = "rofi -monitor -1 -show drun -show-icons"
+rofi_emoji_cmd = (
+    'rofi -modi emoji -show emoji -kb-secondary-copy "" -kb-custom-1 Ctrl+c'
+)
+rofi_calc_cmd = "rofi -show calc -modi calc -no-show-match -no-sort"
 screenshot_cmd = home + "/.config/qtile/screenshot.sh"
 
 #### START KEYBINDINGS ####
@@ -83,9 +85,14 @@ keys = [
     # Spawn with Rofi
     EzKey("M-r", lazy.spawn(rofi_cmd), desc="Spawn a command using rofi",),
 
+    # Rofi-Emoji Picker
+    Key([mod], 51, lazy.spawn(rofi_emoji_cmd), desc="Rofi-Emoji Picker"),
+
+    # Rofi-Calc 
+    Key([mod], 21, lazy.spawn(rofi_calc_cmd), desc="Rofi-Calc"),
+
     # Kill Window
     EzKey("M-w", lazy.window.kill(), desc="Kill focused window"),
-
 
     # Open Powermenu
     EzKey("M-C-q", lazy.spawn(powermenu_cmd), desc="Open Powermenu",),
@@ -255,7 +262,7 @@ floating_layout = layout.Floating(
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="nsxiv"),  # nsxiv
-        Match(role="pop-up"),  # pop-up windows 
+        Match(role="pop-up"),  # pop-up windows
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
@@ -388,9 +395,7 @@ widget_list = [
         "⏻  ",
         foreground=color["red"],
         mouse_callbacks={
-            "Button1": lazy.spawn(
-                "rofi -show power-menu -modi power-menu:~/.config/rofi/rofi-power-menu.sh"
-            ),
+            "Button1": lazy.spawn(powermenu_cmd),
         },
     ),
 ]

@@ -36,14 +36,6 @@
       servers = {
         lua_ls.enable = true;
 
-        rust_analyzer = {
-          enable = true;
-          config = {
-            installCargo = true;
-            installRustc = true;
-          };
-        };
-
         basedpyright = {
           enable = true;
           package = pkgsUnstable.basedpyright;
@@ -108,6 +100,12 @@
             "--header-insertion=iwyu"
             "--fallback-style=LLVM"
           ];
+        };
+        servers.rust_analyzer = {
+          enable = true;
+          cmd = [ "rust-analyzer" ];
+          installCargo = false;
+          installRustc = false;
         };
       };
     };

@@ -60,8 +60,8 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - [ ] Add `KeyChord`s to spawn apps faster in Qtile
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] Create a widget to show the current brightness for Qtile Bar
-- [ ] Home Manager module for `rofi`
 - [ ] fix suspend for sitka
+- [x] Home Manager module for `rofi`
 - [x] Notifications with something like `dunst`
 - [x] Customize `starship` prompt
 - [x] Switch to `snacks.picker` or `fzf-lua` for faster picker

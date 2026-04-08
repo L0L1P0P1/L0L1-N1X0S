@@ -30,6 +30,7 @@
   kdeconnect.enable = true;
   kitty.enable = true;
   picom.enable = true;
+  rofi.enable = true;
   tmux.enable = true;
   zsh.enable = true;
 

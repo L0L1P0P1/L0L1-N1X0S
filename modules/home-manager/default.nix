@@ -16,6 +16,7 @@
     ./kitty.nix
     ./picom.nix
     ./qtile
+    ./rofi
     ./tmux
     ./zsh
   ];
