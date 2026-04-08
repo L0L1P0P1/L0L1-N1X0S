@@ -20,8 +20,8 @@
 }
 
 window {
-    height: 600;
-    width: 600;
+    height: 60ch;
+    width: 60ch;
 
     border: 2;
     border-radius: 14;
@@ -35,19 +35,19 @@ mainbox {
 
 inputbar {
     color: @fg0;
-    padding: 14;
+    padding: 1.4ch;
     background-color: @bg0;
 }
 
 message {
-    padding: 10;
+    padding: 1ch;
     background-color: @grey0;
 }
 
 listview {
-    padding: 8;
-    border-radius: 0 0 14 14;
-    border: 2 2 2 2;
+    padding: 0.8ch;
+    border-radius: 0 0 1.4ch 1.4ch;
+    border: 0.2ch 0.2ch 0.2ch 0.2ch;
     border-color: @bg0;
     background-color: @bg0;
     dynamic: true;
@@ -59,7 +59,7 @@ textbox {
 }
 
 error-message {
-    border: 20 20 20 20;
+    border: 2ch 2ch 2ch 2ch;
 }
 
 entry, prompt, case-indicator {
@@ -67,13 +67,13 @@ entry, prompt, case-indicator {
 }
 
 prompt {
-    margin: 0 10 0 0;
+    margin: 0 1ch 0 0;
 }
 
 element {
-    padding: 5;
+    padding: 0.5ch;
     vertical-align: 0.5;
-    border-radius: 14;
+    border-radius: 1.4ch;
     background-color: @bg1;
 }
 
@@ -102,8 +102,8 @@ element.selected.urgent {
 }
 
 element-text, element-icon {
-    size: 40;
-    margin: 0 10 0 0;
+    size: 4ch;
+    margin: 0 1ch 0 0;
     vertical-align: 0.5;
     background-color: inherit;
     text-color: @fg0;
