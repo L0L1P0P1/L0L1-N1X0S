@@ -63,7 +63,7 @@
           { match = "class_g = 'kitty' || class_g = 'yazi' || class_g = 'nvim'"; opacity = 0.9; },
           { match = "class_g = 'tauonmb'"; opacity = 0.9; },
           { match = "class_g = 'Thunar'"; opacity = 0.9; },
-          { match = "class_g = 'Rofi'"; opacity = 0.85; corner-radius = 0;},
+          { match = "class_g = 'Rofi'"; opacity = 0.85;},
           { match = "fullscreen"; opacity = 1.0; corner-radius = 0; },
           { match = "!focused || !group_focused"; dim = 0.14; },
           {

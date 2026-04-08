@@ -23,13 +23,14 @@ window {
     height: 60ch;
     width: 60ch;
 
-    border: 2;
-    border-radius: 14;
+    border: 0.2ch;
+    border-radius: 1.4ch;
     border-color: @bgStatusline3;
 }
 
 mainbox {
     spacing: 0;
+    border-radius: 1.4ch;
     children: [inputbar, message, listview];
 }
 
