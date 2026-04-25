@@ -63,6 +63,8 @@
     };
     extraHosts = ''
       45.133.251.255 behi-is-vasling
+      85.133.202.161 behi-vaslesh
+      5.160.252.102 vaslesh-2
       2.26.80.142 masipa
       185.47.172.123 pouya
       45.147.251.19 pouya2
