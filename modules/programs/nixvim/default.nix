@@ -71,6 +71,15 @@
             "*.md"
           ];
         }
+        {
+          command = "QuartoActivate";
+          event = [
+            "FileType"
+          ];
+          pattern = [
+            "markdown"
+          ];
+        }
       ];
 
       # Plugins
@@ -175,6 +184,53 @@
           };
         };
 
+        otter.enable = true;
+        quarto = {
+          enable = true;
+          settings = {
+            codeRunner = {
+              enabled = true;
+              default_method = "molten";
+            };
+          };
+        };
+        jupytext = {
+          enable = true;
+          settings = {
+            style = "markdown";
+            output_extension = "md";
+            force_ft = "markdown";
+          };
+        };
+
+        molten = {
+          enable = true;
+          settings = {
+            auto_open_output = true;
+            copy_output = false;
+            enter_output_behavior = "open_then_enter";
+            image_provider = "none";
+            output_crop_border = true;
+            output_show_more = false;
+            output_virt_lines = false;
+            output_win_border = [
+              ""
+              "━"
+              ""
+              ""
+            ];
+            output_win_cover_gutter = true;
+            output_win_hide_on_leave = true;
+            output_win_style = false;
+            save_path = {
+              __raw = "vim.fn.stdpath('data')..'/molten'";
+            };
+            show_mimetype_debug = false;
+            use_border_highlights = false;
+            virt_lines_off_by1 = false;
+            wrap_output = false;
+          };
+        };
         notify = {
           enable = false;
           settings = {

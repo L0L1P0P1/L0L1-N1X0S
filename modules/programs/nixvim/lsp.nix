@@ -52,6 +52,7 @@
                 autoSearchPaths = true;
                 diagnosticMode = "workspace";
                 typeCheckingMode = "basic";
+                diagnosticSeverityOverrides.reportUnusedExpression = "none";
               };
             };
           };
