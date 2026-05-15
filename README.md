@@ -57,17 +57,17 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
-- [ ] Molten-nvim
-  - [x] basic setup
-  - [ ] set up treesitter stuff for it
-  - [ ] set up run stuff keybinds for it
-  - [ ] setup auto kernel creation for current venv
-  - [ ] auto save outputs
-  - [ ] fix image outputs and math renderings.
+- [ ] fix inline and math blocks and stuff for markview
 - [ ] Add `KeyChord`s to spawn apps faster in Qtile
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] Create a widget to show the current brightness for Qtile Bar
 - [ ] fix suspend for sitka
+- [x] Molten-nvim
+  - [x] basic setup
+  - [x] set up treesitter stuff for it
+  - [x] set up run stuff keybinds for it
+  - [x] auto save outputs
+  - [x] fix image outputs and math renderings.
 - [x] Home Manager module for `rofi`
 - [x] Notifications with something like `dunst`
 - [x] Customize `starship` prompt

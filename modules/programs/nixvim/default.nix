@@ -10,6 +10,11 @@
 
   options = {
     nixvim.enable = lib.mkEnableOption "enables nixvim";
+    nixvim.molten-notebook = lib.mkOption {
+      description = "enables molten and other plugins for jupyter notebook in nvim";
+      type = lib.types.bool;
+      default = true;
+    };
     nixvim.obsidianWorkspaces = lib.mkOption {
       description = "Obsidian Workspaces for obsidian.nvim";
       type = lib.types.listOf (lib.types.attrsOf lib.types.anything);
@@ -21,6 +26,7 @@
     ./keymaps.nix
     ./alpha.nix
     ./lsp.nix
+    ./molten-notebook.nix
   ];
 
   config = lib.mkIf config.nixvim.enable {
@@ -47,10 +53,8 @@
         fillchars.eob = " ";
 
         foldmethod = "expr";
-        # foldenable = false;
         foldlevel = 99;
         foldexpr = "v:lua.vim.treesitter.foldexpr()";
-
       };
 
       globals = {
@@ -69,15 +73,6 @@
             "*.cpp"
             "*.h"
             "*.md"
-          ];
-        }
-        {
-          command = "QuartoActivate";
-          event = [
-            "FileType"
-          ];
-          pattern = [
-            "markdown"
           ];
         }
       ];
@@ -160,12 +155,20 @@
           enable = true;
         };
 
+        # needs some fix for inline and math latex blocks stuff
         markview = {
           enable = true;
-          settings.preview = {
-            hybrid_modes = [
-              "n"
-            ];
+          settings = {
+            preview = {
+              hybrid_modes = [
+                "n"
+              ];
+            };
+            latex = {
+              enable = true;
+              blocks.enable = true;
+              inlines.enable = true;
+            };
           };
         };
 
@@ -184,53 +187,6 @@
           };
         };
 
-        otter.enable = true;
-        quarto = {
-          enable = true;
-          settings = {
-            codeRunner = {
-              enabled = true;
-              default_method = "molten";
-            };
-          };
-        };
-        jupytext = {
-          enable = true;
-          settings = {
-            style = "markdown";
-            output_extension = "md";
-            force_ft = "markdown";
-          };
-        };
-
-        molten = {
-          enable = true;
-          settings = {
-            auto_open_output = true;
-            copy_output = false;
-            enter_output_behavior = "open_then_enter";
-            image_provider = "none";
-            output_crop_border = true;
-            output_show_more = false;
-            output_virt_lines = false;
-            output_win_border = [
-              ""
-              "━"
-              ""
-              ""
-            ];
-            output_win_cover_gutter = true;
-            output_win_hide_on_leave = true;
-            output_win_style = false;
-            save_path = {
-              __raw = "vim.fn.stdpath('data')..'/molten'";
-            };
-            show_mimetype_debug = false;
-            use_border_highlights = false;
-            virt_lines_off_by1 = false;
-            wrap_output = false;
-          };
-        };
         notify = {
           enable = false;
           settings = {
