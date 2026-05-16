@@ -38,6 +38,7 @@
       # Color Schemes
       colorschemes.gruvbox-material-nvim = {
         enable = true;
+        package = pkgsUnstable.vimPlugins.gruvbox-material-nvim;
         settings = {
           italics = true;
           comments.italics = true;
@@ -84,7 +85,6 @@
         neogit.enable = true;
         neoscroll.enable = true;
         nix.enable = true;
-        noice.enable = true;
         nvim-autopairs.enable = true;
         presence.enable = true;
         tmux-navigator.enable = true;
@@ -93,6 +93,13 @@
         vim-dadbod.enable = true;
         web-devicons.enable = true;
         fzf-lua.enable = true; # yes i added fzf-lua, no I am too lazy to configure it atm
+
+        noice = {
+          enable = true;
+          settings = {
+            cmdline.view = "cmdline";
+          };
+        };
 
         oil = {
           enable = true;
@@ -155,7 +162,6 @@
           enable = true;
         };
 
-        # needs some fix for inline and math latex blocks stuff
         markview = {
           enable = true;
           settings = {
@@ -163,11 +169,25 @@
               hybrid_modes = [
                 "n"
               ];
+              icon_provider = "devicons";
             };
             latex = {
               enable = true;
-              blocks.enable = true;
-              inlines.enable = true;
+              blocks = {
+                enable = true;
+                hl = "MarkviewPalette6Fg";
+              };
+              inlines = {
+                enable = true;
+                hl = "MarkviewPalette6Fg";
+              };
+            };
+            markdown = {
+              code_blocks = {
+                enable = true;
+                style = "block";
+                min_width = 60;
+              };
             };
           };
         };
@@ -232,20 +252,23 @@
           highlight.enable = true;
           indent.enable = true;
           grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-            json
-            javascript
-            python
-            cpp
-            c
-            rust
-            lua
-            nix
-            sql
-            vim
-            regex
             bash
+            c
+            cpp
+            javascript
+            json
+            latex
+            lua
             markdown
             markdown_inline
+            nix
+            python
+            regex
+            rust
+            sql
+            typst
+            vim
+            yaml
           ];
         };
 
