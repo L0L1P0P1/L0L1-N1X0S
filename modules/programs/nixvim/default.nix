@@ -255,6 +255,13 @@
             bash
             c
             cpp
+            css
+            dockerfile
+            go
+            gomod
+            gosum
+            gowork
+            html
             javascript
             json
             latex
@@ -266,8 +273,10 @@
             regex
             rust
             sql
+            toml
             typst
             vim
+            vimdoc
             yaml
           ];
         };

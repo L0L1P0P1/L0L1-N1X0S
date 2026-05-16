@@ -35,6 +35,9 @@
 
       servers = {
         lua_ls.enable = true;
+        gopls = {
+          enable = true;
+        };
 
         basedpyright = {
           enable = true;

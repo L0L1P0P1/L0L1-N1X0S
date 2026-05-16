@@ -19,6 +19,8 @@
       lldb
       conda
       cmake
+      gcc
+      go
       rustc
       cargo
       rustup
