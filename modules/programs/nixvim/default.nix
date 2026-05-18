@@ -53,9 +53,7 @@
         tabstop = 4;
         fillchars.eob = " ";
 
-        foldmethod = "expr";
         foldlevel = 99;
-        foldexpr = "v:lua.vim.treesitter.foldexpr()";
       };
 
       globals = {
@@ -115,7 +113,7 @@
               "<C-h>" = false;
               "<C-s>" = false;
               "<C-r>" = "actions.refresh";
-              "y." = "actions.copy_entry_path";
+              "<leader>y." = "actions.copy_entry_path";
               "<leader>v" = {
                 __unkeyed-1 = "actions.select";
                 opts.vertical = true;
@@ -249,36 +247,15 @@
 
         treesitter = {
           enable = true;
-          highlight.enable = true;
+          package = pkgs.vimPlugins.nvim-treesitter;
+          settings.highlight = {
+            enable = true;
+            additional_vim_regex_highlighting = true;
+          };
           indent.enable = true;
-          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-            bash
-            c
-            cpp
-            css
-            dockerfile
-            go
-            gomod
-            gosum
-            gowork
-            html
-            javascript
-            json
-            latex
-            lua
-            markdown
-            markdown_inline
-            nix
-            python
-            regex
-            rust
-            sql
-            toml
-            typst
-            vim
-            vimdoc
-            yaml
-          ];
+          folding.enable = true;
+          nixGrammars = true;
+          grammarPackages = config.programs.nixvim.plugins.treesitter.package.allGrammars;
         };
 
         luasnip = {
