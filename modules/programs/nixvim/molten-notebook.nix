@@ -11,6 +11,20 @@
     programs.nixvim = {
       autoCmd = [
         {
+          callback.__raw = ''
+            function ()
+              vim.cmd("QuartoActivate")
+              vim.cmd("MoltenInit")
+            end
+          '';
+          event = [
+            "FileType"
+          ];
+          pattern = [
+            "quarto"
+          ];
+        }
+        {
           command = "QuartoActivate";
           event = [
             "FileType"
@@ -213,7 +227,7 @@
           key = "<leader>ra";
           action = "<cmd>lua require('quarto.runner').run_above()<CR>";
           options = {
-            desc = "run cell and above";
+            desc = "run this cell and above";
             silent = true;
           };
         }
