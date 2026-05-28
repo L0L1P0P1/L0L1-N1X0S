@@ -70,17 +70,6 @@
       45.147.251.19 pouya2
     '';
     firewall.enable = false;
-
-    # nameservers = [
-    #   "178.239.147.139"
-    #   "62.220.112.46"
-    #   "1.1.1.1"
-    #   "8.8.8.8"
-    #   "192.168.1.1"
-    #   # "213.176.7.229"
-    #   # "193.134.100.10"
-    #   # "84.144.144.144"
-    # ];
   };
 
   environment.etc."resolv.conf".enable = false;
@@ -189,6 +178,7 @@
   kdenlive.enable = true;
   latex.enable = true;
   libreOffice.enable = true;
+  platformio.enable = true;
   throne.enable = true;
   nix-ld.enable = true;
   pdfTools.enable = true;
