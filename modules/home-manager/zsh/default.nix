@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
 
   options = {
@@ -63,7 +68,6 @@
 
     programs.zoxide = {
       enable = true;
-      enableZshIntegration = true;
     };
 
     programs.git = {
@@ -72,7 +76,6 @@
 
     programs.dircolors = {
       enable = true;
-      enableZshIntegration = true;
       settings = {
         OTHER_WRITABLE = "01;34;04";
         ".sh" = "01;32";
@@ -82,7 +85,6 @@
 
     programs.fzf = {
       enable = true;
-      enableZshIntegration = true;
       tmux.enableShellIntegration = true;
 
       defaultCommand = "fd --type f";
@@ -106,7 +108,6 @@
 
     programs.starship = {
       enable = true;
-      enableZshIntegration = true;
       configPath = "${config.xdg.configHome}/starship.toml";
       settings = {
         add_newline = true;
@@ -132,6 +133,42 @@
           success_symbol = "[⤳](bold green) ";
           error_symbol = "[⤳](bold red) ";
         };
+      };
+    };
+
+    programs.yazi = {
+      enable = true;
+      shellWrapperName = "y";
+      extraPackages = with pkgs; [
+        glow
+        ouch
+      ];
+      keymap = {
+        mgr.prepend_keymap = [
+          {
+            run = [
+              "shell -- echo %s | xclip -i -selection clipboard -t text/uri-list"
+              "yank"
+            ];
+            on = "y";
+            desc = "Yank selection to register and system clipbaord";
+          }
+          {
+            on = "<C-n>";
+            run = "shell -- dragon-drop -x -a -T %s";
+            desc = "dragon-drop the current selection";
+          }
+          {
+            on = "<C-m>";
+            run = "shell -- dragon-drop -x -t | python3 -c \"import sys, urllib.parse; [print(urllib.parse.unquote(line.strip()).replace('file://', '')) for line in sys.stdin]\" | xargs -d '\\n' cp -t $(pwd)";
+            desc = "Drop file in the current working directory";
+          }
+          {
+            on = "!";
+            run = "shell '$SHELL' --block";
+            desc = "Open $SHELL here";
+          }
+        ];
       };
     };
   };

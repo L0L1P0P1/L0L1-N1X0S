@@ -83,7 +83,7 @@
         dressing.enable = true;
         gitsigns.enable = true;
         neogit.enable = true;
-        neoscroll.enable = true;
+        neoscroll.enable = false;
         nix.enable = true;
         nvim-autopairs.enable = true;
         tmux-navigator.enable = true;

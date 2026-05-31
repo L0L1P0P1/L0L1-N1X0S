@@ -24,6 +24,7 @@
         dig
         dmenu
         dnsmasq
+        dragon-drop
         drill
         dua
         ffmpeg
@@ -70,7 +71,6 @@
         whois
         xev
         xkbmon
-        yazi
         zdns
         zip
         zmap
