@@ -44,7 +44,7 @@
         mlocate
         net-tools
         nitch
-        nixfmt-rfc-style
+        nixfmt
         nix-index
         nixpkgs-manual
         nixpkgs-review

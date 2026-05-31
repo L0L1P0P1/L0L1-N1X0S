@@ -41,7 +41,7 @@
         mpv
         vlc
         sioyek
-        xfce.thunar
+        thunar
         puddletag
         maim
 

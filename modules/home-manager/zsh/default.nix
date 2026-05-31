@@ -33,7 +33,7 @@
       };
       initContent =
         let
-          zshConfigEarlyInit = lib.mkOrder 500 ''bindkey -e'';
+          zshConfigEarlyInit = lib.mkOrder 500 "bindkey -e";
         in
         lib.mkMerge [
           zshConfigEarlyInit
@@ -45,7 +45,7 @@
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks."*" = {
+      settings."*" = {
         forwardAgent = false;
         compression = false;
         addKeysToAgent = "yes";
@@ -107,6 +107,7 @@
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
+      configPath = "${config.xdg.configHome}/starship.toml";
       settings = {
         add_newline = true;
         command_timeout = 36000;
@@ -128,8 +129,8 @@
           ssh_only = false;
         };
         character = {
-          success_symbol = "[⤳](bold green)";
-          error_symbol = "[⤳](bold red)";
+          success_symbol = "[⤳](bold green) ";
+          error_symbol = "[⤳](bold red) ";
         };
       };
     };

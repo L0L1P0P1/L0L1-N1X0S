@@ -35,6 +35,8 @@
       enable = true;
       enableMan = true;
 
+      nixpkgs.source = inputs.nixpkgs;
+
       # Color Schemes
       colorschemes.gruvbox-material-nvim = {
         enable = true;
