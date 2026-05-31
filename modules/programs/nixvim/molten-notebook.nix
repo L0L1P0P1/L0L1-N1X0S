@@ -162,53 +162,6 @@
 
         treesitter-textobjects = {
           enable = true;
-          settings = {
-            move = {
-              enable = true;
-              set_jumps = false;
-
-              goto_next_start = {
-                "]c" = {
-                  query = "@code_cell.inner";
-                  desc = "next code cell";
-                };
-              };
-
-              goto_previous_start = {
-                "[c" = {
-                  query = "@code_cell.inner";
-                  desc = "previous code cell";
-                };
-              };
-            };
-
-            select = {
-              enable = true;
-              lookahead = true;
-
-              keymaps = {
-                ic = {
-                  query = "@code_cell.inner";
-                  desc = "in cell";
-                };
-
-                ac = {
-                  query = "@code_cell.outer";
-                  desc = "around cell";
-                };
-              };
-            };
-
-            swap = {
-              enable = true;
-              swap_next = {
-                "<leader>scl" = "@code_cell.outer";
-              };
-              swap_previous = {
-                "<leader>sch" = "@code_cell.outer";
-              };
-            };
-          };
         };
       };
 
@@ -222,7 +175,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>ra";
@@ -232,7 +184,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>rA";
@@ -242,7 +193,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>rl";
@@ -252,7 +202,6 @@
             silent = true;
           };
         }
-
         {
           mode = "v";
           key = "<leader>r";
@@ -262,7 +211,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>RA";
@@ -272,7 +220,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>os";
@@ -282,7 +229,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>oh";
@@ -292,7 +238,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>md";
@@ -302,7 +247,6 @@
             silent = true;
           };
         }
-
         {
           mode = "n";
           key = "<leader>rr";
@@ -311,6 +255,56 @@
             desc = "re-eval cell";
             silent = true;
           };
+        }
+        {
+          mode = [
+            "n"
+            "x"
+            "o"
+          ];
+          key = "]c";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.move").goto_next_start("@code_cell.outer", "textobjects")<cr>'';
+          options.desc = "Next code cell";
+        }
+        {
+          mode = [
+            "n"
+            "x"
+            "o"
+          ];
+          key = "[c";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.move").goto_previous_start("@code_cell.outer", "textobjects")<cr>'';
+          options.desc = "Previous code cell";
+        }
+        {
+          mode = [
+            "x"
+            "o"
+          ];
+          key = "ic";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.select").select_textobject("@code_cell.inner", "textobjects")<cr>'';
+          options.desc = "In cell";
+        }
+        {
+          mode = [
+            "x"
+            "o"
+          ];
+          key = "ac";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.select").select_textobject("@code_cell.outer", "textobjects")<cr>'';
+          options.desc = "Around cell";
+        }
+        {
+          mode = "n";
+          key = "<leader>scl";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.swap").swap_next("@code_cell.outer")<cr>'';
+          options.desc = "Swap with next cell";
+        }
+        {
+          mode = "n";
+          key = "<leader>sch";
+          action = ''<cmd>lua require("nvim-treesitter-textobjects.swap").swap_previous("@code_cell.outer")<cr>'';
+          options.desc = "Swap with previous cell";
         }
       ];
 
