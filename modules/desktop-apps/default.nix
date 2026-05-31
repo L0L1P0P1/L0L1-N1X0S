@@ -54,7 +54,7 @@
         pwvucontrol
         nitrogen
         qpwgraph
-        helvum
+        crosspipe
         alsa-utils
         nsxiv
         xclip

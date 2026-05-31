@@ -65,6 +65,7 @@
 
   networking = {
     hostName = "poolad";
+    resolvconf.enable = false;
     networkmanager = {
       enable = true;
       dns = "none";

@@ -95,6 +95,7 @@
         };
         jupytext = {
           enable = true;
+          package = pkgs.vimPlugins.jupytext-nvim;
           settings = {
             style = "markdown";
             output_extension = "md";

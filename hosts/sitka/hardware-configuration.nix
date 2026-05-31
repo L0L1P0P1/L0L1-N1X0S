@@ -72,6 +72,7 @@
 
   fileSystems."/var/lib/immich" = {
     device = "/mnt/e/Photos";
+    fsType = "ntfs-3g";
     options = [ "bind" ];
   };
 

@@ -30,6 +30,7 @@ in
         package = pkgsUnstable.gruvbox-material-gtk-theme;
         name = "Gruvbox-Material-Dark";
       };
+      gtk4.theme = config.gtk.theme;
       theme = {
         name = "Gruvbox-Teal-Dark-Compact-Medium";
         package = gruvbox;

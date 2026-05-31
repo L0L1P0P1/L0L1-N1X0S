@@ -24,13 +24,15 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # adds pkgsUnstable
   _module.args.pkgsUnstable = import inputs.nixpkgs-unstable {
     inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
+    config = {
+      allowUnfree = true;
+    };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   # modules to Import
   imports = [
@@ -57,6 +59,7 @@
 
   networking = {
     hostName = "sitka";
+    resolvconf.enable = false;
     networkmanager = {
       enable = true;
       dns = "none";

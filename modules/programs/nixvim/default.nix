@@ -84,13 +84,17 @@
         neoscroll.enable = true;
         nix.enable = true;
         nvim-autopairs.enable = true;
-        presence.enable = true;
         tmux-navigator.enable = true;
         vim-dadbod-completion.enable = true;
         vim-dadbod-ui.enable = true;
         vim-dadbod.enable = true;
         web-devicons.enable = true;
         fzf-lua.enable = true; # yes i added fzf-lua, no I am too lazy to configure it atm
+
+        presence = {
+          enable = false;
+          package = pkgs.vimPlugins.presence-nvim;
+        };
 
         noice = {
           enable = true;
