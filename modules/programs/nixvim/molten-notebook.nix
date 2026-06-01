@@ -13,7 +13,7 @@
         {
           callback.__raw = ''
             function ()
-              vim.cmd("QuartoActivate")
+              -- vim.cmd("QuartoActivate")
               vim.cmd("MoltenInit")
             end
           '';
@@ -63,7 +63,14 @@
       ];
 
       plugins = {
-        otter.enable = true;
+        otter = {
+          enable = true;
+          settings.lsp.diagnostic_update_events = [
+            "BufWritePost"
+            "InsertLeave"
+            "TextChanged"
+          ];
+        };
         image = {
           enable = true;
           settings = {
@@ -87,9 +94,32 @@
         quarto = {
           enable = true;
           settings = {
+            debug = false;
+            closePreviewOnExit = true;
+            lspFeatures = {
+              enabled = true;
+              chunks = "curly";
+              languages = [
+                "r"
+                "python"
+              ];
+              diagnostics = {
+                enabled = true;
+                triggers = [
+                  "BufWritePost"
+                  "TextChanged"
+                  "InsertLeave"
+                ];
+              };
+              completion = {
+                enabled = true;
+              };
+            };
             codeRunner = {
               enabled = true;
               default_method = "molten";
+              ft_runners = { };
+              never_run = [ "yaml" ];
             };
           };
         };
@@ -161,9 +191,7 @@
           '';
         };
 
-        treesitter-textobjects = {
-          enable = true;
-        };
+        treesitter-textobjects.enable = true;
       };
 
       keymaps = [

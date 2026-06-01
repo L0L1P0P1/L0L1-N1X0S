@@ -19,7 +19,9 @@
       lsp = {
         enable = true;
         inlayHints = true;
-
+        capabilities = ''
+          capabilities.textDocument.diagnostic.dynamicRegistration = false
+        '';
         luaConfig.pre = ''
           vim.diagnostic.config {
             virtual_text = true,
