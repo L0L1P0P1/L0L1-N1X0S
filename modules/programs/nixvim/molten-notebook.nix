@@ -68,11 +68,11 @@
           enable = true;
           settings = {
             backend = "kitty";
-            max_height = 12;
+            max_height = 16;
             max_height_window_percentage = {
               __raw = "math.huge";
             };
-            max_width = 250;
+            max_width = 350;
             max_width_window_percentage = {
               __raw = "math.huge";
             };
@@ -126,11 +126,12 @@
             auto_open_output = false;
             cover_empty_lines = false;
             output_win_style = false;
-            output_virt_lines = false;
+            output_virt_lines = true;
             output_win_hide_on_leave = false;
             output_win_cover_gutter = true;
             output_crop_border = true;
             output_show_more = true;
+            limit_output_chars = 2000000;
             output_win_border = [
               ""
               "━"
