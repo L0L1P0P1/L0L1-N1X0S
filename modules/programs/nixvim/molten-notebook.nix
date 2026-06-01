@@ -97,9 +97,9 @@
           enable = true;
           package = pkgs.vimPlugins.jupytext-nvim;
           settings = {
-            style = "markdown";
-            output_extension = "md";
-            force_ft = "markdown";
+            style = "quarto";
+            output_extension = "qmd";
+            force_ft = "quarto";
           };
         };
         molten = {

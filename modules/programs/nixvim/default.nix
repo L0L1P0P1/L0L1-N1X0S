@@ -269,6 +269,9 @@
           fromVscode = [
             { }
           ];
+          filetypeExtend = {
+            quarto = [ "markdown" ];
+          };
           settings.enable_autosnippets = true;
         };
 
