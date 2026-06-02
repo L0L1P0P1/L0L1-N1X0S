@@ -43,7 +43,6 @@
 
       openrgb --startminimized &
       nm-applet &
-      clash-verge & 
       lxqt-policykit-agent &
     '';
   };
