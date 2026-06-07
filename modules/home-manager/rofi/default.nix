@@ -4,6 +4,14 @@
   pkgs,
   ...
 }:
+let
+  rofi-power-menu = (pkgs.rofi-power-menu).overrideAttrs (oldAttrs: {
+    installPhase = ''
+      sed -i 's|terminate-session|kill-session|g' rofi-power-menu
+    ''
+    + oldAttrs.installPhase;
+  });
+in
 {
   options.rofi = {
     enable = lib.mkEnableOption "enable rofi";
@@ -38,6 +46,6 @@
       ];
       theme = ./gruvbox-material.rasi;
     };
-    home.packages = [ pkgs.rofi-power-menu ];
+    home.packages = [ rofi-power-menu ];
   };
 }

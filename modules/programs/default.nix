@@ -17,7 +17,7 @@
     ./nix-ld.nix
     ./pdfTools.nix
     ./platformio.nix
-    ./sddm.nix
+    ./sddm
 
     ./nixvim
   ];
