@@ -69,6 +69,7 @@
                       || window_type = 'utility' 
                       || window_type = 'dnd' 
                       || window_type = 'dock'
+                      || QTILE_INTERNAL = 1
                       || class_g = 'TelegramDesktop'";
               blur-background = false; 
               shadow = false;

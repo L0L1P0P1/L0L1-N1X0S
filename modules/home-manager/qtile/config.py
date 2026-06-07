@@ -421,8 +421,8 @@ screens = [
     Screen(
         top=bar.Bar(
             widget_list,
-            int(24 * gui_scale),
-            border_width=[0, 0, int(2 * gui_scale), 0],  # Draw top and bottom borders
+            int(26 * gui_scale),
+            border_width=[0, 0, int(1 * gui_scale), 0],  # Draw top and bottom borders
             border_color=[
                 color["background"],
                 color["background"],
