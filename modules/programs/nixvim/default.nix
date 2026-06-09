@@ -352,8 +352,9 @@
               ];
               per_filetype = {
                 sql = [
-                  "snippets"
+                  "lsp"
                   "dadbod"
+                  "snippets"
                 ];
               };
               providers = {
