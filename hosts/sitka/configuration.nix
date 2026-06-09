@@ -191,6 +191,7 @@
   tauon.enable = true;
   teamspeak.enable = false;
   virtualbox.enable = true;
+  quarto.enable = true;
   flatpak = {
     enable = true;
     stremio.enable = true;

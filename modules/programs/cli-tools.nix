@@ -54,7 +54,7 @@
         ntfs3g
         pandoc
         pkg-config
-        quarto
+        # quarto
         rar
         ripgrep
         speedtest-go

@@ -18,6 +18,7 @@
     ./pdfTools.nix
     ./platformio.nix
     ./sddm
+    ./quarto.nix
 
     ./nixvim
   ];

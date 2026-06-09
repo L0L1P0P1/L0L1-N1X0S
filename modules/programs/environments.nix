@@ -31,6 +31,7 @@
       lua-language-server
       lua52Packages.lua-lsp
       nodejs_22
+      postgres-language-server
       uv
     ];
   };

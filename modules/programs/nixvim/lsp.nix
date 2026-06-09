@@ -51,6 +51,11 @@
           gopls.enable = true;
           ruff.enable = true;
 
+          postgres_lsp = {
+            enable = true;
+            package = pkgs.postgres-language-server;
+          };
+
           basedpyright = {
             enable = true;
             package = pkgsUnstable.basedpyright;
