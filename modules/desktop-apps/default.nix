@@ -37,6 +37,7 @@
         # From Stable Channel
         arandr
         brave
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         syncthing
         mpv
         vlc
