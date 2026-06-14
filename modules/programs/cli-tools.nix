@@ -29,6 +29,7 @@
         dua
         ffmpeg
         gh
+        ghostscript
         git
         gnumake
         htop
