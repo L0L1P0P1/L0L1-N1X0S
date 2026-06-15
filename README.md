@@ -57,6 +57,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
+- [ ] More fzf integration (git diffs, ripgrep, ...)
 - [ ] Add `KeyChord`s to spawn apps faster in Qtile
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] Create a widget to show the current brightness for Qtile Bar
