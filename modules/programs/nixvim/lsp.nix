@@ -82,11 +82,11 @@
             enable = true;
             package = pkgs.nixd;
             settings = {
-              nixpkgs.expr = "import (builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").inputs.nixpkgs { }";
+              nixpkgs.expr = "import (builtins.getFlake \"path:/home/L0L1P0P/nixos\").inputs.nixpkgs { }";
               options = {
-                home-manager.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []";
-                nixos.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options";
-                nixvim.expr = "(builtins.getFlake \"git+file:///home/L0L1P0P/nixos\").inputs.nixvim.outputs.nixvimConfigurations.x86_64-linux.default.options";
+                home-manager.expr = "(builtins.getFlake \"path:/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []";
+                nixos.expr = "(builtins.getFlake \"path:/home/L0L1P0P/nixos\").nixosConfigurations.${hostname}.options";
+                nixvim.expr = "(builtins.getFlake \"path:/home/L0L1P0P/nixos\").inputs.nixvim.outputs.nixvimConfigurations.x86_64-linux.default.options";
               };
             };
           };

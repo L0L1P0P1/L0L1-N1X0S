@@ -310,6 +310,16 @@
                 "scroll_signature_down"
                 "fallback"
               ];
+              "<C-c>" = [
+                "show"
+                "hide"
+                "fallback"
+              ];
+              "<C-q>" = [
+                "show_documentation"
+                "hide_documentation"
+                "fallback"
+              ];
               "<C-y>" = [
                 "select_and_accept"
                 "fallback"

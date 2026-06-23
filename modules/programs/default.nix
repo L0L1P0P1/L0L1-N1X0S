@@ -14,6 +14,7 @@
     ./docker.nix
     ./environments.nix
     ./latex.nix
+    ./llama-cpp.nix
     ./nix-ld.nix
     ./pdfTools.nix
     ./platformio.nix
