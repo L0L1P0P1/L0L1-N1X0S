@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgsUnstable,
   ...
 }:
 {
@@ -86,6 +87,8 @@
     programs.fzf = {
       enable = true;
       tmux.enableShellIntegration = true;
+
+      package = pkgsUnstable.fzf;
 
       defaultCommand = "fd --type f";
       fileWidgetCommand = "fd --type f";

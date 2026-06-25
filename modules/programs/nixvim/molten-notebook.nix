@@ -337,7 +337,7 @@
         }
       ];
 
-      extraLuaConfig = ''
+      extraConfigLua = ''
         local default_notebook = [[
           {
             "cells": [

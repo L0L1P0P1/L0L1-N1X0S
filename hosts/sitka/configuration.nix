@@ -181,6 +181,7 @@
   immich.enable = true;
   kdenlive.enable = true;
   latex.enable = true;
+  llama-cpp.enable = true;
   libreOffice.enable = true;
   platformio.enable = true;
   throne.enable = true;
