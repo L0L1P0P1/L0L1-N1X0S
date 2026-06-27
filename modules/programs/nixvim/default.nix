@@ -38,12 +38,13 @@
       nixpkgs.source = inputs.nixpkgs;
 
       # Color Schemes
-      colorschemes.gruvbox-material-nvim = {
+      colorschemes.gruvbox-material = {
         enable = true;
-        package = pkgsUnstable.vimPlugins.gruvbox-material-nvim;
+
         settings = {
-          italics = true;
-          comments.italics = true;
+          enable_bold = 1;
+          enable_italic = 1;
+          diagnostic_virtual_text = "colored";
         };
       };
 
@@ -101,7 +102,20 @@
         noice = {
           enable = true;
           settings = {
-            cmdline.view = "cmdline";
+            views = {
+              cmdline_popup = {
+                border = {
+                  style = "none";
+                  padding = [
+                    1
+                    2
+                  ];
+                };
+                win_options = {
+                  winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder";
+                };
+              };
+            };
           };
         };
 
@@ -228,6 +242,8 @@
             options = {
               disabled_filetypes = [
                 "NvimTree"
+                "AvanteTodos"
+                "Avante"
               ];
               ignore_focus = [ "NvimTree" ];
               section_separators = {
@@ -278,6 +294,70 @@
         friendly-snippets = {
           enable = true;
           package = pkgsUnstable.vimPlugins.friendly-snippets;
+        };
+
+        avante = {
+          enable = true;
+
+          settings = {
+            mode = "agentic";
+
+            behaviour = {
+              minimize_diff = true;
+              enable_cursor_planning_mode = false;
+              auto_approve_tool_permissions = false;
+              auto_apply_diff_after_generation = false;
+            };
+
+            auto_suggestions_provider = "llama-cpp";
+            diff = {
+              autojump = true;
+              debug = false;
+              list_opener = "copen";
+            };
+            highlights = {
+              diff = {
+                current = "DiffText";
+                incoming = "DiffAdd";
+              };
+            };
+            hints = {
+              enabled = true;
+            };
+            mappings = {
+              diff = {
+                both = "cb";
+                next = "]x";
+                none = "c0";
+                ours = "co";
+                prev = "[x";
+                theirs = "ct";
+              };
+            };
+            provider = "llama-cpp";
+            providers = {
+              llama-cpp = {
+                __inherited_from = "openai";
+                endpoint = "http://127.0.0.1:6007/v1";
+                model = "gemma-4-12B-finetuned";
+                api_key_name = "";
+                disable_tools = false;
+
+                extra_request_body = {
+                  max_tokens = 8192;
+                  temperature = 1.0;
+                };
+              };
+            };
+            windows = {
+              sidebar_header = {
+                align = "center";
+                rounded = true;
+              };
+              width = 30;
+              wrap = true;
+            };
+          };
         };
 
         blink-cmp = {

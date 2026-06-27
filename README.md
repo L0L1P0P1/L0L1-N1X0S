@@ -2,16 +2,6 @@
 
 This repository contains my personal NixOS configuration files, organized to support multiple hosts and modular components. It uses the Nix flakes system for reproducibility and ease of management.
 
-### Key Directories 
-- **`flake.nix`** and **`flake.lock`**: The main flake file defines system inputs and outputs. The lock file ensures reproducibility.
-- **`hosts/`**: Contains machine-specific configurations. Each host has its own NixOS and optional Home Manager files.
-- **`modules/`**: Custom, reusable Nix modules split into:
-- `desktop-apps`: GUI applications and services Nix Modules
-- `home-manager`: Home Manager Modules
-- `programs`: CLI and development tools including NixVim
-- **`LICENSE`**: Repository licensing
-- **`README.md`**: This documentation fils
-
 ## Usage
 
 ### Cloning the Repository
@@ -58,6 +48,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 
 ### TODO
 - [ ] More fzf integration (git diffs, ripgrep, ...)
+- [ ] split some of the nixvim configuration for better code structure
 - [ ] Add `KeyChord`s to spawn apps faster in Qtile
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] Create a widget to show the current brightness for Qtile Bar
