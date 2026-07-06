@@ -47,6 +47,7 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
+- [ ] fix screen timeout and screenlock time
 - [ ] More fzf integration (git diffs, ripgrep, ...)
 - [ ] split some of the nixvim configuration for better code structure
 - [ ] Add `KeyChord`s to spawn apps faster in Qtile
