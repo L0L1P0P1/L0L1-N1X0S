@@ -64,6 +64,7 @@
     networkmanager = {
       enable = true;
       dns = "none";
+      wifi.powersave = false;
     };
     extraHosts = ''
       45.133.251.255 behi-is-vasling
