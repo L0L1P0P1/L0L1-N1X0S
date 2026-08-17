@@ -2,11 +2,10 @@
   lib,
   config,
   pkgs,
-  pkgsUnstable,
   ...
 }:
 let
-  gruvbox = pkgsUnstable.gruvbox-gtk-theme.override {
+  gruvbox = pkgs.gruvbox-gtk-theme.override {
     colorVariants = [ "dark" ];
     sizeVariants = [ "compact" ];
     themeVariants = [ "teal" ];
@@ -27,7 +26,7 @@ in
     gtk = {
       enable = true;
       iconTheme = {
-        package = pkgsUnstable.gruvbox-material-gtk-theme;
+        package = pkgs.gruvbox-material-gtk-theme;
         name = "Gruvbox-Material-Dark";
       };
       gtk4.theme = config.gtk.theme;

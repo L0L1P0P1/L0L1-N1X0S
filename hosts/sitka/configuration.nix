@@ -185,7 +185,7 @@
   llama-cpp.enable = true;
   libreOffice.enable = true;
   platformio.enable = true;
-  throne.enable = true;
+  throne.enable = false;
   nix-ld.enable = true;
   pdfTools.enable = true;
   photoPrism.enable = false;

@@ -91,7 +91,7 @@
       package = pkgsUnstable.fzf;
 
       defaultCommand = "fd --type f";
-      fileWidgetCommand = "fd --type f";
+      fileWidget.command = "fd --type f";
       defaultOptions = [
         "--tmux center,60% "
         "--layout reverse "
@@ -100,13 +100,13 @@
         "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
         "--bind 'ctrl-h:reload:fd --type f -H'"
       ];
-      historyWidgetOptions = [
+      historyWidget.options = [
         "--bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -selection clipboard)+abort'"
         "--color header:italic"
         "--header 'Press CTRL-Y to copy command into clipboard'"
         "--preview-window hidden"
       ];
-      changeDirWidgetOptions = [ "--preview 'tree -C {}'" ];
+      changeDirWidget.options = [ "--preview 'tree -C {}'" ];
     };
 
     programs.starship = {

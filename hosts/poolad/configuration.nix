@@ -157,7 +157,7 @@
   desktopApps.enable = true;
   environments.enable = true;
   libreOffice.enable = true;
-  throne.enable = true;
+  throne.enable = false;
   sddm.enable = true;
   tauon.enable = true;
   teamspeak.enable = false;
