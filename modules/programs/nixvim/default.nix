@@ -437,8 +437,8 @@
                 "path"
                 "snippets"
                 "dadbod"
-                "obsidian"
-                "obsidian_tags"
+                # "obsidian"
+                # "obsidian_tags"
               ];
               per_filetype = {
                 sql = [
