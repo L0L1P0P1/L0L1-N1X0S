@@ -169,6 +169,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Modules to Enable
+  agents.enable = true;
   arduino.enable = true;
   audacity.enable = true;
   blender.enable = true;

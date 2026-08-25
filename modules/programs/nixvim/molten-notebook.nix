@@ -25,6 +25,15 @@
           ];
         }
         {
+          event = [ "FileType" ];
+          pattern = [ "molten_output" ];
+          callback.__raw = ''
+            function()
+              vim.wo.wrap = false
+            end
+          '';
+        }
+        {
           command = "QuartoActivate";
           event = [
             "FileType"

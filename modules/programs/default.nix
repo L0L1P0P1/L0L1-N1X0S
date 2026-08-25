@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ./agents.nix
     ./arduino.nix
     ./audacity.nix
     ./cli-tools.nix

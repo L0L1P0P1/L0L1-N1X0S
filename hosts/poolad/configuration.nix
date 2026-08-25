@@ -150,6 +150,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Modules to Enable
+  agents.enable = true;
   audacity.enable = true;
   clash-verge.enable = true;
   cli-tools.enable = true;
