@@ -78,6 +78,10 @@
             };
           };
 
+          dartls = {
+            enable = true;
+          };
+
           nixd = {
             enable = true;
             package = pkgs.nixd;

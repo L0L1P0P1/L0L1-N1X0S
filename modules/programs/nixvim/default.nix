@@ -52,6 +52,7 @@
       opts = {
         number = true;
         relativenumber = true;
+        expandtab = true;
         shiftwidth = 4;
         tabstop = 4;
         fillchars.eob = " ";
@@ -71,6 +72,7 @@
             "BufWinEnter"
           ];
           pattern = [
+            "*.dart"
             "*.c"
             "*.cpp"
             "*.h"

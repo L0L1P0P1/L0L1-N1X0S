@@ -274,6 +274,13 @@
     NO_PROXY = "localhost,127.0.0.1,docker.internal";
   };
 
+  # nix proxy
+  # systemd.services.nix-daemon.environment = {
+  #   http_proxy = "http://127.0.0.1:YOUR_PROXY_PORT";
+  #   https_proxy = "http://127.0.0.1:YOUR_PROXY_PORT";
+  #   all_proxy = "socks5://127.0.0.1:YOUR_SOCKS_PORT";
+  # };
+
   # Polkit
   security.polkit.enable = true;
   security.sudo = {
