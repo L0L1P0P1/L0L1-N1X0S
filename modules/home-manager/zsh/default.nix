@@ -40,9 +40,24 @@
       initContent =
         let
           zshConfigEarlyInit = lib.mkOrder 500 "bindkey -e";
+          loadEnv = ''
+            loadenv() {
+              local env_file="''${1:-.env}"
+              if [[ -f "$env_file" ]]; then
+                set -a
+                source "$env_file"
+                set +a
+                echo "Loaded environment variables from $env_file"
+              else
+                echo "Error: $env_file not found" >&2
+                return 1
+              fi
+            }
+          '';
         in
         lib.mkMerge [
           zshConfigEarlyInit
+          loadEnv
         ];
     };
 
