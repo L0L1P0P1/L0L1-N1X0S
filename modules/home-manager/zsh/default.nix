@@ -15,6 +15,7 @@
     home = {
       shell.enableZshIntegration = true;
       shellAliases = {
+        "pc" = "proxychains4 -q";
         "ls" = "ls --color";
         "cd" = "z";
         "nv" = "nvim";
