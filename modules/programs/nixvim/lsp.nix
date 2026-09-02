@@ -16,6 +16,8 @@
         lspServersToEnable = "all";
       };
 
+      flutter-tools.enable = true;
+
       lsp = {
         enable = true;
         inlayHints = true;

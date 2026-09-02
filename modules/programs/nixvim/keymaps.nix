@@ -187,7 +187,7 @@
         "v"
       ];
       key = "<leader>ca";
-      action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+      action = "<cmd>FzfLua lsp_code_actions<CR>";
       options = {
         desc = "See available code actions";
       };
@@ -250,7 +250,7 @@
     {
       mode = "n";
       key = "<leader>rs";
-      action = ":LspRestart<CR>";
+      action = ":lsp restart<CR>";
       options = {
         desc = "Restart LSP";
       };

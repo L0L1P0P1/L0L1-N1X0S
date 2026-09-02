@@ -83,7 +83,6 @@
 
       # Plugins
       plugins = {
-        dressing.enable = true;
         gitsigns.enable = true;
         neogit.enable = true;
         neoscroll.enable = false;
@@ -94,7 +93,11 @@
         vim-dadbod-ui.enable = true;
         vim-dadbod.enable = true;
         web-devicons.enable = true;
-        fzf-lua.enable = true; # yes i added fzf-lua, no I am too lazy to configure it atm
+
+        fzf-lua = {
+          enable = true;
+          luaConfig.post = "require('fzf-lua').register_ui_select()";
+        };
 
         presence = {
           enable = false;
