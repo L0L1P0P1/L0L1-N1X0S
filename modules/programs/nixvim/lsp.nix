@@ -81,7 +81,7 @@
           };
 
           dartls = {
-            enable = true;
+            enable = false;
           };
 
           nixd = {
