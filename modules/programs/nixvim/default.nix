@@ -72,6 +72,8 @@
             "BufWinEnter"
           ];
           pattern = [
+            "*.json"
+            "*.jsonc"
             "*.sql"
             "*.dart"
             "*.c"
