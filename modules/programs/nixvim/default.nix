@@ -72,6 +72,7 @@
             "BufWinEnter"
           ];
           pattern = [
+            "*.sql"
             "*.dart"
             "*.c"
             "*.cpp"
