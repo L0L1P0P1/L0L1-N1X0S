@@ -10,6 +10,7 @@
 {
 
   imports = [
+    ./anki.nix
     ./blender.nix
     ./clash-verge.nix
     ./droidcamOBS.nix

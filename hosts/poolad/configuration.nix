@@ -151,6 +151,7 @@
 
   # Modules to Enable
   agents.enable = true;
+  anki.enable = true;
   audacity.enable = true;
   clash-verge.enable = true;
   cli-tools.enable = true;

@@ -170,6 +170,7 @@
 
   # Modules to Enable
   agents.enable = true;
+  anki.enable = true;
   arduino.enable = true;
   audacity.enable = true;
   blender.enable = true;
