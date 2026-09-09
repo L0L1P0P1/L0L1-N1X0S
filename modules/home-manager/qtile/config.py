@@ -343,7 +343,9 @@ widget_list = [
     ),
     seperator_widget,
     widget_extras.ContinuousPoll(
-        cmd="xkbmon -u", fmt="󰌌  {}", foreground=color["green"]
+        cmd="xkbmon -u",
+        fmt="󰌌  {:.2}",
+        foreground=color["green"],
     ),
     seperator_widget,
     widget.Systray(icon_size=int(15 * gui_scale), padding=int(8 * gui_scale)),
