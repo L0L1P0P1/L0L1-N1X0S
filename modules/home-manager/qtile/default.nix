@@ -38,8 +38,7 @@
           #!/usr/bin/env bash
 
           nitrogen --restore &
-          # /home/L0L1P0P/.config/polybar/launch.sh &
-          setxkbmap -layout us,ir -option 'grp:alt_shift_toggle' &
+          setxkbmap -layout us,ir -variant altgr-intl, -option 'grp:alt_shift_toggle' &
         '';
       };
       autostartOnce = lib.mkOption {
@@ -59,11 +58,11 @@
   config = lib.mkIf config.qtile.enable {
     xdg.configFile = {
       "qtile/autostart.sh" = {
-        text = ''${config.qtile.autostart}'';
+        text = "${config.qtile.autostart}";
         executable = true;
       };
       "qtile/autostart_once.sh" = {
-        text = ''${config.qtile.autostartOnce}'';
+        text = "${config.qtile.autostartOnce}";
         executable = true;
       };
       "qtile/screenshot.sh" = {
