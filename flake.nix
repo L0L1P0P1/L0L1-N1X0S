@@ -33,6 +33,10 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fluxer = {
+      url = "github:Hy4ri/fluxer-flake";
+    };
   };
 
   outputs =
@@ -43,11 +47,13 @@
       home-manager,
       nix-flatpak,
       nix-matlab,
+      fluxer,
       ...
     }@inputs:
     let
       flake-overlays = [
         nix-matlab.overlay
+        fluxer.overlays.fluxer
       ];
     in
     {

@@ -196,6 +196,7 @@
   teamspeak.enable = false;
   virtualbox.enable = true;
   quarto.enable = true;
+  fluxer.enable = true;
   flatpak = {
     enable = true;
     stremio.enable = true;

@@ -17,6 +17,7 @@
     ./gaming.nix
     ./gimp.nix
     ./flatpak.nix
+    ./fluxer.nix
     ./immich.nix
     ./kdenlive.nix
     ./libreOffice.nix
