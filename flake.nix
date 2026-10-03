@@ -54,6 +54,7 @@
       flake-overlays = [
         nix-matlab.overlay
         fluxer.overlays.fluxer
+        fluxer.overlays.fluxer-canary
       ];
     in
     {
