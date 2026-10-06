@@ -22,11 +22,12 @@
       enable = true;
 
       themeFile = "GruvboxMaterialDarkMedium";
-      font.name = "IBM Plex Mono";
+      font.name = "Lilex Nerd Font";
       font.size = config.kitty.fontSize;
 
       settings = {
         confirm_os_window_close = 0;
+        disable_ligatures = "cursor";
         enable_audio_bell = false;
       };
     };

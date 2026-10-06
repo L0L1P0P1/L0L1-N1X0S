@@ -42,11 +42,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1790975317,
-        "narHash": "sha256-O2Ivx4+6frn0i9TVensQNsr8YekmQAbZZRvLiA04eGg=",
+        "lastModified": 1791143627,
+        "narHash": "sha256-AiiachD1/9AiTpqm+rht9fmJ9XSNjkDBOS3RxJbjXko=",
         "owner": "Hy4ri",
         "repo": "fluxer-flake",
-        "rev": "b739228f53fd8cd3db421340fb4e7e9d7ca98e6f",
+        "rev": "c9830d9be36c6436ec0c23acde2fd25747e8b5b7",
         "type": "github"
       },
       "original": {

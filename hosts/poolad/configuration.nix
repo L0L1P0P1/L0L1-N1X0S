@@ -255,6 +255,7 @@
       nerd-fonts.hack
       nerd-fonts.ubuntu-mono
       nerd-fonts.jetbrains-mono
+      nerd-fonts.lilex
       noto-fonts-color-emoji
       ipafont
       iso-flags
@@ -270,7 +271,7 @@
           "Sahel"
         ];
         sansSerif = [ "Sahel" ];
-        monospace = [ "IBM Plex Mono" ];
+        monospace = [ "Lilex Nerd Font" ];
       };
       useEmbeddedBitmaps = true;
     };

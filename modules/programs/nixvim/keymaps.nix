@@ -385,18 +385,9 @@
     {
       mode = "n";
       key = "<leader>gg";
-      action = "<cmd>Neogit<CR>";
+      action = "<cmd>Fugit2<CR>";
       options = {
-        desc = "Open NeoGit Menu";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>gc";
-      action = "<cmd>NeogitCommit<CR>";
-      options = {
-        desc = "Open Last Commit";
+        desc = "Open Fugit2 Menu";
       };
     }
 
