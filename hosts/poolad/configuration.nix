@@ -156,6 +156,7 @@
   clash-verge.enable = true;
   cli-tools.enable = true;
   desktopApps.enable = true;
+  docker.enable = true;
   droidcamOBS.enable = true;
   environments.enable = true;
   nix-ld.enable = true;
@@ -195,6 +196,7 @@
     extraGroups = [
       "wheel"
       "video"
+      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -222,6 +224,20 @@
 
   # Dconf
   programs.dconf.enable = true;
+
+  # docker proxy
+  systemd.services.docker.environment = {
+    HTTP_PROXY = "http://127.0.0.1:10808";
+    HTTPS_PROXY = "http://127.0.0.1:10808";
+    NO_PROXY = "localhost,127.0.0.1,docker.internal";
+  };
+
+  # nix proxy
+  # systemd.services.nix-daemon.environment = {
+  #   http_proxy = "http://127.0.0.1:10808";
+  #   https_proxy = "http://127.0.0.1:10808";
+  #   all_proxy = "socks5://127.0.0.1:10808";
+  # };
 
   # proxychains for simpler updating
   programs.proxychains = {
