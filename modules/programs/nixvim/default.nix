@@ -96,15 +96,7 @@
         web-devicons.enable = true;
 
         diffview.enable = true;
-        fugit2 = {
-          enable = true;
-          package = pkgsUnstable.vimPlugins.fugit2-nvim;
-          settings = {
-            external_diffview = true;
-            height = "90%";
-            width = "62%";
-          };
-        };
+        fugitive.enable = true;
 
         smear-cursor = {
           enable = true;
