@@ -61,13 +61,25 @@
   fileSystems."/mnt/d" = {
     device = "/dev/disk/by-uuid/6422C87222C84AAE";
     fsType = "ntfs-3g";
-    options = [ "rw" ];
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "dmask=0022"
+      "fmask=0133"
+    ];
   };
 
   fileSystems."/mnt/e" = {
     device = "/dev/disk/by-uuid/0E0CCFF60CCFD73D";
     fsType = "ntfs-3g";
-    options = [ "rw" ];
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "dmask=0022"
+      "fmask=0133"
+    ];
   };
 
   fileSystems."/var/lib/immich" = {
