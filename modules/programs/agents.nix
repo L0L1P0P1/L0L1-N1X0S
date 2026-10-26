@@ -11,7 +11,7 @@
 
   config = lib.mkIf config.agents.enable {
     environment.systemPackages = with pkgsUnstable; [
-      opencode
+      # opencode
       gemini-cli
     ];
   };

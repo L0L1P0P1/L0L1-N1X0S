@@ -17,10 +17,11 @@
     ./latex.nix
     ./llama-cpp.nix
     ./nix-ld.nix
+    ./opencode.nix
     ./pdfTools.nix
     ./platformio.nix
-    ./sddm
     ./quarto.nix
+    ./sddm
 
     ./nixvim
   ];
