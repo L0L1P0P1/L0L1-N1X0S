@@ -15,6 +15,7 @@
     home = {
       shell.enableZshIntegration = true;
       shellAliases = {
+        "spc" = "sudo -E proxychains4 -f /home/L0L1P0P/.proxychains.conf -q";
         "pc" = "proxychains4 -q";
         "ls" = "ls --color";
         "cd" = "z";
@@ -55,10 +56,31 @@
               fi
             }
           '';
+          setProxy = ''
+            setproxy() {
+              if [ -z "$1" ]; then
+                echo "Usage: setproxy <host:port>"
+                return 1
+              fi
+              export http_proxy="http://$1"
+              export https_proxy="http://$1"
+              export HTTP_PROXY="http://$1"
+              export HTTPS_PROXY="http://$1"
+              echo "Proxy set to $1"
+            }
+          '';
+          unsetProxy = ''
+            unsetproxy() {
+              unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+              echo "Proxy Removed"
+            }
+          '';
         in
         lib.mkMerge [
           zshConfigEarlyInit
           loadEnv
+          setProxy
+          unsetProxy
         ];
     };
 

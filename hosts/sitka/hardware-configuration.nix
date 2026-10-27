@@ -77,8 +77,8 @@
       "rw"
       "uid=1000"
       "gid=100"
-      "dmask=0022"
-      "fmask=0022"
+      "dmask=0000"
+      "fmask=0111"
     ];
   };
 
@@ -107,6 +107,7 @@
   # Enable graphics
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
 
   # Monitor setup
@@ -125,7 +126,7 @@
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
-    forceFullCompositionPipeline = true;
+    forceFullCompositionPipeline = false; # maybe change to false
   };
 
   hardware.nvidia-container-toolkit = {

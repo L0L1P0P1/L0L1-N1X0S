@@ -69,11 +69,20 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.bluetooth.enable = true;
+  hardware.enableRedistributableFirmware = true;
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      amdvlk
+      rocmPackages.clr.icd
+    ];
+    extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk
+    ];
   };
 
   services.lact.enable = true;
+  services.xserver.videoDriver = [ "amdgpu" ];
 }
