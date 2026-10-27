@@ -54,10 +54,10 @@
           rules: (
             { match = "QTILE_INTERNAL = 1"; corner-radius = 0; },
             { match = "QTILE_INTERNAL = 1"; opacity = 1.0; },
-            { match = "class_g = 'md.Obsidian'"; opacity = 0.95; },
+            { match = "class_g = 'md.obsidian.Obsidian'"; opacity = 0.95; },
             { match = "class_g = 'sioyek'"; opacity = 0.95; },
             { match = "class_g = 'kitty' || class_g = 'yazi' || class_g = 'nvim'"; opacity = 0.9; },
-            { match = "class_g = 'tauonmb'"; opacity = 0.9; },
+            { match = "class_g = 'tauonmb'"; opacity = 0.95; },
             { match = "class_g = 'Thunar'"; opacity = 0.9; },
             { match = "class_g = 'Rofi'"; opacity = 0.85;},
             { match = "fullscreen"; opacity = 1.0; corner-radius = 0; },
