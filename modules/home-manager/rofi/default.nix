@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgsUnstable,
   ...
 }:
 let
@@ -46,6 +47,8 @@ in
       ];
       theme = ./gruvbox-material.rasi;
     };
-    home.packages = [ rofi-power-menu ];
+    home.packages = [
+      rofi-power-menu
+    ];
   };
 }

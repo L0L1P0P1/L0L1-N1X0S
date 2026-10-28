@@ -59,6 +59,7 @@
 
       nm-applet &
       lxqt-policykit-agent &
+      v2rayN &
     '';
   };
 

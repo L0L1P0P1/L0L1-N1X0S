@@ -3,7 +3,6 @@ from libqtile.config import Click, Drag, Group, Key, EzKey, KeyChord, Match, Scr
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from qtile_extras import widget as widget_extras
-from qtile_bonsai import Bonsai
 
 import os
 import subprocess
@@ -12,6 +11,7 @@ import tomllib
 home = os.path.expanduser("~")
 mod = "mod4"
 terminal = guess_terminal()
+browser = "zen"
 
 with open(home + "/.config/qtile/options.toml", "rb") as t:
     options = tomllib.load(t)
@@ -103,6 +103,28 @@ keys = [
     # Close Dunst Notifications
     EzKey("M-c", lazy.spawn("dunstctl close", shell=True), desc="Close Dunst Notification"),
 
+    # Keychord Launch
+
+    KeyChord(
+        [mod],
+        "x",
+        [
+            EzKey("b", lazy.spawn(browser), desc="Spawn Browser"),
+            EzKey("y", lazy.spawn("kitty --class yazi yazi"), desc="Spawn Yazi"),
+            EzKey("o", lazy.spawn("obsidian"), desc="Spawn Obsidian"),
+            EzKey("s", lazy.spawn("sioyek"), desc="Spawn Sioyek"),
+            EzKey("m", lazy.spawn("tauon"), desc="Spawn Tauon"),
+            EzKey("l", lazy.spawn("localsend_app"), desc="Spawn localsend_app"),
+
+            KeyChord([mod], "t", [
+                EzKey("e", lazy.spawn("Telegram"), desc="Spawn Telegram"),
+                EzKey("s", lazy.spawn("flatpak run com.teamspeak.TeamSpeak3"), desc="Spawn TeamSpeak"),
+            ], mode=False, name="launch t..."),
+        ],
+        mode=False,
+        name="launch",
+    ),
+
     # Function Keys
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%"), desc="Turn Up Brightness",),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-"), desc="Turn Down Brightness",),
@@ -115,101 +137,44 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
 ]
 
-
-## Bonsai Layout Keys
-keys.extend([
-      # Spawning
-      EzKey("M-v", lazy.layout.spawn_split(rofi_cmd, "x").when(layout="bonsai"), desc="Bonsai Vertical Split"),
-      EzKey("M-x", lazy.layout.spawn_split(rofi_cmd, "y").when(layout="bonsai"), desc="Bonsai Horizontal Split",),
-      EzKey("M-t", lazy.layout.spawn_tab(rofi_cmd).when(layout="bonsai")),
-      EzKey("M-S-t", lazy.layout.spawn_tab(rofi_cmd, new_level=True).when(layout="bonsai")),
-      EzKey("M-S-v", lazy.layout.spawn_split(rofi_cmd, "x", position="previous"), desc="Bonsai Vertical Split Previous Position",),
-      EzKey("M-S-x", lazy.layout.spawn_split(rofi_cmd, "y", position="previous", desc="Bonsai Horizontal Split Previous Position",),),
-
-      # Movement and Manimulation
-      EzKey("M-f", lazy.layout.next_tab().when(layout="bonsai"), desc="Bonsai Next Tab"),
-      EzKey("M-d", lazy.layout.prev_tab().when(layout="bonsai"), desc="Bonsai Previous Tab"),
-      EzKey("M-S-d", lazy.layout.swap_tabs("previous").when(layout="bonsai")),
-      EzKey("M-S-f", lazy.layout.swap_tabs("next").when(layout="bonsai")),
-      Key([mod], "o", lazy.layout.select_container_outer().when(layout="bonsai")),
-      Key([mod], "p", lazy.layout.select_container_inner().when(layout="bonsai")),
-
-      # Chords
-      KeyChord(
-          [mod],
-          "b",
-          [
-              # Spawning Terminals Fast
-              EzKey("v", lazy.layout.spawn_split(terminal, "x")),
-              EzKey("x", lazy.layout.spawn_split(terminal, "y")),
-              EzKey("t", lazy.layout.spawn_tab(terminal)),
-              EzKey("S-t", lazy.layout.spawn_tab(terminal, new_level=True)),
-
-              # Toggle Container Select Mode
-              EzKey("C-v", lazy.layout.toggle_container_select_mode()),
-
-              # Pull Out
-              EzKey("o", lazy.layout.pull_out()),
-              EzKey("u", lazy.layout.pull_out_to_tab()),
-
-              # Rename Tab
-              EzKey("r", lazy.layout.rename_tab()),
-
-              # Directional commands to merge windows with their neighbor into subtabs.
-              KeyChord(
-                  [],
-                  "m",
-                  [
-                      EzKey("h", lazy.layout.merge_to_subtab("left")),
-                      EzKey("l", lazy.layout.merge_to_subtab("right")),
-                      EzKey("j", lazy.layout.merge_to_subtab("down")),
-                      EzKey("k", lazy.layout.merge_to_subtab("up")),
-
-                      # Merge entire tabs with each other as splits
-                      EzKey("S-h", lazy.layout.merge_tabs("previous")),
-                      EzKey("S-l", lazy.layout.merge_tabs("next")),
-                  ],
-                  mode=True,
-                  name="B-Merge"
-              ),
-
-              ## Directional commands for push_in() to move window inside neighbor space.
-              KeyChord(
-                  [],
-                  "i",
-                  [
-                      EzKey("j", lazy.layout.push_in("down")),
-                      EzKey("k", lazy.layout.push_in("up")),
-                      EzKey("h", lazy.layout.push_in("left")),
-                      EzKey("l", lazy.layout.push_in("right")),
-
-                      # It's nice to be able to push directly into the deepest
-                      # neighbor node when desired. The default bindings above
-                      # will have us push into the largest neighbor container.
-                      EzKey("S-j", lazy.layout.push_in("down", dest_selection="mru_deepest"),),
-                      EzKey("S-k", lazy.layout.push_in("up", dest_selection="mru_deepest"),),
-                      EzKey("S-h",lazy.layout.push_in("left", dest_selection="mru_deepest"),),
-                      EzKey("S-l", lazy.layout.push_in("right", dest_selection="mru_deepest"),),
-                  ],
-                  mode=True,
-                  name="B-Push"
-              ),
-          ],
-          mode=False,
-          name="Bonsai",
-      ),
-])
-for vt in range(1, 8):
-    keys.append(
-        Key(
-            ["control", "mod1"],
-            f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
-            desc=f"Switch to VT{vt}",
-        )
-    )
-
-groups = [Group(i) for i in "123456789"]
+groups = [
+    Group("1"),
+    Group(
+        "2",
+        matches=[
+            Match(wm_class="zen")
+        ]
+    ),
+    Group("3"),
+    Group(
+        "4", 
+        matches=[
+            Match(wm_class="md.obsidian.Obsidian"),
+            Match(wm_class="sioyek")
+        ]
+    ),
+    Group("5"),
+    Group(
+        "6",
+        matches=[
+            Match(wm_class="v2rayN"),
+        ],
+    ),
+    Group("7"),
+    Group(
+        "8",
+        matches=[
+            Match(wm_class="tauonmb")
+        ]
+    ),
+    Group(
+        "9", 
+        matches=[
+            Match(wm_class="Telegram"),
+            Match(wm_class="TeamSpeak 3")
+        ]
+    ),
+]
 
 for i in groups:
     keys.extend(
