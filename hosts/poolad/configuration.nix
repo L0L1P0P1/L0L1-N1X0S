@@ -87,7 +87,6 @@
         extraPackages =
           python3Packages: with python3Packages; [
             qtile-extras
-            qtile-bonsai
             iwlib
             dbus-fast
             requests

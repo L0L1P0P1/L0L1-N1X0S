@@ -115,8 +115,9 @@ keys = [
             EzKey("s", lazy.spawn("sioyek"), desc="Spawn Sioyek"),
             EzKey("m", lazy.spawn("tauon"), desc="Spawn Tauon"),
             EzKey("l", lazy.spawn("localsend_app"), desc="Spawn localsend_app"),
+            EzKey("v", lazy.spawn("v2rayN"), desc="Spawn v2rayN"),
 
-            KeyChord([mod], "t", [
+            KeyChord([], "t", [
                 EzKey("e", lazy.spawn("Telegram"), desc="Spawn Telegram"),
                 EzKey("s", lazy.spawn("flatpak run com.teamspeak.TeamSpeak3"), desc="Spawn TeamSpeak"),
             ], mode=False, name="launch t..."),

@@ -60,7 +60,7 @@
 
   fileSystems."/mnt/d" = {
     device = "/dev/disk/by-uuid/6422C87222C84AAE";
-    fsType = "ntfs-3g";
+    fsType = "ntfs3";
     options = [
       "rw"
       "uid=1000"
@@ -72,7 +72,7 @@
 
   fileSystems."/mnt/e" = {
     device = "/dev/disk/by-uuid/0E0CCFF60CCFD73D";
-    fsType = "ntfs-3g";
+    fsType = "ntfs3";
     options = [
       "rw"
       "uid=1000"
@@ -84,7 +84,7 @@
 
   fileSystems."/var/lib/immich" = {
     device = "/mnt/e/Photos";
-    fsType = "ntfs-3g";
+    fsType = "ntfs3";
     options = [ "bind" ];
   };
 
