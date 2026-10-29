@@ -44,7 +44,12 @@
   zsh.enable = true;
 
   kitty = {
-    enable = true;
+    enable = false;
+    fontSize = 16;
+  };
+
+  ghostty = {
+    enable = false;
     fontSize = 16;
   };
 

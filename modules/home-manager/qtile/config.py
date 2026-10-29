@@ -110,7 +110,7 @@ keys = [
         "x",
         [
             EzKey("b", lazy.spawn(browser), desc="Spawn Browser"),
-            EzKey("y", lazy.spawn("kitty --class yazi yazi"), desc="Spawn Yazi"),
+            EzKey("y", lazy.spawn("ghostty --class=yazi -e yazi"), desc="Spawn Yazi"),
             EzKey("o", lazy.spawn("obsidian"), desc="Spawn Obsidian"),
             EzKey("s", lazy.spawn("sioyek"), desc="Spawn Sioyek"),
             EzKey("m", lazy.spawn("tauon"), desc="Spawn Tauon"),

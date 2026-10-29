@@ -13,6 +13,7 @@
     ./easyeffects.nix
     ./gruvbox
     ./kdeconnect.nix
+    ./ghostty.nix
     ./kitty.nix
     ./picom.nix
     ./qtile

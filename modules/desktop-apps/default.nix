@@ -67,7 +67,6 @@
       ++ (with pkgsUnstable; [
         # From Unstable Channel
         telegram-desktop
-        kitty
         vesktop
         obsidian
         v2rayn

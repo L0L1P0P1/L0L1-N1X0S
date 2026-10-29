@@ -29,6 +29,7 @@
         confirm_os_window_close = 0;
         disable_ligatures = "cursor";
         enable_audio_bell = false;
+        force_ltr = "yes";
       };
     };
   };

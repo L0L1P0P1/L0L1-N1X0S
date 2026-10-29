@@ -28,7 +28,8 @@
   easyeffects.enable = true;
   gruvbox.enable = true;
   kdeconnect.enable = true;
-  kitty.enable = true;
+  kitty.enable = false;
+  ghostty.enable = true;
   picom.enable = true;
   rofi.enable = true;
   tmux.enable = true;
