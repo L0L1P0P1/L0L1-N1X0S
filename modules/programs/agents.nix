@@ -12,7 +12,6 @@
   config = lib.mkIf config.agents.enable {
     environment.systemPackages = with pkgsUnstable; [
       claude-code
-      antigravity-cli
     ];
   };
 }
