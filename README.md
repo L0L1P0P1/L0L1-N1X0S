@@ -47,13 +47,14 @@ This configuration repository is distributed under the [MIT License](LICENSE). F
 - **Testing Changes**: Use Git branches for experimenting with new configurations to avoid breaking your system.
 
 ### TODO
+- [ ] configure your sioyek abit
 - [ ] fix screen timeout and screenlock time
 - [ ] More fzf integration (git diffs, ripgrep, ...)
 - [ ] split some of the nixvim configuration for better code structure
-- [ ] Add `KeyChord`s to spawn apps faster in Qtile
 - [ ] xdg/mime `home-manager` configuration and add custom `.desktop` apps to `home-manager`
 - [ ] Create a widget to show the current brightness for Qtile Bar
 - [ ] fix suspend for sitka
+- [x] Add `KeyChord`s to spawn apps faster in Qtile
 - [x] fix inline and math blocks and stuff for markview
 - [x] Molten-nvim
   - [x] basic setup
