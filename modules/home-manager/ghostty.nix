@@ -22,6 +22,7 @@
       enable = true;
       package = pkgsUnstable.ghostty;
 
+      systemd.enable = true;
       settings = {
         theme = "Gruvbox Material Dark";
         font-family = "Lilex Nerd Font Medium";

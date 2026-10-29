@@ -49,7 +49,7 @@
   };
 
   ghostty = {
-    enable = false;
+    enable = true;
     fontSize = 16;
   };
 
