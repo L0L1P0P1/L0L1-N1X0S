@@ -391,6 +391,18 @@
       };
     }
 
+    {
+      mode = [
+        "n"
+        "i"
+      ];
+      key = "<F8>";
+      action = "<cmd>set rightleft!<CR>";
+      options = {
+        desc = "Right to Left Toggle for Persian";
+      };
+    }
+
     # {
     # 	mode = ;
     # 	key = ;
