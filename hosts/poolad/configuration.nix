@@ -108,6 +108,12 @@
       };
     };
 
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+
     pipewire = {
       enable = true;
       pulse.enable = true;
