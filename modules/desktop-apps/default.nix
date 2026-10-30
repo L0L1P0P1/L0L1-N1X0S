@@ -14,10 +14,11 @@
     ./blender.nix
     ./clash-verge.nix
     ./droidcamOBS.nix
-    ./gaming.nix
-    ./gimp.nix
     ./flatpak.nix
     ./fluxer.nix
+    ./gaming.nix
+    ./gimp.nix
+    ./gnome-network-displays.nix
     ./immich.nix
     ./kdenlive.nix
     ./libreOffice.nix

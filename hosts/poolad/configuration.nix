@@ -155,6 +155,7 @@
   audacity.enable = true;
   clash-verge.enable = true;
   cli-tools.enable = true;
+  gnome-network-displays.enable = true;
   desktopApps.enable = true;
   docker.enable = true;
   droidcamOBS.enable = true;
