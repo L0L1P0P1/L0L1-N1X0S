@@ -31,6 +31,7 @@
         confirm-close-surface = false;
         window-padding-balance = true;
         window-decoration = false;
+        gtk-single-instance = true;
         bell-features = false;
         cursor-style = "block";
       };

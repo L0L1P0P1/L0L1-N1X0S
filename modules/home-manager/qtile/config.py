@@ -80,7 +80,7 @@ keys = [
     EzKey("M-S-<space>", lazy.layout.flip(), desc="Monad Flip"),
 
     # Terminal
-    EzKey("M-<Return>", lazy.spawn(terminal), desc="Launch terminal"),
+    EzKey("M-<Return>", lazy.spawn(["ghostty", "+new-window"]), desc="Launch terminal"),
 
     # Spawn with Rofi
     EzKey("M-r", lazy.spawn(rofi_cmd), desc="Spawn a command using rofi",),
