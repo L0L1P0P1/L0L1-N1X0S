@@ -403,6 +403,34 @@
       };
     }
 
+    {
+      mode = "n";
+      key = "<leader>ll";
+      action = "<cmd>VimtexCompile<CR>";
+      options = {
+        desc = "LaTeX: Toggle Compile";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>lv";
+      action = "<cmd>VimtexView<CR>";
+      options = {
+        desc = "LaTeX: View PDF";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>le";
+      action = "<cmd>VimtexErrors<CR>";
+      options = {
+        desc = "LaTeX: Check Errors";
+        silent = true;
+      };
+    }
+
     # {
     # 	mode = ;
     # 	key = ;

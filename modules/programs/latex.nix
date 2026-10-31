@@ -13,13 +13,16 @@
   config = lib.mkIf config.latex.enable {
     environment.systemPackages = with pkgs; [
       texliveFull
-      (texliveMedium.withPackages (
-        ps: with ps; [
-          standalone
-          preview
-          mathalpha
-        ]
-      ))
+      # (texliveMedium.withPackages (
+      #   ps: with ps; [
+      #     scheme-medium
+      #     xepersian
+      #     bidi
+      #     standalone
+      #     preview
+      #     mathalpha
+      #   ]
+      # ))
     ];
   };
 }

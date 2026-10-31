@@ -279,6 +279,26 @@
           };
         };
 
+        vimtex = {
+          enable = true;
+          settings = {
+            view_method = "sioyek";
+            texlivePackage = pkgs.texliveFull;
+            tex_path = "/run/current-system/sw/bin/latexmk";
+            compiler_method = "latexmk";
+            compiler_latexmk = {
+              executable = "/run/current-system/sw/bin/latexmk";
+              options = [
+                "-verbose"
+                "-file-line-error"
+                "-synctex=1"
+                "-interaction=nonstopmode"
+                "-xelatex"
+              ];
+            };
+          };
+        };
+
         indent-blankline = {
           enable = true;
           settings = {
