@@ -20,6 +20,7 @@
     ./opencode.nix
     ./pdfTools.nix
     ./platformio.nix
+    ./fonts.nix
     ./quarto.nix
     ./sddm
 
