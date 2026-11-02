@@ -23,6 +23,8 @@
         sahel-fonts
         vazir-fonts
         vazir-code-font
+        parastoo-fonts
+        samim-fonts
       ];
       fontconfig = {
         defaultFonts = {

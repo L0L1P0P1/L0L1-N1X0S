@@ -430,6 +430,24 @@
         silent = true;
       };
     }
+    {
+      mode = "n";
+      key = "<leader>tt";
+      action = "<cmd>TypstPreview<CR>";
+      options = {
+        desc = "typst-preview: start";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ts";
+      action = "<cmd>TypstPreviewStop<CR>";
+      options = {
+        desc = "typst-preview: stop";
+        silent = true;
+      };
+    }
 
     # {
     # 	mode = ;

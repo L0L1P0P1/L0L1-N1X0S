@@ -341,6 +341,10 @@
           package = pkgsUnstable.vimPlugins.friendly-snippets;
         };
 
+        typst-preview = {
+          enable = true;
+        };
+
         avante = {
           enable = true;
 

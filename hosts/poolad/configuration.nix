@@ -152,6 +152,7 @@
   environments.enable = true;
   nix-ld.enable = true;
   libreOffice.enable = true;
+  typst.enable = true;
   quarto.enable = true;
   sddm.enable = true;
   tauon.enable = true;

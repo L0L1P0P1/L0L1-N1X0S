@@ -97,6 +97,15 @@
             };
           };
 
+          tinymist = {
+            enable = true;
+            package = pkgs.tinymist;
+            settings = {
+              exportPdf = "onType";
+              formatterMode = "typstyle";
+            };
+          };
+
           clangd = {
             enable = true;
             package = null;

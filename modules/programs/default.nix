@@ -14,15 +14,16 @@
     ./cli-tools.nix
     ./docker.nix
     ./environments.nix
+    ./fonts.nix
     ./latex.nix
     ./llama-cpp.nix
     ./nix-ld.nix
     ./opencode.nix
     ./pdfTools.nix
     ./platformio.nix
-    ./fonts.nix
     ./quarto.nix
     ./sddm
+    ./typst.nix
 
     ./nixvim
   ];

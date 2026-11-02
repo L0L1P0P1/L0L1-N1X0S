@@ -185,6 +185,7 @@
   kdenlive.enable = true;
   latex.enable = true;
   llama-cpp.enable = true;
+  typst.enable = true;
   libreOffice.enable = true;
   platformio.enable = true;
   throne.enable = false;
