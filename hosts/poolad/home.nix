@@ -65,6 +65,7 @@
       nm-applet &
       lxqt-policykit-agent &
       v2rayN &
+      tmux start-server &
     '';
   };
 
