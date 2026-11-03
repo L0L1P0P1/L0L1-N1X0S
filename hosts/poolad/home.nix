@@ -65,7 +65,7 @@
       nm-applet &
       lxqt-policykit-agent &
       v2rayN &
-      tmux start-server &
+      zsh -l -c "tmux start-server" &
     '';
   };
 

@@ -151,7 +151,6 @@ groups = [
         "4", 
         matches=[
             Match(wm_class="md.obsidian.Obsidian"),
-            Match(wm_class="sioyek")
         ]
     ),
     Group("5"),
@@ -421,13 +420,13 @@ os.environ["XDG_CURRENT_DESKTOP"] = "qtile"
 @hook.subscribe.startup_once
 def autostart_once():
     home = os.path.expanduser("~")
-    subprocess.run([home + "/.config/qtile/autostart_once.sh"])
+    subprocess.Popen([home + "/.config/qtile/autostart_once.sh"])
 
 
 @hook.subscribe.startup
 def autostart():
     home = os.path.expanduser("~")
-    subprocess.run([home + "/.config/qtile/autostart.sh"])
+    subprocess.Popen([home + "/.config/qtile/autostart.sh"])
 
 
 wmname = "LG3D"

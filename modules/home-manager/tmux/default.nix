@@ -35,6 +35,9 @@
         # TMUX-passthrough for kitty image
         set -g allow-passthrough on
 
+        # Cursor style
+        set -g cursor-style blinking-bar
+
         # Split in Current Directory
         bind '"' split-window -v -c "#{pane_current_path}"
         bind '%' split-window -h -c "#{pane_current_path}"
@@ -93,6 +96,7 @@
           extraConfig = ''
             set -g @continuum-restore 'on'
             set -g @continuum-save-interval '5'
+            set -g @continuum-boot 'on'
           '';
         }
         {
