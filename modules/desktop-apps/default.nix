@@ -44,7 +44,6 @@
         syncthing
         mpv
         vlc
-        sioyek
         thunar
         puddletag
         maim
@@ -67,6 +66,7 @@
       ])
       ++ (with pkgsUnstable; [
         # From Unstable Channel
+        sioyek
         telegram-desktop
         vesktop
         obsidian
