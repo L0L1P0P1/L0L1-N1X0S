@@ -50,6 +50,7 @@
 
       # Options
       opts = {
+        exrc = true;
         number = true;
         relativenumber = true;
         expandtab = true;
