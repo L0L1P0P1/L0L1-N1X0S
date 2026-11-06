@@ -75,12 +75,29 @@
               echo "Proxy Removed"
             }
           '';
+          nixproxyOn = ''
+            nixproxy-on() {
+              local p="''${1:-$http_proxy}"
+              sudo mkdir -p /run/systemd/system/nix-daemon.service.d
+              printf '[Service]\nEnvironment="http_proxy=%s" "https_proxy=%s" "all_proxy=%s"\n' "$p" "$p" "$p" \
+                | sudo tee /run/systemd/system/nix-daemon.service.d/proxy.conf >/dev/null
+              sudo systemctl daemon-reload && sudo systemctl restart nix-daemon
+            }
+          '';
+          nixproxyOff = ''
+            nixproxy-off() {
+              sudo rm -f /run/systemd/system/nix-daemon.service.d/proxy.conf
+              sudo systemctl daemon-reload && sudo systemctl restart nix-daemon
+            }
+          '';
         in
         lib.mkMerge [
           zshConfigEarlyInit
           loadEnv
           setProxy
           unsetProxy
+          nixproxyOff
+          nixproxyOn
         ];
     };
 
